@@ -1,3 +1,4 @@
 #Core & Functional Programming
 github "ReactiveCocoa/ReactiveCocoa" ~> 4.1.0
 github "Wolox/wolmo-core-ios" ~> 0.1.0
+github "robb/Cartography" ~> 0.7.0

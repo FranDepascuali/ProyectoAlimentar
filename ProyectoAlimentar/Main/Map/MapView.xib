@@ -23,7 +23,7 @@
                 <constraint firstAttribute="bottom" secondItem="d5f-cR-4UX" secondAttribute="bottom" id="tqG-po-R9Y"/>
             </constraints>
             <connections>
-                <outlet property="mapView" destination="d5f-cR-4UX" id="b9M-q3-J2D"/>
+                <outlet property="map" destination="d5f-cR-4UX" id="7PC-r2-a2B"/>
             </connections>
         </view>
     </objects>
