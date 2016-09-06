@@ -21,10 +21,8 @@ public final class MainView: UIView, NibLoadable {
             switch selectedMapType {
             case .Donor:
                 donorsButton.addBorder(to: .Bottom, filledWith: ColorPalette.primaryColor, width: 2)
-//                communityKitchenButton.layer.sublayers = []
             default:
                 communityKitchenButton.addBorder(to: .Bottom, filledWith: ColorPalette.primaryColor, width: 2)
-//                donorsButton.layer.sublayers = []
             }
         }
     }
@@ -52,14 +50,14 @@ public final class MainView: UIView, NibLoadable {
     
     @IBOutlet weak var donorsButton: UIButton! {
         didSet {
-            
+            donorsButton.setTitle("Donantes", forState: .Normal)
         }
     }
     
     
     @IBOutlet weak var communityKitchenButton: UIButton! {
         didSet {
-            
+            communityKitchenButton.setTitle("Comedores", forState: .Normal)
         }
     }
     

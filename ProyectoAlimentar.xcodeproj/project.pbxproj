@@ -24,6 +24,8 @@
 		F84185881D7A175B0000AEB5 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84185841D7A175B0000AEB5 /* MBProgressHUD.framework */; };
 		F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841858D1D7A20EB0000AEB5 /* ColorPalette.swift */; };
 		F84185921D7A27610000AEB5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185911D7A27610000AEB5 /* UIView.swift */; };
+		F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */; };
+		F84185BD1D7E3F060000AEB5 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185BC1D7E3F060000AEB5 /* UICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		F84185841D7A175B0000AEB5 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = ../Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		F841858D1D7A20EB0000AEB5 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		F84185911D7A27610000AEB5 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselController.swift; sourceTree = "<group>"; };
+		F84185BC1D7E3F060000AEB5 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +87,10 @@
 		F84185591D7A10CE0000AEB5 /* ProyectoAlimentar */ = {
 			isa = PBXGroup;
 			children = (
+				F84185BB1D7E3F060000AEB5 /* UIExtensions */,
+				F84185B61D7E3E510000AEB5 /* Utilities */,
 				F84185901D7A27570000AEB5 /* Extensions */,
 				F84185761D7A162D0000AEB5 /* Main */,
-				F841856D1D7A14060000AEB5 /* Map */,
 				F841856C1D7A12CA0000AEB5 /* Resources */,
 				F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */,
 				F84185631D7A10CE0000AEB5 /* LaunchScreen.storyboard */,
@@ -111,7 +116,8 @@
 				F841856E1D7A142C0000AEB5 /* MapViewController.swift */,
 				F84185721D7A15BC0000AEB5 /* MapViewModel.swift */,
 			);
-			path = Map;
+			name = Map;
+			path = ../Map;
 			sourceTree = "<group>";
 		};
 		F84185761D7A162D0000AEB5 /* Main */ = {
@@ -121,6 +127,7 @@
 				F84185791D7A163F0000AEB5 /* MainView.swift */,
 				F841857D1D7A16580000AEB5 /* MainViewModel.swift */,
 				F84185771D7A16360000AEB5 /* MainViewController.swift */,
+				F841856D1D7A14060000AEB5 /* Map */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -142,6 +149,23 @@
 				F84185911D7A27610000AEB5 /* UIView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F84185B61D7E3E510000AEB5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */,
+			);
+			name = Utilities;
+			path = CarouselController;
+			sourceTree = "<group>";
+		};
+		F84185BB1D7E3F060000AEB5 /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				F84185BC1D7E3F060000AEB5 /* UICollectionView.swift */,
+			);
+			path = UIExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +267,9 @@
 				F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */,
 				F84185751D7A15CD0000AEB5 /* MapView.swift in Sources */,
 				F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */,
+				F84185BD1D7E3F060000AEB5 /* UICollectionView.swift in Sources */,
 				F84185731D7A15BC0000AEB5 /* MapViewModel.swift in Sources */,
+				F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */,
 				F84185921D7A27610000AEB5 /* UIView.swift in Sources */,
 				F84185781D7A16360000AEB5 /* MainViewController.swift in Sources */,
 			);
@@ -395,6 +421,7 @@
 				F841856B1D7A10CE0000AEB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
