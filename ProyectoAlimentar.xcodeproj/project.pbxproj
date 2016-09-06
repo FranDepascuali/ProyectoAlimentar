@@ -31,9 +31,9 @@
 /* Begin PBXFileReference section */
 		F84185571D7A10CE0000AEB5 /* ProyectoAlimentar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoAlimentar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F84185611D7A10CE0000AEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		F84185611D7A10CE0000AEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F84185641D7A10CE0000AEB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F84185661D7A10CE0000AEB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		F84185661D7A10CE0000AEB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F841856E1D7A142C0000AEB5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F84185701D7A14400000AEB5 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		F84185721D7A15BC0000AEB5 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -70,9 +70,9 @@
 		F841854E1D7A10CE0000AEB5 = {
 			isa = PBXGroup;
 			children = (
-				F84185591D7A10CE0000AEB5 /* ProyectoAlimentar */,
 				F84185891D7A176B0000AEB5 /* Frameworks */,
 				F84185581D7A10CE0000AEB5 /* Products */,
+				F84185591D7A10CE0000AEB5 /* ProyectoAlimentar */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,11 +87,11 @@
 		F84185591D7A10CE0000AEB5 /* ProyectoAlimentar */ = {
 			isa = PBXGroup;
 			children = (
-				F84185BB1D7E3F060000AEB5 /* UIExtensions */,
-				F84185B61D7E3E510000AEB5 /* Utilities */,
 				F84185901D7A27570000AEB5 /* Extensions */,
 				F84185761D7A162D0000AEB5 /* Main */,
 				F841856C1D7A12CA0000AEB5 /* Resources */,
+				F84185BB1D7E3F060000AEB5 /* UIExtensions */,
+				F84185B61D7E3E510000AEB5 /* Utilities */,
 				F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */,
 				F84185631D7A10CE0000AEB5 /* LaunchScreen.storyboard */,
 			);
@@ -102,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				F84185611D7A10CE0000AEB5 /* Assets.xcassets */,
-				F84185661D7A10CE0000AEB5 /* Info.plist */,
 				F841858D1D7A20EB0000AEB5 /* ColorPalette.swift */,
+				F84185661D7A10CE0000AEB5 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -111,23 +111,22 @@
 		F841856D1D7A14060000AEB5 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				F84185701D7A14400000AEB5 /* MapView.xib */,
 				F84185741D7A15CD0000AEB5 /* MapView.swift */,
+				F84185701D7A14400000AEB5 /* MapView.xib */,
 				F841856E1D7A142C0000AEB5 /* MapViewController.swift */,
 				F84185721D7A15BC0000AEB5 /* MapViewModel.swift */,
 			);
-			name = Map;
-			path = ../Map;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		F84185761D7A162D0000AEB5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				F841857B1D7A16490000AEB5 /* MainView.xib */,
-				F84185791D7A163F0000AEB5 /* MainView.swift */,
-				F841857D1D7A16580000AEB5 /* MainViewModel.swift */,
-				F84185771D7A16360000AEB5 /* MainViewController.swift */,
 				F841856D1D7A14060000AEB5 /* Map */,
+				F84185791D7A163F0000AEB5 /* MainView.swift */,
+				F841857B1D7A16490000AEB5 /* MainView.xib */,
+				F84185771D7A16360000AEB5 /* MainViewController.swift */,
+				F841857D1D7A16580000AEB5 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -156,8 +155,7 @@
 			children = (
 				F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */,
 			);
-			name = Utilities;
-			path = CarouselController;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		F84185BB1D7E3F060000AEB5 /* UIExtensions */ = {
@@ -284,6 +282,7 @@
 				F84185641D7A10CE0000AEB5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
