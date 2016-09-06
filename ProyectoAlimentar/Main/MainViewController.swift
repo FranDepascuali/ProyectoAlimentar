@@ -15,6 +15,8 @@ public final class MainViewController: UIViewController {
     
     private let _viewModel: MainViewModel
     
+    private var loaded = false
+    
     init(viewModel: MainViewModel) {
         _viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -45,11 +47,16 @@ public final class MainViewController: UIViewController {
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        if !loaded {
+        
         let carousel = CarouselController(collectionViewLayout: createFlowLayout())
         carousel.delegate = self
         
+//        _mainView.donationDetailContainerView.addSubview(carousel.view)
         loadViewController(carousel, into: _mainView.donationDetailContainerView)
-        
+        carousel.collectionView?.registerNib(UINib(nibName: "DonationDetailCell", bundle: nil), forCellWithReuseIdentifier: "Mycell")
+            loaded = true
+        }
         _mainView.selectedMapType = .Donor
     }
     
@@ -72,7 +79,10 @@ extension MainViewController: CarouselControllerDelegate {
     }
     
     public func carousel(carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = carousel.collectionView?.dequeueReusableCellWithReuseIdentifier("Mycell", forIndexPath: NSIndexPath(forItem: index, inSection: 0))
+        
+        cell!.backgroundColor = .redColor()
+        return cell!
     }
     
     public func numberOfItems(carousel: CarouselController) -> Int {
