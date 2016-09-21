@@ -20,9 +20,17 @@ public final class MainView: UIView, NibLoadable {
         didSet {
             switch selectedMapType {
             case .Donor:
+                if communityKitchenButton.layer.sublayers?.count > 1 {
+                    donorsButton.layer.sublayers?.removeLast()
+                }
                 donorsButton.addBorder(to: .Bottom, filledWith: ColorPalette.primaryColor, width: 2)
+                donorsButton.setTitleColor(ColorPalette.primaryColor, forState: .Normal)
             default:
+                if communityKitchenButton.layer.sublayers?.count > 1 {
+                    communityKitchenButton.layer.sublayers?.removeLast()
+                }
                 communityKitchenButton.addBorder(to: .Bottom, filledWith: ColorPalette.primaryColor, width: 2)
+                communityKitchenButton.setTitleColor(ColorPalette.primaryColor, forState: .Normal)
             }
         }
     }

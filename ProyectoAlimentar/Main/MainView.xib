@@ -48,10 +48,10 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPg-TX-Dpl">
-                    <rect key="frame" x="8" y="282" width="307" height="128"/>
+                    <rect key="frame" x="0.0" y="260" width="323" height="150"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="128" id="z7f-ls-7YC"/>
+                        <constraint firstAttribute="height" constant="150" id="z7f-ls-7YC"/>
                     </constraints>
                 </view>
             </subviews>
@@ -59,13 +59,13 @@
             <constraints>
                 <constraint firstItem="TN0-Dp-08K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3fS-ZO-Cbt"/>
                 <constraint firstItem="Xfz-KK-7yO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5pR-CA-0Nc"/>
-                <constraint firstItem="kPg-TX-Dpl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="9Zz-1R-oK9"/>
+                <constraint firstItem="kPg-TX-Dpl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9Zz-1R-oK9"/>
                 <constraint firstAttribute="trailing" secondItem="TN0-Dp-08K" secondAttribute="trailing" id="HbB-Yd-dKX"/>
                 <constraint firstAttribute="trailing" secondItem="Xfz-KK-7yO" secondAttribute="trailing" id="HwA-qG-mte"/>
                 <constraint firstAttribute="bottom" secondItem="kPg-TX-Dpl" secondAttribute="bottom" id="IAB-a7-OeD"/>
                 <constraint firstAttribute="bottom" secondItem="TN0-Dp-08K" secondAttribute="bottom" id="NCR-OH-PM5"/>
                 <constraint firstItem="AWE-D3-7bi" firstAttribute="top" secondItem="Xfz-KK-7yO" secondAttribute="bottom" id="WPS-u9-iug"/>
-                <constraint firstAttribute="trailing" secondItem="kPg-TX-Dpl" secondAttribute="trailing" constant="8" id="YGt-Gj-Tvy"/>
+                <constraint firstAttribute="trailing" secondItem="kPg-TX-Dpl" secondAttribute="trailing" id="YGt-Gj-Tvy"/>
                 <constraint firstAttribute="trailing" secondItem="AWE-D3-7bi" secondAttribute="trailing" id="Zrw-An-gDu"/>
                 <constraint firstItem="Xfz-KK-7yO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="coc-zN-101"/>
                 <constraint firstItem="AWE-D3-7bi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mjF-mN-wgn"/>

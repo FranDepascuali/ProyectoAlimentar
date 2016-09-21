@@ -12,6 +12,13 @@ import Core
 
 public final class MapView: UIView, NibLoadable {
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var map: MKMapView! {
+        didSet {
+            map.zoomEnabled = true
+            map.scrollEnabled = true
+//            mapView.region.span.longitudeDelta  *= 0.05;
+//            mapView.region.span.latitudeDelta  *= 0.05;
+        }
+    }
     
 }

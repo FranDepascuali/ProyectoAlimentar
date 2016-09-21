@@ -8,6 +8,7 @@
 
 import UIKit
 import Core
+import ReactiveCocoa
 
 public final class MainViewController: UIViewController {
     
@@ -29,7 +30,9 @@ public final class MainViewController: UIViewController {
     public override func loadView() {
         view = _mainView
         
-        loadViewController(MapViewController(), into: _mainView.mapContainerView)
+        let viewModel = MapViewModel(annotations: [MapViewAnnotation(coordinate: CLLocationCoordinate2D(latitude: 20, longitude: 30))], externalSelection: Signal.empty, notifySelection: { _ in () })
+        
+        loadViewController(MapViewController(viewModel: viewModel), into: _mainView.mapContainerView)
     }
     
     public override func viewDidLoad() {
@@ -49,14 +52,17 @@ public final class MainViewController: UIViewController {
         
         if !loaded {
         
-        let carousel = CarouselController(collectionViewLayout: createFlowLayout())
-        carousel.delegate = self
-        
-//        _mainView.donationDetailContainerView.addSubview(carousel.view)
-        loadViewController(carousel, into: _mainView.donationDetailContainerView)
-        carousel.collectionView?.registerNib(UINib(nibName: "DonationDetailCell", bundle: nil), forCellWithReuseIdentifier: "Mycell")
+            let carousel = CarouselController(collectionViewLayout: createFlowLayout())
+            carousel.delegate = self
+            
+            //        _mainView.donationDetailContainerView.addSubview(carousel.view)
+            loadViewController(carousel, into: _mainView.donationDetailContainerView)
+            carousel.collectionView?.registerNib(UINib(nibName: "DonationDetailCell", bundle: nil), forCellWithReuseIdentifier: "Mycell")
             loaded = true
         }
+        
+
+        
         _mainView.selectedMapType = .Donor
     }
     
@@ -79,10 +85,17 @@ extension MainViewController: CarouselControllerDelegate {
     }
     
     public func carousel(carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell {
-        let cell = carousel.collectionView?.dequeueReusableCellWithReuseIdentifier("Mycell", forIndexPath: NSIndexPath(forItem: index, inSection: 0))
+        let cell = carousel.collectionView?.dequeueReusableCellWithReuseIdentifier("Mycell", forIndexPath: NSIndexPath(forItem: index, inSection: 0)) as! DonationDetailCell
         
-        cell!.backgroundColor = .redColor()
-        return cell!
+        let fakeDonation = Donation()
+        
+        cell.distanceToPlaceLabel.text = "\(fakeDonation.distance)km"
+        cell.locationLabel.text = fakeDonation.placeDirection
+        cell.placeNameLabel.text = fakeDonation.placeName
+        
+        cell.timeOpenedLabel.text = fakeDonation.from + " - " + fakeDonation.to
+        
+        return cell
     }
     
     public func numberOfItems(carousel: CarouselController) -> Int {
