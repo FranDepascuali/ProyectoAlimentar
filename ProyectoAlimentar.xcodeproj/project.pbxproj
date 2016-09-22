@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */; };
 		F84185621D7A10CE0000AEB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84185611D7A10CE0000AEB5 /* Assets.xcassets */; };
-		F84185651D7A10CE0000AEB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84185631D7A10CE0000AEB5 /* LaunchScreen.storyboard */; };
 		F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841856E1D7A142C0000AEB5 /* MapViewController.swift */; };
 		F84185711D7A14400000AEB5 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F84185701D7A14400000AEB5 /* MapView.xib */; };
 		F84185731D7A15BC0000AEB5 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185721D7A15BC0000AEB5 /* MapViewModel.swift */; };
@@ -27,23 +26,24 @@
 		F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */; };
 		F84185BD1D7E3F060000AEB5 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185BC1D7E3F060000AEB5 /* UICollectionView.swift */; };
 		F84185BF1D7E43850000AEB5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F84185BE1D7E43850000AEB5 /* Default-568h@2x.png */; };
-		F84185C21D7E44170000AEB5 /* DonationDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185C11D7E44170000AEB5 /* DonationDetailsController.swift */; };
-		F84185C41D7E44370000AEB5 /* DonationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185C31D7E44370000AEB5 /* DonationDetailsViewModel.swift */; };
-		F84185C61D7E44410000AEB5 /* DonationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185C51D7E44410000AEB5 /* DonationDetailsView.swift */; };
-		F84185C81D7E44590000AEB5 /* DonationDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F84185C71D7E44590000AEB5 /* DonationDetailsView.xib */; };
 		F84185CB1D7E44A10000AEB5 /* DonationDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F84185CA1D7E44A10000AEB5 /* DonationDetailCell.xib */; };
 		F84185CD1D7E44B10000AEB5 /* DonationDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185CC1D7E44B10000AEB5 /* DonationDetailCell.swift */; };
+		F8680BFA1D932E0C0090207A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680BF91D932E0C0090207A /* SearchViewController.swift */; };
+		F8680BFC1D93308C0090207A /* DonationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680BFB1D93308C0090207A /* DonationListViewModel.swift */; };
+		F8680BFE1D934F480090207A /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8680BFD1D934F480090207A /* Roboto-Medium.ttf */; };
+		F8680C011D934FF00090207A /* FontPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680C001D934FF00090207A /* FontPalette.swift */; };
+		F8680C031D9358800090207A /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680C021D9358800090207A /* UILabelExtension.swift */; };
+		F8680C051D936C6C0090207A /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680C041D936C6C0090207A /* Resource.swift */; };
 		F8681CDF1D8E20030092F44E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CDE1D8E20030092F44E /* LocationService.swift */; };
 		F8681CE31D8E27DA0092F44E /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE21D8E27DA0092F44E /* Donation.swift */; };
 		F8681CE51D8E56B90092F44E /* MapViewAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE41D8E56B90092F44E /* MapViewAnnotation.swift */; };
-		F8681CE81D8E5A920092F44E /* DonationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE71D8E5A920092F44E /* DonationsListViewController.swift */; };
+		F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE71D8E5A920092F44E /* DonationListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F84185571D7A10CE0000AEB5 /* ProyectoAlimentar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoAlimentar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F84185611D7A10CE0000AEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F84185641D7A10CE0000AEB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F84185661D7A10CE0000AEB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F841856E1D7A142C0000AEB5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F84185701D7A14400000AEB5 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
@@ -62,16 +62,18 @@
 		F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselController.swift; sourceTree = "<group>"; };
 		F84185BC1D7E3F060000AEB5 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		F84185BE1D7E43850000AEB5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		F84185C11D7E44170000AEB5 /* DonationDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDetailsController.swift; sourceTree = "<group>"; };
-		F84185C31D7E44370000AEB5 /* DonationDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDetailsViewModel.swift; sourceTree = "<group>"; };
-		F84185C51D7E44410000AEB5 /* DonationDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDetailsView.swift; sourceTree = "<group>"; };
-		F84185C71D7E44590000AEB5 /* DonationDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonationDetailsView.xib; sourceTree = "<group>"; };
 		F84185CA1D7E44A10000AEB5 /* DonationDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonationDetailCell.xib; sourceTree = "<group>"; };
 		F84185CC1D7E44B10000AEB5 /* DonationDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDetailCell.swift; sourceTree = "<group>"; };
+		F8680BF91D932E0C0090207A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F8680BFB1D93308C0090207A /* DonationListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListViewModel.swift; sourceTree = "<group>"; };
+		F8680BFD1D934F480090207A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../../../Downloads/roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		F8680C001D934FF00090207A /* FontPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPalette.swift; sourceTree = "<group>"; };
+		F8680C021D9358800090207A /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		F8680C041D936C6C0090207A /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		F8681CDE1D8E20030092F44E /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F8681CE21D8E27DA0092F44E /* Donation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
 		F8681CE41D8E56B90092F44E /* MapViewAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewAnnotation.swift; sourceTree = "<group>"; };
-		F8681CE71D8E5A920092F44E /* DonationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationsListViewController.swift; sourceTree = "<group>"; };
+		F8681CE71D8E5A920092F44E /* DonationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +114,12 @@
 			children = (
 				F8681CE01D8E27A30092F44E /* Domain */,
 				F84185901D7A27570000AEB5 /* Extensions */,
-				F84185761D7A162D0000AEB5 /* Main */,
 				F841856C1D7A12CA0000AEB5 /* Resources */,
+				F8681CDD1D8E1FF50092F44E /* Services */,
+				F8680BF71D932CD30090207A /* UIComponents */,
 				F84185BB1D7E3F060000AEB5 /* UIExtensions */,
 				F84185B61D7E3E510000AEB5 /* Utilities */,
 				F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */,
-				F84185631D7A10CE0000AEB5 /* LaunchScreen.storyboard */,
 			);
 			path = ProyectoAlimentar;
 			sourceTree = "<group>";
@@ -125,9 +127,12 @@
 		F841856C1D7A12CA0000AEB5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8680BFF1D934F4F0090207A /* Fonts */,
 				F84185611D7A10CE0000AEB5 /* Assets.xcassets */,
 				F841858D1D7A20EB0000AEB5 /* ColorPalette.swift */,
+				F8680C001D934FF00090207A /* FontPalette.swift */,
 				F84185661D7A10CE0000AEB5 /* Info.plist */,
+				F8680C041D936C6C0090207A /* Resource.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -146,9 +151,9 @@
 		F84185761D7A162D0000AEB5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				F8681CE61D8E5A840092F44E /* DonationsList */,
-				F84185C01D7E44050000AEB5 /* DonationsDetails */,
+				F8681CE61D8E5A840092F44E /* DonationList */,
 				F841856D1D7A14060000AEB5 /* Map */,
+				F8680BF81D932DFD0090207A /* Search */,
 				F84185791D7A163F0000AEB5 /* MainView.swift */,
 				F841857B1D7A16490000AEB5 /* MainView.xib */,
 				F84185771D7A16360000AEB5 /* MainViewController.swift */,
@@ -171,7 +176,6 @@
 		F84185901D7A27570000AEB5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F84185911D7A27610000AEB5 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,7 +183,6 @@
 		F84185B61D7E3E510000AEB5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F8681CDD1D8E1FF50092F44E /* Services */,
 				F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */,
 				F8681CE41D8E56B90092F44E /* MapViewAnnotation.swift */,
 			);
@@ -190,29 +193,43 @@
 			isa = PBXGroup;
 			children = (
 				F84185BC1D7E3F060000AEB5 /* UICollectionView.swift */,
+				F8680C021D9358800090207A /* UILabelExtension.swift */,
+				F84185911D7A27610000AEB5 /* UIView.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
 		};
-		F84185C01D7E44050000AEB5 /* DonationsDetails */ = {
-			isa = PBXGroup;
-			children = (
-				F84185C91D7E44960000AEB5 /* DonationDetail */,
-				F84185C11D7E44170000AEB5 /* DonationDetailsController.swift */,
-				F84185C51D7E44410000AEB5 /* DonationDetailsView.swift */,
-				F84185C71D7E44590000AEB5 /* DonationDetailsView.xib */,
-				F84185C31D7E44370000AEB5 /* DonationDetailsViewModel.swift */,
-			);
-			path = DonationsDetails;
-			sourceTree = "<group>";
-		};
-		F84185C91D7E44960000AEB5 /* DonationDetail */ = {
+		F84185C91D7E44960000AEB5 /* DonationDetailCell */ = {
 			isa = PBXGroup;
 			children = (
 				F84185CC1D7E44B10000AEB5 /* DonationDetailCell.swift */,
 				F84185CA1D7E44A10000AEB5 /* DonationDetailCell.xib */,
 			);
-			path = DonationDetail;
+			path = DonationDetailCell;
+			sourceTree = "<group>";
+		};
+		F8680BF71D932CD30090207A /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F84185761D7A162D0000AEB5 /* Main */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		F8680BF81D932DFD0090207A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F8680BF91D932E0C0090207A /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F8680BFF1D934F4F0090207A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F8680BFD1D934F480090207A /* Roboto-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F8681CDD1D8E1FF50092F44E /* Services */ = {
@@ -239,12 +256,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F8681CE61D8E5A840092F44E /* DonationsList */ = {
+		F8681CE61D8E5A840092F44E /* DonationList */ = {
 			isa = PBXGroup;
 			children = (
-				F8681CE71D8E5A920092F44E /* DonationsListViewController.swift */,
+				F84185C91D7E44960000AEB5 /* DonationDetailCell */,
+				F8681CE71D8E5A920092F44E /* DonationListViewController.swift */,
+				F8680BFB1D93308C0090207A /* DonationListViewModel.swift */,
 			);
-			path = DonationsList;
+			path = DonationList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,10 +327,9 @@
 			files = (
 				F84185711D7A14400000AEB5 /* MapView.xib in Resources */,
 				F841857C1D7A16490000AEB5 /* MainView.xib in Resources */,
-				F84185651D7A10CE0000AEB5 /* LaunchScreen.storyboard in Resources */,
+				F8680BFE1D934F480090207A /* Roboto-Medium.ttf in Resources */,
 				F84185BF1D7E43850000AEB5 /* Default-568h@2x.png in Resources */,
 				F84185621D7A10CE0000AEB5 /* Assets.xcassets in Resources */,
-				F84185C81D7E44590000AEB5 /* DonationDetailsView.xib in Resources */,
 				F84185CB1D7E44A10000AEB5 /* DonationDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,21 +362,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F841857E1D7A16580000AEB5 /* MainViewModel.swift in Sources */,
-				F8681CE81D8E5A920092F44E /* DonationsListViewController.swift in Sources */,
+				F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */,
+				F8680C011D934FF00090207A /* FontPalette.swift in Sources */,
 				F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */,
 				F841857A1D7A163F0000AEB5 /* MainView.swift in Sources */,
 				F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */,
+				F8680C051D936C6C0090207A /* Resource.swift in Sources */,
 				F84185751D7A15CD0000AEB5 /* MapView.swift in Sources */,
+				F8680BFC1D93308C0090207A /* DonationListViewModel.swift in Sources */,
 				F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */,
 				F84185BD1D7E3F060000AEB5 /* UICollectionView.swift in Sources */,
 				F84185731D7A15BC0000AEB5 /* MapViewModel.swift in Sources */,
-				F84185C41D7E44370000AEB5 /* DonationDetailsViewModel.swift in Sources */,
-				F84185C21D7E44170000AEB5 /* DonationDetailsController.swift in Sources */,
+				F8680BFA1D932E0C0090207A /* SearchViewController.swift in Sources */,
+				F8680C031D9358800090207A /* UILabelExtension.swift in Sources */,
 				F8681CDF1D8E20030092F44E /* LocationService.swift in Sources */,
 				F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */,
 				F8681CE31D8E27DA0092F44E /* Donation.swift in Sources */,
 				F84185CD1D7E44B10000AEB5 /* DonationDetailCell.swift in Sources */,
-				F84185C61D7E44410000AEB5 /* DonationDetailsView.swift in Sources */,
 				F84185921D7A27610000AEB5 /* UIView.swift in Sources */,
 				F8681CE51D8E56B90092F44E /* MapViewAnnotation.swift in Sources */,
 				F84185781D7A16360000AEB5 /* MainViewController.swift in Sources */,
@@ -366,18 +386,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F84185631D7A10CE0000AEB5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F84185641D7A10CE0000AEB5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F84185671D7A10CE0000AEB5 /* Debug */ = {

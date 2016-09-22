@@ -30,4 +30,7 @@ public struct ColorPalette: ColorPaletteType {
     
     public static var activatedColor = UIColor.darkOrange
     
+    public static var primaryTextColor = UIColor.blackColor()
+    
+    public static var secondaryTextColor = UIColor(hex: "9b9b9b")!
 }
