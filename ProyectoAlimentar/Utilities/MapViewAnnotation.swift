@@ -22,8 +22,8 @@ public final class MapViewAnnotation: NSObject, MKAnnotation {
 
 public extension MapViewAnnotation {
     
-    public static var trickAnnotationIdentifier: String {
-        return "TrickAnnotation"
+    public static var orderAnnotationIdentifier: String {
+        return "orderAnnotation"
     }
     
 }
