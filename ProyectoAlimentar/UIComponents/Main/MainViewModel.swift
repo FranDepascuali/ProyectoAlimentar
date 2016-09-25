@@ -8,15 +8,81 @@
 
 import Foundation
 import ReactiveCocoa
+import Core
 
-public struct MainViewModel {
+public struct Selection {
+    
+    private let _donation: Donation
+    
+    private let _annotation: MapViewAnnotation
+    
+    public init(donation: Donation, annotation: MapViewAnnotation) {
+        _donation = donation
+        _annotation = annotation
+    }
+    
+}
+
+public class MainViewModel {
+    
+    private let _selected: MutableProperty<Selection?> = MutableProperty(.None)
+    
+    private let _selections: [Selection]
+    
+    public init(selections: [Selection]) {
+        _selections = selections
+    }
     
     public func mapViewModel() -> MapViewModel {
-        return MapViewModel(
-            annotations: [MapViewAnnotation(coordinate: CLLocationCoordinate2D(latitude: -34.603105, longitude: -58.367894))], externalSelection: Signal.empty, notifySelection: { _ in () })
+        
+        let selectedForMap = _selected
+                .signal
+                .ignoreNil()
+                .map { $0._annotation }
+        
+        let mapViewModel = MapViewModel(
+            annotations: _selections.map { $0._annotation },
+            externalSelection: selectedForMap) { [unowned self] annotation in
+                guard !self.isAlreadySelected(annotation) else {
+                    print("Annotation already selected")
+                    return
+                }
+                
+                self._selected.value = self._selections.filterFirst { $0._annotation == annotation }!
+        }
+        
+        return mapViewModel
+        
     }
     
     public func donationListViewModel() -> DonationListViewModel {
-        return DonationListViewModel()
+        let selectedForList = _selected
+            .signal
+            .ignoreNil()
+            .map { $0._donation }
+        
+        let donationListViewModel = DonationListViewModel(
+            donations: _selections.map { $0._donation },
+            externalSelection: selectedForList) { [unowned self] donation in
+                guard !self.isAlreadySelected(donation) else {
+                    print("Donation already selected")
+                    return
+                }
+                
+                self._selected.value = self._selections.filterFirst { $0._donation == donation }!
+        }
+        
+        return donationListViewModel
+    }
+}
+
+private extension MainViewModel {
+    
+    private func isAlreadySelected(donation: Donation) -> Bool {
+        return _selected.value?._donation == donation
+    }
+    
+    private func isAlreadySelected(annotation: MapViewAnnotation) -> Bool {
+        return _selected.value?._annotation == annotation
     }
 }

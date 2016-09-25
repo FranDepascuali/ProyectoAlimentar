@@ -16,30 +16,23 @@ import Result
 
 public final class MapViewModel {
     
-    private var _annotations: [MapViewAnnotation?]
+    public let annotations: [MapViewAnnotation]
     
-    private let _selected = MutableProperty<MapViewAnnotation?>(nil)
-    public var selected: AnyProperty<MapViewAnnotation?>
+    private let _notifySelection: MapViewAnnotation -> ()
     
-    private let _notifySelection: Int -> ()
+    public let selected: Signal<MapViewAnnotation, NoError>
     
-    public init(annotations: [MapViewAnnotation?], externalSelection: Signal<Int, NoError>, notifySelection: Int -> ()) {
-        _annotations = annotations
-        _notifySelection = notifySelection
-        selected = AnyProperty(_selected)
+    public init(annotations: [MapViewAnnotation],
+                externalSelection: Signal<MapViewAnnotation, NoError>,
+                notifySelection: MapViewAnnotation -> ()) {
         
-        _selected <~ externalSelection
-            .observeOn(UIScheduler())
-            .map { [unowned self] selection in self._annotations[selection] }
+        self.annotations = annotations
+        _notifySelection = notifySelection
+        selected = externalSelection.observeOn(UIScheduler())
     }
     
     public func tapped(annotation: MapViewAnnotation) {
-        let position = Int (_annotations.indexOf { $0 == annotation }!)
-        _selected.value = _annotations[position]
-        _notifySelection(position)
+        _notifySelection(annotation)
     }
-    
-    public func getAnnotations() -> [MapViewAnnotation] {
-        return _annotations.flatMap { $0 }
-    }
+
 }

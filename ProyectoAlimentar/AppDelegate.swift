@@ -17,7 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
-        window!.rootViewController = MainViewController(viewModel: MainViewModel())
+        
+        let annotations = [BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5]
+        
+        let fakedDonations = annotations.enumerate().map { Selection(donation: Donation(id: $0), annotation: $1 )}
+        
+        let viewModel = MainViewModel(selections: fakedDonations)
+        
+        
+        
+        window!.rootViewController = MainViewController(viewModel: viewModel)
         window?.makeKeyAndVisible()
         return true
     }

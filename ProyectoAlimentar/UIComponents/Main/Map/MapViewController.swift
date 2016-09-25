@@ -15,6 +15,8 @@ public final class MapViewController: UIViewController {
     
     private let _viewModel: MapViewModel
     
+    private var _initiallyLoaded: Bool = false
+    
     public init(viewModel: MapViewModel) {
         _viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -34,10 +36,11 @@ public final class MapViewController: UIViewController {
         bindViewModel()
     }
     
-    override public func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if let firstTrickAnnotation = _viewModel.getAnnotations().get(0) {
-            centerMap(firstTrickAnnotation)
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if !_initiallyLoaded {
+            addAnnotationsToMap(_viewModel.annotations)
+            _initiallyLoaded = true
         }
     }
     
@@ -71,11 +74,21 @@ extension MapViewController: MKMapViewDelegate {
 private extension MapViewController {
     
     private func bindViewModel() {
-        addAnnotationsToMap(_viewModel.getAnnotations())
-        _viewModel.selected.producer
-            .ignoreNil()
-            .take(1) // TODO: remove this
-            .startWithNext { [unowned self] in self.centerMap($0) }
+        _viewModel.selected
+            .map { Optional.Some($0) }
+            .combinePrevious(.None)
+            .observeNext { [unowned self] in
+                self.centerMap($0.1!)
+                self._mapView.map.viewForAnnotation($0.1!)?.image = UIImage(identifier: ImageAssetIdentifier.SelectedOrderPin)
+                
+                let previousAnnotation = $0.0.flatMap { self._mapView.map.viewForAnnotation($0) }
+                
+                guard let _previousAnnotation = previousAnnotation else {
+                    return
+                }
+                
+                _previousAnnotation.image = UIImage(identifier: ImageAssetIdentifier.OrderPin)
+        }
     }
     
     private func initializeMap() {
@@ -86,9 +99,9 @@ private extension MapViewController {
     }
     
     /* Add the annotations to reload annotation's imagesViews */
-    private func addAnnotationsToMap(trickList: [MapViewAnnotation]) {
-        _mapView.map.addAnnotations(trickList)
-//        _mapView.map.showAnnotations(trickList, animated: false)
+    private func addAnnotationsToMap(annotations: [MapViewAnnotation]) {
+        _mapView.map.addAnnotations(annotations)
+        _mapView.map.showAnnotations(annotations, animated: false)
     }
     
     private func centerMap(annotation: MapViewAnnotation) {
@@ -98,10 +111,13 @@ private extension MapViewController {
 //            longitudeDelta: 0.01)
         
         
-        let _region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500)
+//        let _region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500)
 //        let region = MKCoordinateRegion(center: coordinate, span: span)
         
-        _mapView.map.region = _region
+//        _mapView.map.region = _region
+        UIView.animateWithDuration(0.5) {
+            self._mapView.map.centerCoordinate = coordinate
+        }
 //        coordinate.latitude -= _mapView.map.region.span.latitudeDelta * 0.3
 //        _mapView.map.setCenterCoordinate(coordinate, animated: true)
     }
