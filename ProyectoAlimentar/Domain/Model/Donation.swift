@@ -20,4 +20,23 @@ public struct Donation {
     
     public let to: String = "22:00"
     
+    private let _id: Int
+    
+    public init(id: Int) {
+        _id = id
+    }
+}
+
+extension Donation: Equatable {
+    
+}
+
+public func ==(lhs: Donation, rhs: Donation) -> Bool {
+    return
+        lhs.distance == rhs.distance &&
+        lhs.placeName == rhs.placeName &&
+        lhs.placeDirection == rhs.placeDirection &&
+        lhs.from == rhs.from &&
+        lhs.to == rhs.to &&
+        lhs._id == rhs._id
 }

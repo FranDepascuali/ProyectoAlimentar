@@ -31,6 +31,12 @@ public class CarouselController: UICollectionViewController {
         return delegate?.numberOfItems(self) ?? 0
     }
     
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .clearColor()
+        collectionView?.backgroundColor = .clearColor()
+    }
+    
     public func setSelected(index: Int) {
         _selected = toInternalIndex(index)
         scrollToItem(_selected, animated: true)
