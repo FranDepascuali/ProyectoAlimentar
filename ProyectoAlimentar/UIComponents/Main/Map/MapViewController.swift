@@ -106,20 +106,9 @@ private extension MapViewController {
     
     private func centerMap(annotation: MapViewAnnotation) {
         let coordinate = annotation.coordinate
-//        let span = MKCoordinateSpan(
-//            latitudeDelta: 0.01,
-//            longitudeDelta: 0.01)
-        
-        
-//        let _region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500)
-//        let region = MKCoordinateRegion(center: coordinate, span: span)
-        
-//        _mapView.map.region = _region
         UIView.animateWithDuration(0.5) {
             self._mapView.map.centerCoordinate = coordinate
         }
-//        coordinate.latitude -= _mapView.map.region.span.latitudeDelta * 0.3
-//        _mapView.map.setCenterCoordinate(coordinate, animated: true)
     }
     
 }

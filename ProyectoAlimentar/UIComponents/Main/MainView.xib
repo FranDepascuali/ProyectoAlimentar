@@ -25,7 +25,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="323" height="36"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruG-yT-jHZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="161.5" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="162" height="36"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQe-uu-255">
                                             <rect key="frame" x="0.0" y="34" width="161" height="2"/>
@@ -51,17 +51,17 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOS-PS-FMk">
-                                    <rect key="frame" x="161.5" y="0.0" width="161.5" height="36"/>
+                                    <rect key="frame" x="162" y="0.0" width="161" height="36"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kcx-i8-cLW">
-                                            <rect key="frame" x="0.0" y="34" width="161.5" height="2"/>
+                                            <rect key="frame" x="0.0" y="34" width="162" height="2"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="2" id="yMp-uf-fPE"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfW-5A-pXF">
-                                            <rect key="frame" x="0.0" y="0.0" width="161.5" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="162" height="36"/>
                                             <state key="normal" title="Comedores"/>
                                         </button>
                                     </subviews>
