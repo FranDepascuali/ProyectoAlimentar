@@ -10,11 +10,11 @@ import UIKit
 import Core
 import ReactiveCocoa
 
-public final class MainViewController: UIViewController {
+public final class DonationPickerViewController: UIViewController {
     
-    private let _mainView = MainView.loadFromNib()!
+    private let _mainView = DonationPickerView.loadFromNib()!
     
-    private let _viewModel: MainViewModel
+    private let _viewModel: DonationPickerViewModel
     
     private var loaded = false
     
@@ -22,7 +22,7 @@ public final class MainViewController: UIViewController {
     
     private let _donationListViewController: DonationListViewController
     
-    init(viewModel: MainViewModel) {
+    init(viewModel: DonationPickerViewModel) {
         _viewModel = viewModel
         _mapViewController = MapViewController(viewModel: _viewModel.mapViewModel())
         _donationListViewController = DonationListViewController(viewModel: _viewModel.donationListViewModel())
