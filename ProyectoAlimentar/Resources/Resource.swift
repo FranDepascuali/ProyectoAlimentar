@@ -17,6 +17,8 @@ public protocol Resource {
 public enum ImageAssetIdentifier: String {
     case OrderPin = "order_pin"
     case SelectedOrderPin = "selected_order_pin"
+    case LoginBackgroundImage = "bg_login_ios"
+    case LoginLogo = "img_login_logo_pa"
 }
 
 
