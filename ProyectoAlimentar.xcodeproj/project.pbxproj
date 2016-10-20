@@ -39,6 +39,10 @@
 		F8681CE31D8E27DA0092F44E /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE21D8E27DA0092F44E /* Donation.swift */; };
 		F8681CE51D8E56B90092F44E /* MapViewAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE41D8E56B90092F44E /* MapViewAnnotation.swift */; };
 		F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE71D8E5A920092F44E /* DonationListViewController.swift */; };
+		F8DF77D21DB9753400B5C37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D11DB9753300B5C37D /* LoginViewController.swift */; };
+		F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D31DB9753A00B5C37D /* LoginView.swift */; };
+		F8DF77D61DB9754800B5C37D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DF77D51DB9754800B5C37D /* LoginView.xib */; };
+		F8DF77D81DB9756000B5C37D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D71DB9756000B5C37D /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		F8681CE21D8E27DA0092F44E /* Donation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
 		F8681CE41D8E56B90092F44E /* MapViewAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewAnnotation.swift; sourceTree = "<group>"; };
 		F8681CE71D8E5A920092F44E /* DonationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListViewController.swift; sourceTree = "<group>"; };
+		F8DF77D11DB9753300B5C37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F8DF77D31DB9753A00B5C37D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F8DF77D51DB9754800B5C37D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		F8DF77D71DB9756000B5C37D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				F84185761D7A162D0000AEB5 /* DonationPicker */,
+				F8DF77CF1DB9751000B5C37D /* Authentication */,
+				F84185761D7A162D0000AEB5 /* Main */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -268,6 +278,25 @@
 				F8680BFB1D93308C0090207A /* DonationListViewModel.swift */,
 			);
 			path = DonationList;
+			sourceTree = "<group>";
+		};
+		F8DF77CF1DB9751000B5C37D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F8DF77D01DB9752A00B5C37D /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		F8DF77D01DB9752A00B5C37D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F8DF77D11DB9753300B5C37D /* LoginViewController.swift */,
+				F8DF77D31DB9753A00B5C37D /* LoginView.swift */,
+				F8DF77D51DB9754800B5C37D /* LoginView.xib */,
+				F8DF77D71DB9756000B5C37D /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +361,7 @@
 				F84185711D7A14400000AEB5 /* MapView.xib in Resources */,
 				F841857C1D7A16490000AEB5 /* DonationPickerView.xib in Resources */,
 				F8680BFE1D934F480090207A /* Roboto-Medium.ttf in Resources */,
+				F8DF77D61DB9754800B5C37D /* LoginView.xib in Resources */,
 				F84185BF1D7E43850000AEB5 /* Default-568h@2x.png in Resources */,
 				F84185621D7A10CE0000AEB5 /* Assets.xcassets in Resources */,
 				F84185CB1D7E44A10000AEB5 /* DonationDetailCell.xib in Resources */,
@@ -368,14 +398,17 @@
 				F841857E1D7A16580000AEB5 /* DonationPickerViewModel.swift in Sources */,
 				F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */,
 				F8680C011D934FF00090207A /* FontPalette.swift in Sources */,
+				F8DF77D21DB9753400B5C37D /* LoginViewController.swift in Sources */,
 				F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */,
 				F841857A1D7A163F0000AEB5 /* DonationPickerView.swift in Sources */,
+				F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */,
 				F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */,
 				F8680C051D936C6C0090207A /* Resource.swift in Sources */,
 				F84185751D7A15CD0000AEB5 /* MapView.swift in Sources */,
 				F8680C071D9486FC0090207A /* FakedLocation.swift in Sources */,
 				F8680BFC1D93308C0090207A /* DonationListViewModel.swift in Sources */,
 				F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */,
+				F8DF77D81DB9756000B5C37D /* LoginViewModel.swift in Sources */,
 				F84185BD1D7E3F060000AEB5 /* UICollectionView.swift in Sources */,
 				F84185731D7A15BC0000AEB5 /* MapViewModel.swift in Sources */,
 				F8680BFA1D932E0C0090207A /* SearchViewController.swift in Sources */,
