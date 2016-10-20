@@ -14,7 +14,7 @@ public enum MapType {
     case CommunityKitchen
 }
 
-public final class MainView: UIView, NibLoadable {
+public final class DonationPickerView: UIView, NibLoadable {
     
     @IBOutlet weak var donorsButtonBottomLine: UIView! {
         didSet {

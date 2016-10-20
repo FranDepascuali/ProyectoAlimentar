@@ -22,11 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let fakedDonations = annotations.enumerate().map { Selection(donation: Donation(id: $0), annotation: $1 )}
         
-        let viewModel = MainViewModel(selections: fakedDonations)
+        let viewModel = DonationPickerViewModel(selections: fakedDonations)
         
         
         
-        window!.rootViewController = MainViewController(viewModel: viewModel)
+        window!.rootViewController = DonationPickerViewController(viewModel: viewModel)
         window?.makeKeyAndVisible()
         return true
     }

@@ -23,7 +23,7 @@ public struct Selection {
     
 }
 
-public class MainViewModel {
+public class DonationPickerViewModel {
     
     private let _selected: MutableProperty<Selection?> = MutableProperty(.None)
     
@@ -76,7 +76,7 @@ public class MainViewModel {
     }
 }
 
-private extension MainViewModel {
+private extension DonationPickerViewModel {
     
     private func isAlreadySelected(donation: Donation) -> Bool {
         return _selected.value?._donation == donation
