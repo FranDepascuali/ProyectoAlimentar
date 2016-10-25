@@ -12,7 +12,8 @@ import Core
 
 public struct Selection {
     
-    private let _donation: Donation
+    // TODO: This should be private and a mutable property
+    public let _donation: Donation
     
     private let _annotation: MapViewAnnotation
     

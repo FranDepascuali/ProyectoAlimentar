@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8024C161DBF006100407D92 /* ActiveDonationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C151DBF006100407D92 /* ActiveDonationsViewController.swift */; };
+		F8024C181DBF006800407D92 /* ActiveDonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C171DBF006800407D92 /* ActiveDonationsView.swift */; };
+		F8024C1A1DBF007800407D92 /* ActiveDonationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8024C191DBF007800407D92 /* ActiveDonationsView.xib */; };
+		F8024C1C1DBF009C00407D92 /* ActiveDonationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C1B1DBF009C00407D92 /* ActiveDonationsViewModel.swift */; };
+		F8024C1E1DBF09D400407D92 /* UITabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C1D1DBF09D400407D92 /* UITabBarExtension.swift */; };
 		F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */; };
 		F84185621D7A10CE0000AEB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84185611D7A10CE0000AEB5 /* Assets.xcassets */; };
 		F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841856E1D7A142C0000AEB5 /* MapViewController.swift */; };
@@ -50,6 +55,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8024C151DBF006100407D92 /* ActiveDonationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationsViewController.swift; sourceTree = "<group>"; };
+		F8024C171DBF006800407D92 /* ActiveDonationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationsView.swift; sourceTree = "<group>"; };
+		F8024C191DBF007800407D92 /* ActiveDonationsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveDonationsView.xib; sourceTree = "<group>"; };
+		F8024C1B1DBF009C00407D92 /* ActiveDonationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationsViewModel.swift; sourceTree = "<group>"; };
+		F8024C1D1DBF09D400407D92 /* UITabBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarExtension.swift; sourceTree = "<group>"; };
 		F84185571D7A10CE0000AEB5 /* ProyectoAlimentar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoAlimentar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F84185611D7A10CE0000AEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +119,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8024C141DBF005200407D92 /* ActiveDonations */ = {
+			isa = PBXGroup;
+			children = (
+				F8024C171DBF006800407D92 /* ActiveDonationsView.swift */,
+				F8024C191DBF007800407D92 /* ActiveDonationsView.xib */,
+				F8024C151DBF006100407D92 /* ActiveDonationsViewController.swift */,
+				F8024C1B1DBF009C00407D92 /* ActiveDonationsViewModel.swift */,
+			);
+			path = ActiveDonations;
+			sourceTree = "<group>";
+		};
 		F841854E1D7A10CE0000AEB5 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +234,7 @@
 			children = (
 				F84185BC1D7E3F060000AEB5 /* UICollectionView.swift */,
 				F8680C021D9358800090207A /* UILabelExtension.swift */,
+				F8024C1D1DBF09D400407D92 /* UITabBarExtension.swift */,
 				F84185911D7A27610000AEB5 /* UIView.swift */,
 			);
 			path = UIExtensions;
@@ -308,6 +330,7 @@
 		F8DF77D91DB986FD00B5C37D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F8024C141DBF005200407D92 /* ActiveDonations */,
 				F84185761D7A162D0000AEB5 /* DonationPicker */,
 				F8DF77DC1DB9872E00B5C37D /* MainView.swift */,
 				F8DF77E01DB9874500B5C37D /* MainView.xib */,
@@ -383,6 +406,7 @@
 				F8DF77E11DB9874500B5C37D /* MainView.xib in Resources */,
 				F84185BF1D7E43850000AEB5 /* Default-568h@2x.png in Resources */,
 				F84185621D7A10CE0000AEB5 /* Assets.xcassets in Resources */,
+				F8024C1A1DBF007800407D92 /* ActiveDonationsView.xib in Resources */,
 				F84185CB1D7E44A10000AEB5 /* DonationDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F841857E1D7A16580000AEB5 /* DonationPickerViewModel.swift in Sources */,
+				F8024C1C1DBF009C00407D92 /* ActiveDonationsViewModel.swift in Sources */,
 				F8DF77DB1DB9872400B5C37D /* MainViewController.swift in Sources */,
 				F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */,
 				F8680C011D934FF00090207A /* FontPalette.swift in Sources */,
@@ -422,6 +447,7 @@
 				F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */,
 				F841857A1D7A163F0000AEB5 /* DonationPickerView.swift in Sources */,
 				F8DF77DF1DB9873800B5C37D /* MainViewModel.swift in Sources */,
+				F8024C181DBF006800407D92 /* ActiveDonationsView.swift in Sources */,
 				F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */,
 				F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */,
 				F8680C051D936C6C0090207A /* Resource.swift in Sources */,
@@ -431,11 +457,13 @@
 				F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */,
 				F8DF77D81DB9756000B5C37D /* LoginViewModel.swift in Sources */,
 				F84185BD1D7E3F060000AEB5 /* UICollectionView.swift in Sources */,
+				F8024C161DBF006100407D92 /* ActiveDonationsViewController.swift in Sources */,
 				F84185731D7A15BC0000AEB5 /* MapViewModel.swift in Sources */,
 				F8680BFA1D932E0C0090207A /* SearchViewController.swift in Sources */,
 				F8680C031D9358800090207A /* UILabelExtension.swift in Sources */,
 				F8DF77DD1DB9872E00B5C37D /* MainView.swift in Sources */,
 				F8681CDF1D8E20030092F44E /* LocationService.swift in Sources */,
+				F8024C1E1DBF09D400407D92 /* UITabBarExtension.swift in Sources */,
 				F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */,
 				F8681CE31D8E27DA0092F44E /* Donation.swift in Sources */,
 				F84185CD1D7E44B10000AEB5 /* DonationDetailCell.swift in Sources */,
