@@ -177,8 +177,7 @@
 				F84185771D7A16360000AEB5 /* DonationPickerViewController.swift */,
 				F841857D1D7A16580000AEB5 /* DonationPickerViewModel.swift */,
 			);
-			name = DonationPicker;
-			path = ../DonationPicker;
+			path = DonationPicker;
 			sourceTree = "<group>";
 		};
 		F84185891D7A176B0000AEB5 /* Frameworks */ = {
@@ -231,6 +230,7 @@
 		F8680BF71D932CD30090207A /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F8DF77CF1DB9751000B5C37D /* Authentication */,
 				F8DF77D91DB986FD00B5C37D /* Main */,
 			);
 			path = UIComponents;
@@ -291,8 +291,7 @@
 			children = (
 				F8DF77D01DB9752A00B5C37D /* Login */,
 			);
-			name = Authentication;
-			path = ../Authentication;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		F8DF77D01DB9752A00B5C37D /* Login */ = {
@@ -310,11 +309,10 @@
 			isa = PBXGroup;
 			children = (
 				F84185761D7A162D0000AEB5 /* DonationPicker */,
-				F8DF77CF1DB9751000B5C37D /* Authentication */,
-				F8DF77DA1DB9872400B5C37D /* MainViewController.swift */,
 				F8DF77DC1DB9872E00B5C37D /* MainView.swift */,
-				F8DF77DE1DB9873800B5C37D /* MainViewModel.swift */,
 				F8DF77E01DB9874500B5C37D /* MainView.xib */,
+				F8DF77DA1DB9872400B5C37D /* MainViewController.swift */,
+				F8DF77DE1DB9873800B5C37D /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
