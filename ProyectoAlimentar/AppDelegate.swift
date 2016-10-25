@@ -18,16 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
-        let annotations = [BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5]
-        
-        let fakedDonations = annotations.enumerate().map { Selection(donation: Donation(id: $0), annotation: $1 )}
         
 //        let viewModel = DonationPickerViewModel(selections: fakedDonations)
 //        
 //        
 //        
 //        window!.rootViewController = DonationPickerViewController(viewModel: viewModel)
-        window!.rootViewController = LoginViewController(viewModel: LoginViewModel());
+        window!.rootViewController = MainViewController(viewModel: MainViewModel());
         window?.makeKeyAndVisible()
         return true
     }

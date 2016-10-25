@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MainView" customModule="ProyectoAlimentar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRe-Ae-clq">
+                    <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem systemItem="favorites" id="VlD-6f-aCg"/>
+                        <tabBarItem title="Item" id="x0f-ne-5uc"/>
+                        <tabBarItem systemItem="more" id="jt6-qs-R6Z"/>
+                    </items>
+                </tabBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5L-E9-Yig">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="P5L-E9-Yig" secondAttribute="trailing" id="21U-YP-O6u"/>
+                <constraint firstItem="P5L-E9-Yig" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5IF-j7-CXU"/>
+                <constraint firstAttribute="bottom" secondItem="oRe-Ae-clq" secondAttribute="bottom" id="9HZ-KU-JrS"/>
+                <constraint firstItem="oRe-Ae-clq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RBz-mc-wLa"/>
+                <constraint firstItem="oRe-Ae-clq" firstAttribute="top" secondItem="P5L-E9-Yig" secondAttribute="bottom" id="cxO-RX-nmX"/>
+                <constraint firstAttribute="trailing" secondItem="oRe-Ae-clq" secondAttribute="trailing" id="ggv-Y2-KLx"/>
+                <constraint firstItem="P5L-E9-Yig" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="v6q-7h-uzq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="containerView" destination="P5L-E9-Yig" id="ux4-5H-6FQ"/>
+                <outlet property="tabBar" destination="oRe-Ae-clq" id="vcM-ex-rx7"/>
+            </connections>
+        </view>
+    </objects>
+</document>
