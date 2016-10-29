@@ -10,11 +10,11 @@ import UIKit
 import Core
 
 public final class ActiveDonationsView: UIView, NibLoadable {
-    
+
     @IBOutlet weak var activeDonationsCollectionView: UICollectionView! {
         didSet {
             activeDonationsCollectionView.backgroundColor = UIColor.grayColor()
         }
     }
-    
+
 }

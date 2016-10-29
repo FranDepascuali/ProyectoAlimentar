@@ -10,9 +10,9 @@ import UIKit
 import Core
 
 public final class DonationDetailCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var placeImageView: UIImageView!
-    
+
     @IBOutlet weak var placeNameLabel: UILabel! {
         didSet {
             placeNameLabel.setFont(pointSize: 16.0)
@@ -25,16 +25,16 @@ public final class DonationDetailCell: UICollectionViewCell {
             distanceToPlaceLabel.textColor = ColorPalette.primaryTextColor
         }
     }
-    
+
     @IBOutlet weak var locationIconImageView: UIImageView!
-    
+
     @IBOutlet weak var locationLabel: UILabel! {
         didSet {
             locationLabel.setFont(pointSize: 14)
             locationLabel.textColor = ColorPalette.secondaryTextColor
         }
     }
-    
+
     @IBOutlet weak var timeOpenedImageView: UIImageView!
     @IBOutlet weak var timeOpenedLabel: UILabel! {
         didSet {
@@ -42,14 +42,14 @@ public final class DonationDetailCell: UICollectionViewCell {
             timeOpenedLabel.textColor = ColorPalette.secondaryTextColor
         }
     }
-    
+
     @IBOutlet weak var detailedInformationStackView: UIStackView! {
         didSet {
             detailedInformationStackView.hidden = true
         }
     }
-    
-    
+
+
     @IBOutlet weak var fetchDonationButton: UIButton! {
         didSet {
             fetchDonationButton.setTitle("Buscar Donación", forState: .Normal)

@@ -14,18 +14,18 @@ public enum TabViewItem: Int {
 }
 
 public final class MainViewModel {
-    
+
     public let selectedTab: AnyProperty<TabViewItem>
-    
+
     private let _selectedTab = MutableProperty(TabViewItem.First)
-    
+
     public init() {
         selectedTab = AnyProperty(_selectedTab)
     }
-    
+
     public func selectTab(at index: Int) {
         guard let selectedTab = TabViewItem(rawValue: index) where selectedTab != _selectedTab.value else { return }
-        
+
         _selectedTab.value = selectedTab
     }
 }

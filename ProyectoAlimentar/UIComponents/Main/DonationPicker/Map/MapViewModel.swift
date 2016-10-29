@@ -15,22 +15,22 @@ import ReactiveCocoa
 import Result
 
 public final class MapViewModel {
-    
+
     public let annotations: [MapViewAnnotation]
-    
+
     private let _notifySelection: MapViewAnnotation -> ()
-    
+
     public let selected: Signal<MapViewAnnotation, NoError>
-    
+
     public init(annotations: [MapViewAnnotation],
                 externalSelection: Signal<MapViewAnnotation, NoError>,
                 notifySelection: MapViewAnnotation -> ()) {
-        
+
         self.annotations = annotations
         _notifySelection = notifySelection
         selected = externalSelection.observeOn(UIScheduler())
     }
-    
+
     public func tapped(annotation: MapViewAnnotation) {
         _notifySelection(annotation)
     }

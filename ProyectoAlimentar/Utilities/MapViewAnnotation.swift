@@ -11,9 +11,9 @@ import MapKit
 import CoreLocation
 
 public final class MapViewAnnotation: NSObject, MKAnnotation {
-    
+
     public var coordinate: CLLocationCoordinate2D
-    
+
     public init(coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
         super.init()
@@ -21,9 +21,9 @@ public final class MapViewAnnotation: NSObject, MKAnnotation {
 }
 
 public extension MapViewAnnotation {
-    
+
     public static var orderAnnotationIdentifier: String {
         return "orderAnnotation"
     }
-    
+
 }
