@@ -22,6 +22,8 @@ private extension UIColor {
     private static let lightOrange = UIColor(hex: "FDB949")!
 
     private static let darkOrange = UIColor(hex: "F39700")!
+    
+    private static let lightGrey = UIColor(hex: "F2F2F2")!
 }
 
 public struct ColorPalette: ColorPaletteType {
@@ -33,4 +35,6 @@ public struct ColorPalette: ColorPaletteType {
     public static var primaryTextColor = UIColor.blackColor()
 
     public static var secondaryTextColor = UIColor(hex: "9b9b9b")!
+    
+    public static var clearBackgroundColor = UIColor.lightGrey
 }
