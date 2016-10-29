@@ -12,6 +12,10 @@
 		F8024C1A1DBF007800407D92 /* ActiveDonationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8024C191DBF007800407D92 /* ActiveDonationsView.xib */; };
 		F8024C1C1DBF009C00407D92 /* ActiveDonationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C1B1DBF009C00407D92 /* ActiveDonationsViewModel.swift */; };
 		F8024C1E1DBF09D400407D92 /* UITabBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C1D1DBF09D400407D92 /* UITabBarExtension.swift */; };
+		F8024C241DC43BB500407D92 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C231DC43BB500407D92 /* UserRepository.swift */; };
+		F8024C261DC43C7000407D92 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C251DC43C7000407D92 /* User.swift */; };
+		F8024C2B1DC43D5500407D92 /* Bootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C2A1DC43D5500407D92 /* Bootstrapper.swift */; };
+		F8024C2E1DC43E2B00407D92 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8024C2D1DC43E2B00407D92 /* MainCoordinator.swift */; };
 		F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */; };
 		F84185621D7A10CE0000AEB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84185611D7A10CE0000AEB5 /* Assets.xcassets */; };
 		F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841856E1D7A142C0000AEB5 /* MapViewController.swift */; };
@@ -60,6 +64,10 @@
 		F8024C191DBF007800407D92 /* ActiveDonationsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveDonationsView.xib; sourceTree = "<group>"; };
 		F8024C1B1DBF009C00407D92 /* ActiveDonationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationsViewModel.swift; sourceTree = "<group>"; };
 		F8024C1D1DBF09D400407D92 /* UITabBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarExtension.swift; sourceTree = "<group>"; };
+		F8024C231DC43BB500407D92 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		F8024C251DC43C7000407D92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F8024C2A1DC43D5500407D92 /* Bootstrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bootstrapper.swift; sourceTree = "<group>"; };
+		F8024C2D1DC43E2B00407D92 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F84185571D7A10CE0000AEB5 /* ProyectoAlimentar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoAlimentar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F84185611D7A10CE0000AEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +138,30 @@
 			path = ActiveDonations;
 			sourceTree = "<group>";
 		};
+		F8024C221DC43BA500407D92 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F8024C231DC43BB500407D92 /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F8024C271DC43D2F00407D92 /* Bootstrappers */ = {
+			isa = PBXGroup;
+			children = (
+				F8024C2A1DC43D5500407D92 /* Bootstrapper.swift */,
+			);
+			path = Bootstrappers;
+			sourceTree = "<group>";
+		};
+		F8024C2C1DC43DE400407D92 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F8024C2D1DC43E2B00407D92 /* MainCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		F841854E1D7A10CE0000AEB5 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +183,9 @@
 		F84185591D7A10CE0000AEB5 /* ProyectoAlimentar */ = {
 			isa = PBXGroup;
 			children = (
+				F8024C2C1DC43DE400407D92 /* Navigation */,
+				F8024C271DC43D2F00407D92 /* Bootstrappers */,
+				F8024C221DC43BA500407D92 /* Repositories */,
 				F8681CE01D8E27A30092F44E /* Domain */,
 				F84185901D7A27570000AEB5 /* Extensions */,
 				F841856C1D7A12CA0000AEB5 /* Resources */,
@@ -294,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				F8681CE21D8E27DA0092F44E /* Donation.swift */,
+				F8024C251DC43C7000407D92 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,7 +386,8 @@
 				F84185531D7A10CE0000AEB5 /* Sources */,
 				F84185541D7A10CE0000AEB5 /* Frameworks */,
 				F84185551D7A10CE0000AEB5 /* Resources */,
-				F84185801D7A16B40000AEB5 /* ShellScript */,
+				F84185801D7A16B40000AEB5 /* Carthage */,
+				F8024C2F1DC4425E00407D92 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -414,7 +451,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F84185801D7A16B40000AEB5 /* ShellScript */ = {
+		F8024C2F1DC4425E00407D92 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		F84185801D7A16B40000AEB5 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -425,6 +476,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
+			name = Carthage;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,12 +495,14 @@
 				F8DF77DB1DB9872400B5C37D /* MainViewController.swift in Sources */,
 				F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */,
 				F8680C011D934FF00090207A /* FontPalette.swift in Sources */,
+				F8024C2B1DC43D5500407D92 /* Bootstrapper.swift in Sources */,
 				F8DF77D21DB9753400B5C37D /* LoginViewController.swift in Sources */,
 				F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */,
 				F841857A1D7A163F0000AEB5 /* DonationPickerView.swift in Sources */,
 				F8DF77DF1DB9873800B5C37D /* MainViewModel.swift in Sources */,
 				F8024C181DBF006800407D92 /* ActiveDonationsView.swift in Sources */,
 				F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */,
+				F8024C241DC43BB500407D92 /* UserRepository.swift in Sources */,
 				F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */,
 				F8680C051D936C6C0090207A /* Resource.swift in Sources */,
 				F84185751D7A15CD0000AEB5 /* MapView.swift in Sources */,
@@ -461,6 +515,8 @@
 				F84185731D7A15BC0000AEB5 /* MapViewModel.swift in Sources */,
 				F8680BFA1D932E0C0090207A /* SearchViewController.swift in Sources */,
 				F8680C031D9358800090207A /* UILabelExtension.swift in Sources */,
+				F8024C2E1DC43E2B00407D92 /* MainCoordinator.swift in Sources */,
+				F8024C261DC43C7000407D92 /* User.swift in Sources */,
 				F8DF77DD1DB9872E00B5C37D /* MainView.swift in Sources */,
 				F8681CDF1D8E20030092F44E /* LocationService.swift in Sources */,
 				F8024C1E1DBF09D400407D92 /* UITabBarExtension.swift in Sources */,
