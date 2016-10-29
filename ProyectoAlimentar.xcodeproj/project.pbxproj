@@ -79,8 +79,8 @@
 		F8024C251DC43C7000407D92 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F8024C2A1DC43D5500407D92 /* Bootstrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bootstrapper.swift; sourceTree = "<group>"; };
 		F8024C2D1DC43E2B00407D92 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		F8024C301DC44A2D00407D92 /* DonationDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DonationDetailsView.swift; path = ../../Main/DonationPicker/DonationList/DonationDetailCell/DonationDetailsView.swift; sourceTree = "<group>"; };
-		F8024C321DC44A7E00407D92 /* DonationDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DonationDetailsView.xib; path = ../../Main/DonationPicker/DonationList/DonationDetailCell/DonationDetailsView.xib; sourceTree = "<group>"; };
+		F8024C301DC44A2D00407D92 /* DonationDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDetailsView.swift; sourceTree = "<group>"; };
+		F8024C321DC44A7E00407D92 /* DonationDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonationDetailsView.xib; sourceTree = "<group>"; };
 		F8024C361DC44CA900407D92 /* DonationDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDetailsViewModel.swift; sourceTree = "<group>"; };
 		F8024C381DC44E1F00407D92 /* DonationDetailCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDetailCellViewModel.swift; sourceTree = "<group>"; };
 		F8024C3C1DC4520500407D92 /* DonationsRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationsRecordViewController.swift; sourceTree = "<group>"; };
@@ -182,8 +182,7 @@
 			children = (
 				F8024C2D1DC43E2B00407D92 /* MainCoordinator.swift */,
 			);
-			name = Navigation;
-			path = ../Navigation;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		F8024C341DC44B1100407D92 /* Common */ = {
@@ -215,21 +214,20 @@
 			isa = PBXGroup;
 			children = (
 				F8024C441DC453C100407D92 /* DonationRecordCell */,
-				F8024C3C1DC4520500407D92 /* DonationsRecordViewController.swift */,
 				F8024C3E1DC4521B00407D92 /* DonationsRecordView.swift */,
-				F8024C401DC4522500407D92 /* DonationsRecordViewModel.swift */,
 				F8024C421DC4524300407D92 /* DonationsRecordView.xib */,
+				F8024C3C1DC4520500407D92 /* DonationsRecordViewController.swift */,
+				F8024C401DC4522500407D92 /* DonationsRecordViewModel.swift */,
 			);
-			name = DonationsRecord;
-			path = DonationRecord;
+			path = DonationsRecord;
 			sourceTree = "<group>";
 		};
 		F8024C441DC453C100407D92 /* DonationRecordCell */ = {
 			isa = PBXGroup;
 			children = (
-				F8024C451DC453FD00407D92 /* DonationRecordCellViewModel.swift */,
 				F8024C471DC4544E00407D92 /* DonationRecordCell.swift */,
 				F8024C491DC4545E00407D92 /* DonationRecordCell.xib */,
+				F8024C451DC453FD00407D92 /* DonationRecordCellViewModel.swift */,
 			);
 			path = DonationRecordCell;
 			sourceTree = "<group>";
@@ -256,9 +254,9 @@
 			isa = PBXGroup;
 			children = (
 				F8024C271DC43D2F00407D92 /* Bootstrappers */,
-				F8024C221DC43BA500407D92 /* Repositories */,
 				F8681CE01D8E27A30092F44E /* Domain */,
 				F84185901D7A27570000AEB5 /* Extensions */,
+				F8024C221DC43BA500407D92 /* Repositories */,
 				F841856C1D7A12CA0000AEB5 /* Resources */,
 				F8681CDD1D8E1FF50092F44E /* Services */,
 				F8680BF71D932CD30090207A /* UIComponents */,
@@ -359,10 +357,10 @@
 		F8680BF71D932CD30090207A /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				F8024C341DC44B1100407D92 /* Common */,
-				F8024C2C1DC43DE400407D92 /* Navigation */,
 				F8DF77CF1DB9751000B5C37D /* Authentication */,
+				F8024C341DC44B1100407D92 /* Common */,
 				F8DF77D91DB986FD00B5C37D /* Main */,
+				F8024C2C1DC43DE400407D92 /* Navigation */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -440,9 +438,9 @@
 		F8DF77D91DB986FD00B5C37D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				F8024C3B1DC451D000407D92 /* DonationsRecord */,
 				F8024C141DBF005200407D92 /* ActiveDonations */,
 				F84185761D7A162D0000AEB5 /* DonationPicker */,
+				F8024C3B1DC451D000407D92 /* DonationsRecord */,
 				F8DF77DC1DB9872E00B5C37D /* MainView.swift */,
 				F8DF77E01DB9874500B5C37D /* MainView.xib */,
 				F8DF77DA1DB9872400B5C37D /* MainViewController.swift */,
