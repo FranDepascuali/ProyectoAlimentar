@@ -12,20 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    private var _mainCoordinator: MainCoordinator!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         
+        _mainCoordinator = MainCoordinator(window: window!, userRepository: UserRepository())
+        _mainCoordinator.start()
         
-        window!.rootViewController = rootViewController();
-        window?.makeKeyAndVisible()
         return true
-    }
-
-    private func rootViewController() -> UIViewController {
-        return MainViewController(viewModel: MainViewModel())
     }
     
     func applicationWillResignActive(application: UIApplication) {
