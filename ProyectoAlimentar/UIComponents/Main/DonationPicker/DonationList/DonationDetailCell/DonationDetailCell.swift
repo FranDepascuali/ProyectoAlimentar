@@ -10,36 +10,12 @@ import UIKit
 import Core
 
 public final class DonationDetailCell: UICollectionViewCell {
-
-    @IBOutlet weak var placeImageView: UIImageView!
-
-    @IBOutlet weak var placeNameLabel: UILabel! {
+    
+    private lazy var _donationDetailsView: DonationDetailsView = DonationDetailsView.loadFromNib()!
+    
+    @IBOutlet weak var donationDetailsContainerView: UIView! {
         didSet {
-            placeNameLabel.setFont(pointSize: 16.0)
-            placeNameLabel.textColor = ColorPalette.primaryTextColor
-        }
-    }
-    @IBOutlet weak var distanceToPlaceLabel: UILabel! {
-        didSet {
-            distanceToPlaceLabel.setFont(pointSize: 16)
-            distanceToPlaceLabel.textColor = ColorPalette.primaryTextColor
-        }
-    }
-
-    @IBOutlet weak var locationIconImageView: UIImageView!
-
-    @IBOutlet weak var locationLabel: UILabel! {
-        didSet {
-            locationLabel.setFont(pointSize: 14)
-            locationLabel.textColor = ColorPalette.secondaryTextColor
-        }
-    }
-
-    @IBOutlet weak var timeOpenedImageView: UIImageView!
-    @IBOutlet weak var timeOpenedLabel: UILabel! {
-        didSet {
-            timeOpenedLabel.setFont(pointSize: 14)
-            timeOpenedLabel.textColor = ColorPalette.secondaryTextColor
+            donationDetailsContainerView.backgroundColor = UIColor.clearColor()
         }
     }
 
@@ -52,10 +28,19 @@ public final class DonationDetailCell: UICollectionViewCell {
 
     @IBOutlet weak var fetchDonationButton: UIButton! {
         didSet {
-            fetchDonationButton.setTitle("Buscar Donación", forState: .Normal)
             fetchDonationButton.backgroundColor = ColorPalette.primaryColor
             fetchDonationButton.setTitleColor(.whiteColor(), forState: .Normal)
             fetchDonationButton.titleLabel?.setFont(pointSize: 14)
         }
+    }
+    
+    public func bindViewModel(viewModel: DonationDetailCellViewModel) {
+        fetchDonationButton.setTitle(viewModel.fetchDonationTitle, forState: .Normal)
+        _donationDetailsView.bindViewModel(viewModel.donationDetailsViewModel)
+    }
+    
+    override public func awakeFromNib() {
+        super.awakeFromNib()
+        _donationDetailsView.loadInto(donationDetailsContainerView)
     }
 }

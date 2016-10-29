@@ -53,13 +53,8 @@ extension ActiveDonationsViewController: UICollectionViewDataSource {
 
 
         let fakeDonation = Donation(id: 0)
-
-        cell.distanceToPlaceLabel.text = "\(fakeDonation.distance)km"
-        cell.locationLabel.text = fakeDonation.placeDirection
-        cell.placeNameLabel.text = fakeDonation.placeName
-
-        cell.timeOpenedLabel.text = fakeDonation.from + " - " + fakeDonation.to
-        cell.placeImageView.image = UIImage(named: "restaurant_placeholder")!
+        let viewModel = DonationDetailCellViewModel(donation: fakeDonation)
+        cell.bindViewModel(viewModel)
 
         return cell
     }
