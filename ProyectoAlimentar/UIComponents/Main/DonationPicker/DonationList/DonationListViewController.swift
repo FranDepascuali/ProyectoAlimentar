@@ -40,7 +40,7 @@ extension DonationListViewController: CarouselControllerDelegate {
     }
 
     public func carousel(carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell {
-        let cell = carousel.collectionView?.dequeueReusableCellWithReuseIdentifier("Mycell", forIndexPath: NSIndexPath(forItem: index, inSection: 0)) as! DonationDetailCell
+        let cell = carousel.collectionView?.dequeCellWithIdentifier(.DonationDetailCell, forIndexPath: index) as! DonationDetailCell
 
 
         let fakeDonation = Donation(id: 0)
@@ -72,7 +72,7 @@ private extension DonationListViewController {
     private func initializeDonationCarouselController() {
         _donationsCarouselController = CarouselController(collectionViewLayout: createFlowLayout())
         _donationsCarouselController.collectionView!.showsHorizontalScrollIndicator = false
-        _donationsCarouselController.collectionView!.registerNib(UINib(nibName: "DonationDetailCell", bundle: nil), forCellWithReuseIdentifier: "Mycell")
+        _donationsCarouselController.collectionView!.registerCell(.DonationDetailCell)
         _donationsCarouselController.delegate = self
         loadViewController(_donationsCarouselController, into: view)
     }

@@ -11,7 +11,11 @@ import Core
 
 public final class DonationDetailsView: UIView, NibLoadable {
     
-    @IBOutlet weak var placeImageView: UIImageView!
+    @IBOutlet weak var placeImageView: UIImageView! {
+        didSet {
+            placeImageView.image = UIImage(named: "restaurant_placeholder")!
+        }
+    }
     
     @IBOutlet weak var placeNameLabel: UILabel! {
         didSet {
@@ -48,7 +52,5 @@ public final class DonationDetailsView: UIView, NibLoadable {
         distanceToPlaceLabel.text = viewModel.distance
         locationLabel.text = viewModel.placeDirection
         timeOpenedLabel.text = viewModel.timeOpened
-        
-        placeImageView.image = UIImage(named: "restaurant_placeholder")!
     }
 }

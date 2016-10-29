@@ -11,6 +11,7 @@ import ReactiveCocoa
 public enum TabViewItem: Int {
     case First = 0
     case Second
+    case Third
 }
 
 public final class MainViewModel {

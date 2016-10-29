@@ -11,7 +11,7 @@ import Core
 
 public final class DonationDetailCell: UICollectionViewCell {
     
-    private lazy var _donationDetailsView: DonationDetailsView = DonationDetailsView.loadFromNib()!
+    private lazy var _donationDetailsView = DonationDetailsView.loadFromNib()!
     
     @IBOutlet weak var donationDetailsContainerView: UIView! {
         didSet {
@@ -24,7 +24,6 @@ public final class DonationDetailCell: UICollectionViewCell {
             detailedInformationStackView.hidden = true
         }
     }
-
 
     @IBOutlet weak var fetchDonationButton: UIButton! {
         didSet {
