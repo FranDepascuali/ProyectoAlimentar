@@ -159,7 +159,8 @@
 			children = (
 				F8024C2D1DC43E2B00407D92 /* MainCoordinator.swift */,
 			);
-			path = Navigation;
+			name = Navigation;
+			path = ../Navigation;
 			sourceTree = "<group>";
 		};
 		F841854E1D7A10CE0000AEB5 = {
@@ -183,7 +184,6 @@
 		F84185591D7A10CE0000AEB5 /* ProyectoAlimentar */ = {
 			isa = PBXGroup;
 			children = (
-				F8024C2C1DC43DE400407D92 /* Navigation */,
 				F8024C271DC43D2F00407D92 /* Bootstrappers */,
 				F8024C221DC43BA500407D92 /* Repositories */,
 				F8681CE01D8E27A30092F44E /* Domain */,
@@ -287,6 +287,7 @@
 		F8680BF71D932CD30090207A /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F8024C2C1DC43DE400407D92 /* Navigation */,
 				F8DF77CF1DB9751000B5C37D /* Authentication */,
 				F8DF77D91DB986FD00B5C37D /* Main */,
 			);

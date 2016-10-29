@@ -76,6 +76,7 @@ private extension DonationListViewController {
 
     private func initializeDonationCarouselController() {
         _donationsCarouselController = CarouselController(collectionViewLayout: createFlowLayout())
+        _donationsCarouselController.collectionView!.showsHorizontalScrollIndicator = false
         _donationsCarouselController.collectionView!.registerNib(UINib(nibName: "DonationDetailCell", bundle: nil), forCellWithReuseIdentifier: "Mycell")
         _donationsCarouselController.delegate = self
         loadViewController(_donationsCarouselController, into: view)
