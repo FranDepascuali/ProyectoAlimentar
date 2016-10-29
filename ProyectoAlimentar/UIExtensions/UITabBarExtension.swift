@@ -9,11 +9,11 @@
 import UIKit
 
 public extension UITabBar {
-    
+
     public func selectItemAt(index: Int) {
         selectedItem = items![index]
     }
-    
+
     public func indexForItem(item: UITabBarItem) -> Int? {
         for (index, _item) in items!.enumerate() {
             if _item == item {
@@ -22,5 +22,5 @@ public extension UITabBar {
         }
         return nil
     }
-    
+
 }

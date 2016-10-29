@@ -9,9 +9,9 @@
 import UIKit
 
 public protocol Resource {
-    
+
     var identifier: String { get }
-    
+
 }
 
 public enum ImageAssetIdentifier: String {
@@ -23,7 +23,7 @@ public enum ImageAssetIdentifier: String {
 
 
 public extension UIImage {
-    
+
     convenience init(identifier: ImageAssetIdentifier) {
         self.init(named:identifier.rawValue)!
     }

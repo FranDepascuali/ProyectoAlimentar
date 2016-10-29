@@ -10,8 +10,8 @@ import UIKit
 import Core
 
 public final class MainView: UIView, NibLoadable {
-    
+
     @IBOutlet weak var containerView: UIView!
-    
+
     @IBOutlet weak var tabBar: UITabBar!
 }

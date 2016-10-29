@@ -11,7 +11,7 @@ import MapKit
 import Core
 
 public final class MapView: UIView, NibLoadable {
-    
+
     @IBOutlet weak var map: MKMapView!
-    
+
 }

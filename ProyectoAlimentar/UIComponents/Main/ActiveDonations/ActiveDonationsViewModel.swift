@@ -9,10 +9,10 @@
 import UIKit
 
 public final class ActiveDonationsViewModel {
-    
+
     // TODO: This should be private and a mutable property
     public let _donations: [Donation]
-    
+
     public init(donations: [Donation]) {
         _donations = donations
     }
