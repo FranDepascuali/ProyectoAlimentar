@@ -67,7 +67,8 @@ private extension MainViewController {
     }
 
     private func initializeControllers() -> [UIViewController] {
-        return [getDonationPickerViewController(), getActiveDonationsViewController()]
+        return [getDonationPickerViewController(), getActiveDonationsViewController(),
+            getDonationsRecordViewController()]
     }
 
     private func getActiveDonationsViewController() -> ActiveDonationsViewController {
@@ -89,4 +90,13 @@ private extension MainViewController {
         return DonationPickerViewController(viewModel: viewModel)
     }
 
+    private func getDonationsRecordViewController() -> DonationsRecordViewController {
+        let annotations = [BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5, BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5]
+        
+        let fakedDonations = annotations.enumerate().map { Selection(donation: Donation(id: $0), annotation: $1 )}
+        
+        let viewModel = DonationsRecordsViewModel(donations: fakedDonations.map { $0._donation })
+        
+        return DonationsRecordViewController(viewModel: viewModel)
+    }
 }

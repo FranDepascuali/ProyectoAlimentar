@@ -21,6 +21,29 @@ public enum ImageAssetIdentifier: String {
     case LoginLogo = "img_login_logo_pa"
 }
 
+public enum CellIdentifier: String {
+    case DonationRecordCell
+    case ActiveDonationCell
+    case DonationDetailCell
+}
+
+public extension UICollectionView {
+    
+    public func registerCell(identifier: CellIdentifier) {
+        registerNib(UINib(nibName: identifier.rawValue, bundle: nil), forCellWithReuseIdentifier: identifier.rawValue)
+    }
+    
+    public func dequeCellWithIdentifier<CellType: UICollectionViewCell>(identifier: CellIdentifier, forIndexPath indexPath: NSIndexPath) -> CellType {
+        return dequeueReusableCellWithReuseIdentifier(identifier.rawValue, forIndexPath: indexPath) as! CellType
+    }
+    
+    public func dequeCellWithIdentifier<CellType: UICollectionViewCell>(identifier: CellIdentifier, forIndexPath index: Int) -> CellType {
+        return dequeCellWithIdentifier(identifier, forIndexPath: NSIndexPath(forItem: index, inSection: 0))
+    }
+    
+    
+}
+
 
 public extension UIImage {
 
