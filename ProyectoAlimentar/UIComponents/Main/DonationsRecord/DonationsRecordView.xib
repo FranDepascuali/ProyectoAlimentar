@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,8 +11,15 @@
             <rect key="frame" x="0.0" y="0.0" width="265" height="373"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSl-2o-iaC">
+                    <rect key="frame" x="0.0" y="0.0" width="265" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="XIy-JQ-pmc"/>
+                    </constraints>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6Re-EJ-ihv">
-                    <rect key="frame" x="0.0" y="72" width="265" height="301"/>
+                    <rect key="frame" x="0.0" y="60" width="265" height="313"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pRy-lV-PzX">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -20,19 +27,12 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSl-2o-iaC">
-                    <rect key="frame" x="0.0" y="0.0" width="265" height="72"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="72" id="XIy-JQ-pmc"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6Re-EJ-ihv" secondAttribute="trailing" id="1w1-Nu-tgC"/>
                 <constraint firstItem="6Re-EJ-ihv" firstAttribute="top" secondItem="CSl-2o-iaC" secondAttribute="bottom" id="RTE-0B-Gmb"/>
-                <constraint firstItem="6Re-EJ-ihv" firstAttribute="top" secondItem="CSl-2o-iaC" secondAttribute="top" id="S1v-bV-cfK"/>
+                <constraint firstItem="CSl-2o-iaC" firstAttribute="top" secondItem="Mc9-da-FWM" secondAttribute="top" id="UlF-s8-xDI"/>
                 <constraint firstItem="6Re-EJ-ihv" firstAttribute="leading" secondItem="Mc9-da-FWM" secondAttribute="leading" id="emb-CH-zeI"/>
                 <constraint firstItem="CSl-2o-iaC" firstAttribute="top" secondItem="Mc9-da-FWM" secondAttribute="top" id="fo9-TG-uJ2"/>
                 <constraint firstAttribute="bottom" secondItem="6Re-EJ-ihv" secondAttribute="bottom" id="gqf-fD-jvE"/>
@@ -42,12 +42,12 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="S1v-bV-cfK"/>
+                    <exclude reference="fo9-TG-uJ2"/>
                 </mask>
             </variation>
             <connections>
                 <outlet property="donationsRecordCollectionView" destination="6Re-EJ-ihv" id="kAY-gs-pV7"/>
-                <outlet property="titleView" destination="CSl-2o-iaC" id="QPk-O5-Q6I"/>
+                <outlet property="titleContainerView" destination="CSl-2o-iaC" id="I6D-An-6aw"/>
             </connections>
             <point key="canvasLocation" x="94.5" y="366.5"/>
         </view>

@@ -10,10 +10,17 @@ import UIKit
 import Core
 
 public final class DonationsRecordView: UIView, NibLoadable {
-    
-    @IBOutlet weak var titleView: UIView! {
+    @IBOutlet weak var statusBar: UIView! {
         didSet {
-            titleView.backgroundColor = ColorPalette.primaryColor
+            statusBar.backgroundColor = ColorPalette.primaryColor
+        }
+    }
+    
+    private lazy var _titleView = TitleView.init(title: "Historial")
+    
+    @IBOutlet weak var titleContainerView: UIView! {
+        didSet {
+            _titleView.loadInto(titleContainerView)
         }
     }
     
