@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cartography
 
 public final class DonationsRecordViewController: UIViewController {
     
@@ -38,6 +39,15 @@ public final class DonationsRecordViewController: UIViewController {
         super.viewDidLoad()
         initializeCollectionView()
         bindViewModel()
+        
+//        
+//        constrain(_donationsRecordView, self.topLayoutGuide) {
+//            
+//        }
+        
+//        _donationsRecordView.translatesAutoresizingMaskIntoConstraints = false
+//        self._donationsRecordView.topAnchor
+//            .constraintEqualToAnchor( self.topLayoutGuide.bottomAnchor ).active = true
     }
     
 }
