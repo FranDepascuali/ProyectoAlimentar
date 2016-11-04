@@ -1,5 +1,5 @@
 #Core & Functional Programming
 github "ReactiveCocoa/ReactiveCocoa" ~> 4.1.0
-github "Wolox/wolmo-core-ios" ~> 0.1.0
+github "Simplicity-iOS/wolmo-core-ios" "swift-2.3-migration"
 github "robb/Cartography" ~> 0.7.0
-github "facebook/facebook-ios-sdk" ~> 4.16
+#github "facebook/facebook-ios-sdk" ~> 4.17
