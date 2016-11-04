@@ -32,6 +32,7 @@ public final class ActiveDonationsViewController: UIViewController {
         _activeDonationsView.activeDonationsCollectionView.collectionViewLayout.invalidateLayout()
         _activeDonationsView.activeDonationsCollectionView.collectionViewLayout = createFlowLayout()
         _activeDonationsView.activeDonationsCollectionView.reloadData()
+        _activeDonationsView.activeDonationsCollectionView.setContentOffset(CGPointZero, animated: false)
     }
 
     override public func viewDidLoad() {
@@ -49,11 +50,10 @@ extension ActiveDonationsViewController: UICollectionViewDataSource {
     }
 
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Mycell", forIndexPath: NSIndexPath(forItem: indexPath.row, inSection: 0)) as! DonationDetailCell
-
+        let cell: ActiveDonationCell = collectionView.dequeCellWithIdentifier(.ActiveDonationCell, forIndexPath: indexPath.row)
 
         let fakeDonation = Donation(id: 0)
-        let viewModel = DonationDetailCellViewModel(donation: fakeDonation)
+        let viewModel = ActiveDonationCellViewModel(donation: fakeDonation)
         cell.bindViewModel(viewModel)
 
         return cell
@@ -67,7 +67,7 @@ private extension ActiveDonationsViewController {
         // TODO: change MyCell
         _activeDonationsView.activeDonationsCollectionView.dataSource = self
         _activeDonationsView.activeDonationsCollectionView.collectionViewLayout = createFlowLayout()
-        _activeDonationsView.activeDonationsCollectionView.registerNib(UINib(nibName: "DonationDetailCell", bundle: nil), forCellWithReuseIdentifier: "Mycell")
+        _activeDonationsView.activeDonationsCollectionView.registerCell(.ActiveDonationCell)
 
 
     }
@@ -76,7 +76,7 @@ private extension ActiveDonationsViewController {
         let layout = UICollectionViewFlowLayout()
         // TODO: take this faked number out
         layout.itemSize = CGSize(width: view.frame.width,
-                                 height: 158)
+                                 height: 187)
         layout.minimumInteritemSpacing = 40
         layout.scrollDirection = UICollectionViewScrollDirection.Vertical
 
