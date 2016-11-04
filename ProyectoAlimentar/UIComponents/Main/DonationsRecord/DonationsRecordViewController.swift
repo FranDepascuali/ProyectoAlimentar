@@ -33,21 +33,13 @@ public final class DonationsRecordViewController: UIViewController {
         _donationsRecordView.donationsRecordCollectionView.collectionViewLayout.invalidateLayout()
         _donationsRecordView.donationsRecordCollectionView.collectionViewLayout = createFlowLayout()
         _donationsRecordView.donationsRecordCollectionView.reloadData()
+        _donationsRecordView.donationsRecordCollectionView.setContentOffset(CGPointZero, animated: false)
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         initializeCollectionView()
         bindViewModel()
-        
-//        
-//        constrain(_donationsRecordView, self.topLayoutGuide) {
-//            
-//        }
-        
-//        _donationsRecordView.translatesAutoresizingMaskIntoConstraints = false
-//        self._donationsRecordView.topAnchor
-//            .constraintEqualToAnchor( self.topLayoutGuide.bottomAnchor ).active = true
     }
     
 }

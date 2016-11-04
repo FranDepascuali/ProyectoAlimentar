@@ -11,9 +11,9 @@ import Core
 
 public final class ActiveDonationsView: UIView, NibLoadable {
     
-    @IBOutlet weak var titleView: UIView! {
+    @IBOutlet weak var titleViewContainer: UIView! {
         didSet {
-            titleView.backgroundColor = ColorPalette.primaryColor
+            TitleView(title: "Donaciones Activas").loadInto(titleViewContainer)
         }
     }
 
