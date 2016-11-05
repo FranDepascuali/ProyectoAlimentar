@@ -30,7 +30,11 @@ public final class DonationDetailsView: UIView, NibLoadable {
         }
     }
     
-    @IBOutlet weak var locationIconImageView: UIImageView!
+    @IBOutlet weak var locationIconImageView: UIImageView! {
+        didSet {
+            locationIconImageView.image = UIImage(identifier: .LocationIcon)
+        }
+    }
     
     @IBOutlet weak var locationLabel: UILabel! {
         didSet {
@@ -39,7 +43,13 @@ public final class DonationDetailsView: UIView, NibLoadable {
         }
     }
     
-    @IBOutlet weak var timeOpenedImageView: UIImageView!
+    @IBOutlet weak var timeOpenedImageView: UIImageView! {
+        didSet {
+            timeOpenedImageView.image = UIImage(identifier: .TimeOpenedIcon)
+        }
+    }
+    
+    
     @IBOutlet weak var timeOpenedLabel: UILabel! {
         didSet {
             timeOpenedLabel.setFont(pointSize: 14)
