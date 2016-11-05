@@ -10,9 +10,30 @@ import UIKit
 
 public final class ActiveDonationCell: UICollectionViewCell {
     
+    // TODO: This should be a button
+    @IBOutlet weak var cancelLabel: UILabel! {
+        didSet {
+            cancelLabel.setFont(pointSize: 14.0)
+            cancelLabel.textColor = ColorPalette.secondaryTextColor
+        }
+    }
+    
+    @IBOutlet weak var timeLeftLabel: UILabel! {
+        didSet {
+            timeLeftLabel.setFont(pointSize: 32.0)
+            timeLeftLabel.textColor = ColorPalette.primaryColor
+        }
+    }
+    
     @IBOutlet weak var separatorView: UIView! {
         didSet {
             separatorView.backgroundColor = ColorPalette.secondaryTextColor
+        }
+    }
+    
+    @IBOutlet weak var chronometerImageView: UIImageView! {
+        didSet {
+            chronometerImageView.image = UIImage(identifier: .Chronometer)
         }
     }
     
