@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "345FA0E3-9160-4092-9EBE-B3B9A0529A0A@1x.png",
+      "filename" : "img_donation_time.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "img_donation_time@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "img_donation_time@3x.png",
       "scale" : "3x"
     }
   ],
