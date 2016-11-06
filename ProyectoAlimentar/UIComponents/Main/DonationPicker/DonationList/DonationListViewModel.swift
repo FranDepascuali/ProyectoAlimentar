@@ -12,29 +12,33 @@ import enum Result.NoError
 
 public class DonationListViewModel {
 
-    private let _donations: [Donation]
-
+    public let donations: AnyProperty<[DonationDetailViewModel]>
+    
     private let _notifySelection: Donation -> ()
 
     // TODO: This should not be var
     public var selected: Signal<Int, NoError>!
 
     public var donationsCount: Int {
-        return _donations.count
+        return donations.value.count
     }
 
-    public init(donations: [Donation],
-                externalSelection: Signal<Donation, NoError>,
+    public init(donations: AnyProperty<[Donation]>,
+                externalSelection: Signal<Int, NoError>,
                 notifySelection: Donation -> ()) {
 
-        _donations = donations
+        self.donations = donations.map { $0.map(DonationDetailViewModel.init) }
         _notifySelection = notifySelection
         selected = externalSelection
-            .map { [unowned self] in self._donations.indexOf($0)! }
             .observeOn(UIScheduler())
     }
 
     public func selectDonationAt(index: Int) {
-        _notifySelection(_donations[index])
+        _notifySelection(donations.value[index].donation)
     }
+    
+    public subscript(index: Int) -> DonationDetailViewModel {
+        return donations.value[index]
+    }
+    
 }

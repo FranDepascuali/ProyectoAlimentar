@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import ReactiveCocoa
 
 public final class MapViewController: UIViewController {
 
@@ -33,14 +34,14 @@ public final class MapViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
+//        bindViewModel()
     }
-
-    override public func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    
+    override public func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if !_initiallyLoaded {
-            addAnnotationsToMap(_viewModel.annotations)
             _initiallyLoaded = true
+            bindViewModel()
         }
     }
 
@@ -74,6 +75,14 @@ extension MapViewController: MKMapViewDelegate {
 private extension MapViewController {
 
     private func bindViewModel() {
+        
+        _viewModel.annotations
+            .producer
+            .observeOn(UIScheduler())
+            .startWithNext { [unowned self] in
+                self.addAnnotationsToMap($0)
+        }
+        
         _viewModel.selected
             .map { Optional.Some($0) }
             .combinePrevious(.None)

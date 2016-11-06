@@ -18,7 +18,7 @@ public final class DonationRecordCell: UICollectionViewCell {
         }
     }
     
-    public func bindViewModel(viewModel: DonationDetailCellViewModel) {
+    public func bindViewModel(viewModel: DonationRecordViewModel) {
         _donationDetailsView.bindViewModel(viewModel.donationDetailsViewModel)
     }
     

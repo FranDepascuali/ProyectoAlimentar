@@ -8,11 +8,14 @@
 
 import UIKit
 
-public final class DonationDetailCellViewModel {
+public final class DonationDetailViewModel {
     
     public let donationDetailsViewModel: DonationDetailsViewModel
     
+    public let donation: Donation
+    
     public init(donation: Donation) {
+        self.donation = donation
         donationDetailsViewModel = DonationDetailsViewModel(donation: donation)
     }
     
@@ -20,4 +23,5 @@ public final class DonationDetailCellViewModel {
     public var fetchDonationTitle: String {
         return "Buscar donación"
     }
+    
 }

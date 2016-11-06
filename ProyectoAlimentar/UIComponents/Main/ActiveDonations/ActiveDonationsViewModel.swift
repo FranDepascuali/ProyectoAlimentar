@@ -6,14 +6,24 @@
 //  Copyright © 2016 Alimentar. All rights reserved.
 //
 
-import UIKit
+import ReactiveCocoa
 
 public final class ActiveDonationsViewModel {
 
-    // TODO: This should be private and a mutable property
-    public let _donations: [Donation]
-
-    public init(donations: [Donation]) {
-        _donations = donations
+    private let _donationRepository: DonationRepositoryType
+    
+    private let _activeDonations: MutableProperty<[ActiveDonationViewModel]>
+    
+    public init(donationRepository: DonationRepositoryType) {
+        _donationRepository = donationRepository
+        _activeDonations = MutableProperty([])
+    }
+    
+    public func count() -> Int {
+        return _activeDonations.value.count
+    }
+    
+    public subscript(index: Int) -> ActiveDonationViewModel {
+        return _activeDonations.value[index]
     }
 }

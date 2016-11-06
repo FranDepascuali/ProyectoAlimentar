@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 public final class DonationListViewController: UIViewController {
 
@@ -14,7 +15,7 @@ public final class DonationListViewController: UIViewController {
 
     private let _viewModel: DonationListViewModel
 
-    init(viewModel: DonationListViewModel) {
+    public init(viewModel: DonationListViewModel) {
         _viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -42,10 +43,7 @@ extension DonationListViewController: CarouselControllerDelegate {
     public func carousel(carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell {
         let cell = carousel.collectionView?.dequeCellWithIdentifier(.DonationDetailCell, forIndexPath: index) as! DonationDetailCell
 
-
-        let fakeDonation = Donation(id: 0)
-        let viewModel = DonationDetailCellViewModel(donation: fakeDonation)
-        cell.bindViewModel(viewModel)
+        cell.bindViewModel(_viewModel[index])
         
         return cell
     }
@@ -78,6 +76,14 @@ private extension DonationListViewController {
     }
 
     private func bindViewModel() {
+        
+        _viewModel.donations
+            .producer
+            .observeOn(UIScheduler())
+            .startWithNext { _ in
+                self._donationsCarouselController.collectionView?.reloadData()
+        }
+        
         _viewModel.selected
             .observeNext { [unowned self] in self._donationsCarouselController.setSelected($0) }
     }

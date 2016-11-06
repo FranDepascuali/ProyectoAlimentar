@@ -14,14 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     private var _mainCoordinator: MainCoordinator!
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
-UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         _mainCoordinator = MainCoordinator(window: window!, userRepository: UserRepository())
         _mainCoordinator.start()
-
+        
         return true
     }
 
