@@ -31,13 +31,12 @@ public final class MainCoordinator {
                 self._window.rootViewController = self.createMainViewController()
         }
     }
-
 }
 
 private extension MainCoordinator {
 
     private func createMainViewController() -> MainViewController {
-        return MainViewController(viewModel: MainViewModel())
+        return MainViewController(viewModel: MainViewModel(donationsRepository: FakedDonationsRepository()))
     }
 
     private func createLoginViewController() -> LoginViewController {

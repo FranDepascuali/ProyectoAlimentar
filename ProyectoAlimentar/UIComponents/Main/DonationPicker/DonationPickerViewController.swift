@@ -43,7 +43,7 @@ public final class DonationPickerViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         _mainView.communityKitchenButton.setAction { [unowned self] _ in
             self._mainView.selectedMapType = .CommunityKitchen
         }
@@ -53,6 +53,18 @@ public final class DonationPickerViewController: UIViewController {
         }
 
         _mainView.selectedMapType = .Donor
+        
+        bindViewModel(_viewModel)
     }
+    
+}
 
+private extension DonationPickerViewController {
+    
+    private func bindViewModel(viewModel: DonationPickerViewModel) {
+        viewModel
+            .fetchDonations()
+            .start()
+    }
+    
 }

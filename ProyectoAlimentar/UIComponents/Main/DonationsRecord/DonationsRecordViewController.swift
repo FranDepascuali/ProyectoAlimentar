@@ -47,16 +47,13 @@ public final class DonationsRecordViewController: UIViewController {
 extension DonationsRecordViewController: UICollectionViewDataSource {
     
     public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return _viewModel._donations.count
+        return _viewModel.count()
     }
     
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: DonationRecordCell = collectionView.dequeCellWithIdentifier(.DonationRecordCell, forIndexPath: indexPath)
         
-        
-        let fakeDonation = Donation(id: 0)
-        let viewModel = DonationDetailCellViewModel(donation: fakeDonation)
-        cell.bindViewModel(viewModel)
+        cell.bindViewModel(_viewModel[indexPath.row])
         
         return cell
     }

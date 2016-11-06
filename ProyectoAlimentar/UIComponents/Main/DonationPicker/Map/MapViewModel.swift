@@ -16,13 +16,13 @@ import Result
 
 public final class MapViewModel {
 
-    public let annotations: [MapViewAnnotation]
+    public let annotations: AnyProperty<[MapViewAnnotation]>
 
     private let _notifySelection: MapViewAnnotation -> ()
 
     public let selected: Signal<MapViewAnnotation, NoError>
 
-    public init(annotations: [MapViewAnnotation],
+    public init(annotations: AnyProperty<[MapViewAnnotation]>,
                 externalSelection: Signal<MapViewAnnotation, NoError>,
                 notifySelection: MapViewAnnotation -> ()) {
 

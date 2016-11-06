@@ -51,7 +51,7 @@ public extension CarouselController {
     }
 
     override public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemCount + 2
+        return itemCount > 0 ? itemCount + 2 : 0
     }
 
     override public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

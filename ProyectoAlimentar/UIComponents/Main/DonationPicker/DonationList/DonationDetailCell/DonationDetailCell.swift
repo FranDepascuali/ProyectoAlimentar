@@ -33,7 +33,7 @@ public final class DonationDetailCell: UICollectionViewCell {
         }
     }
     
-    public func bindViewModel(viewModel: DonationDetailCellViewModel) {
+    public func bindViewModel(viewModel: DonationDetailViewModel) {
         fetchDonationButton.setTitle(viewModel.fetchDonationTitle, forState: .Normal)
         _donationDetailsView.bindViewModel(viewModel.donationDetailsViewModel)
     }

@@ -72,31 +72,14 @@ private extension MainViewController {
     }
 
     private func getActiveDonationsViewController() -> ActiveDonationsViewController {
-        let annotations = [BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5, BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5]
-
-        let fakedDonations = annotations.enumerate().map { Selection(donation: Donation(id: $0), annotation: $1 )}
-
-        let viewModel = ActiveDonationsViewModel(donations: fakedDonations.map { $0._donation })
-        return ActiveDonationsViewController(viewModel: viewModel)
+        return ActiveDonationsViewController(viewModel: _viewModel.createActiveDonationsViewModel())
     }
 
     private func getDonationPickerViewController() -> DonationPickerViewController {
-        let annotations = [BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5]
-
-        let fakedDonations = annotations.enumerate().map { Selection(donation: Donation(id: $0), annotation: $1 )}
-
-        let viewModel = DonationPickerViewModel(selections: fakedDonations)
-
-        return DonationPickerViewController(viewModel: viewModel)
+        return DonationPickerViewController(viewModel: _viewModel.createDonationPickerViewModel())
     }
 
     private func getDonationsRecordViewController() -> DonationsRecordViewController {
-        let annotations = [BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5, BuenosAires, BuenosAires2, BuenosAires3, BuenosAires4, BuenosAires5]
-        
-        let fakedDonations = annotations.enumerate().map { Selection(donation: Donation(id: $0), annotation: $1 )}
-        
-        let viewModel = DonationsRecordsViewModel(donations: fakedDonations.map { $0._donation })
-        
-        return DonationsRecordViewController(viewModel: viewModel)
+        return DonationsRecordViewController(viewModel: _viewModel.createDonationsRecordViewModel())
     }
 }

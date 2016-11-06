@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct DonationRecordCellViewModel {
+public struct DonationRecordViewModel {
     
     public let donationDetailsViewModel: DonationDetailsViewModel
     

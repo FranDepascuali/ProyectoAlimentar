@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class ActiveDonationCellViewModel {
+public final class ActiveDonationViewModel {
     
     public let donationDetailsViewModel: DonationDetailsViewModel
     
