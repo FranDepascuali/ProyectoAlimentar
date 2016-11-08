@@ -38,5 +38,24 @@
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Alimentar necesita tu ubicación para mostrar donaciones cercanas.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb863927230374800</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>863927230374800</string>
+	<key>FacebookDisplayName</key>
+	<string>proyecto-alimentar</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 </dict>
 </plist>

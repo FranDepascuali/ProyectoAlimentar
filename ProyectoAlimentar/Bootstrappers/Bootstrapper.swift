@@ -6,10 +6,10 @@
 //  Copyright © 2016 Alimentar. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public protocol Bootstrapper {
 
-    func bootstrap()
+    func bootstrap(application: UIApplication, launchOptions: [NSObject : AnyObject]?)
 
 }

@@ -7,7 +7,20 @@
 //
 
 import Foundation
+import ReactiveCocoa
 
 public final class LoginViewModel {
 
+    private let _userRepository: FacebookUserRepository
+    
+    public init(userRepository: FacebookUserRepository) {
+        _userRepository = userRepository
+    }
+    
+    public func login() -> SignalProducer<(), FacebookLoginError> {
+        return
+            _userRepository
+                .login()
+                .observeOn(UIScheduler())
+    }
 }

@@ -7,8 +7,9 @@
 //
 
 import UIKit
-
-import UIKit
+import FacebookLogin
+import FacebookCore
+import Core
 
 public final class LoginViewController: UIViewController {
 
@@ -27,6 +28,8 @@ public final class LoginViewController: UIViewController {
 
     override public func loadView() {
         view = _loginView
+        
+        loadFacebookButton()
     }
 
     override public func viewDidLoad() {
@@ -43,4 +46,18 @@ private extension LoginViewController {
 
     }
 
+    private func loadFacebookButton() {
+        let loginButton = LoginButton(readPermissions: [ .PublicProfile ])
+        loginButton.loadInto(_loginView.facebookButtonContainerView)
+        loginButton.userInteractionEnabled = false
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(loginButtonClicked))
+        _loginView.facebookButtonContainerView.addGestureRecognizer(recognizer)
+    }
+    
+    @objc private func loginButtonClicked(recognizer: UITapGestureRecognizer) {
+        _viewModel
+            .login()
+            .start()
+    }
 }

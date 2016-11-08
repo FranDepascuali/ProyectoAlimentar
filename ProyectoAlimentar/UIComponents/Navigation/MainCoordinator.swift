@@ -12,23 +12,21 @@ import ReactiveCocoa
 public final class MainCoordinator {
 
     private let _window: UIWindow
-    private let _userRepository: UserRepositoryType
+    private let _userRepository: FacebookUserRepository
 
-    public init(window: UIWindow, userRepository: UserRepositoryType) {
+    public init(window: UIWindow, userRepository: FacebookUserRepository) {
         _window = window
         _userRepository = userRepository
     }
 
     public func start() {
-        _window.rootViewController = getRootViewController()
         _window.makeKeyAndVisible()
-
-        _userRepository.currentUser
-            .signal
-            .ignoreNil()
+        
+        _userRepository.isLoggedIn
+            .producer
             .observeOn(UIScheduler())
-            .observeNext { [unowned self] _ in
-                self._window.rootViewController = self.createMainViewController()
+            .startWithNext { [unowned self] in
+                self._window.rootViewController = self.getRootViewController($0)
         }
     }
 }
@@ -40,16 +38,15 @@ private extension MainCoordinator {
     }
 
     private func createLoginViewController() -> LoginViewController {
-        return LoginViewController(viewModel: LoginViewModel())
+        return LoginViewController(viewModel: LoginViewModel(userRepository: _userRepository))
     }
 
-    private func getRootViewController() -> UIViewController {
-        return createMainViewController()
-//        if let _ = _userRepository.currentUser.value {
-//            return createMainViewController()
-//        } else {
-//            return createLoginViewController()
-//        }
+    private func getRootViewController(loggedIn: Bool) -> UIViewController {
+        if loggedIn {
+            return createMainViewController()
+        } else {
+            return createLoginViewController()
+        }
     }
 
 }
