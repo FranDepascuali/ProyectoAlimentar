@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        _mainCoordinator = MainCoordinator(window: window!, userRepository: UserRepository())
+        FacebookBootstrapper.sharedInstance.bootstrap(application, launchOptions: launchOptions)
+        
+        _mainCoordinator = MainCoordinator(window: window!, userRepository: (loginProvider: FacebookUserRepository()))
         _mainCoordinator.start()
         
         return true
@@ -40,7 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FacebookBootstrapper.sharedInstance.openURL(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+//    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+//        return FacebookBootstrapper(application: app, didFinishLaunchingWithOptions: options).openURL(url)
+//    }
+//    
     func applicationDidBecomeActive(application: UIApplication) {
+        FacebookBootstrapper.sharedInstance.applicationDidBecomeActive(application)
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

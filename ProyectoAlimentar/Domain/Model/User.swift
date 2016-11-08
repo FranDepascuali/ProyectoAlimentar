@@ -10,4 +10,9 @@ import Foundation
 
 public struct User {
 
+    public let email: String
+    
+    public let userName: String
+    
+    public let name: String
 }

@@ -8,19 +8,13 @@
 
 import Foundation
 import ReactiveCocoa
+import enum Result.NoError
 
 public protocol UserRepositoryType {
 
-    var currentUser: AnyProperty<User?> { get }
+    // TODO: This should not be commented. It isn't necessary now to know the user
+//    var currentUser: AnyProperty<User?> { get }
 
+    var isLoggedIn: AnyProperty<Bool> { get }
 }
 
-public class UserRepository: UserRepositoryType {
-
-    private let _currentUser: MutableProperty<User?> = MutableProperty(nil)
-
-    // TODO: Change this
-    public var currentUser: AnyProperty<User?> {
-        return AnyProperty(_currentUser)
-    }
-}

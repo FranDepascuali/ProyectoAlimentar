@@ -40,10 +40,6 @@
 		F841857A1D7A163F0000AEB5 /* DonationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185791D7A163F0000AEB5 /* DonationPickerView.swift */; };
 		F841857C1D7A16490000AEB5 /* DonationPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F841857B1D7A16490000AEB5 /* DonationPickerView.xib */; };
 		F841857E1D7A16580000AEB5 /* DonationPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841857D1D7A16580000AEB5 /* DonationPickerViewModel.swift */; };
-		F84185851D7A175B0000AEB5 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84185811D7A175B0000AEB5 /* Core.framework */; };
-		F84185861D7A175B0000AEB5 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84185821D7A175B0000AEB5 /* ReactiveCocoa.framework */; };
-		F84185871D7A175B0000AEB5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84185831D7A175B0000AEB5 /* Result.framework */; };
-		F84185881D7A175B0000AEB5 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84185841D7A175B0000AEB5 /* MBProgressHUD.framework */; };
 		F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841858D1D7A20EB0000AEB5 /* ColorPalette.swift */; };
 		F84185921D7A27610000AEB5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185911D7A27610000AEB5 /* UIView.swift */; };
 		F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */; };
@@ -63,7 +59,6 @@
 		F8681CE51D8E56B90092F44E /* MapViewAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE41D8E56B90092F44E /* MapViewAnnotation.swift */; };
 		F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE71D8E5A920092F44E /* DonationListViewController.swift */; };
 		F893CB041DCAB3210042E2A9 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893CB031DCAB3210042E2A9 /* TitleView.swift */; };
-		F893CB081DCAB4100042E2A9 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F893CB071DCAB4100042E2A9 /* Cartography.framework */; };
 		F893CB0A1DCAC1CE0042E2A9 /* ProgrammaticViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893CB091DCAC1CE0042E2A9 /* ProgrammaticViewType.swift */; };
 		F8DF77D21DB9753400B5C37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D11DB9753300B5C37D /* LoginViewController.swift */; };
 		F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D31DB9753A00B5C37D /* LoginView.swift */; };
@@ -75,6 +70,9 @@
 		F8DF77E11DB9874500B5C37D /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DF77E01DB9874500B5C37D /* MainView.xib */; };
 		F8EDEC351DCFD19600607E17 /* DonationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC341DCFD19600607E17 /* DonationsRepository.swift */; };
 		F8EDEC371DCFE7E700607E17 /* DonationSelectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC361DCFE7E700607E17 /* DonationSelectionService.swift */; };
+		F8EDEC3D1DD1657100607E17 /* LoginManagerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC3C1DD1657100607E17 /* LoginManagerAdapter.swift */; };
+		F8EDEC3F1DD16B1C00607E17 /* FacebookUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC3E1DD16B1C00607E17 /* FacebookUserRepository.swift */; };
+		F8EDEC411DD17EC600607E17 /* FacebokBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC401DD17EC600607E17 /* FacebokBootstrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,10 +111,6 @@
 		F84185791D7A163F0000AEB5 /* DonationPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationPickerView.swift; sourceTree = "<group>"; };
 		F841857B1D7A16490000AEB5 /* DonationPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonationPickerView.xib; sourceTree = "<group>"; };
 		F841857D1D7A16580000AEB5 /* DonationPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationPickerViewModel.swift; sourceTree = "<group>"; };
-		F84185811D7A175B0000AEB5 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = ../Carthage/Build/iOS/Core.framework; sourceTree = "<group>"; };
-		F84185821D7A175B0000AEB5 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ../Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		F84185831D7A175B0000AEB5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		F84185841D7A175B0000AEB5 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = ../Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		F841858D1D7A20EB0000AEB5 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		F84185911D7A27610000AEB5 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F84185B71D7E3E5E0000AEB5 /* CarouselController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselController.swift; sourceTree = "<group>"; };
@@ -136,7 +130,6 @@
 		F8681CE41D8E56B90092F44E /* MapViewAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewAnnotation.swift; sourceTree = "<group>"; };
 		F8681CE71D8E5A920092F44E /* DonationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListViewController.swift; sourceTree = "<group>"; };
 		F893CB031DCAB3210042E2A9 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
-		F893CB071DCAB4100042E2A9 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = SOURCE_ROOT; };
 		F893CB091DCAC1CE0042E2A9 /* ProgrammaticViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammaticViewType.swift; sourceTree = "<group>"; };
 		F8DF77D11DB9753300B5C37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8DF77D31DB9753A00B5C37D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -148,6 +141,9 @@
 		F8DF77E01DB9874500B5C37D /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		F8EDEC341DCFD19600607E17 /* DonationsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationsRepository.swift; sourceTree = "<group>"; };
 		F8EDEC361DCFE7E700607E17 /* DonationSelectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationSelectionService.swift; sourceTree = "<group>"; };
+		F8EDEC3C1DD1657100607E17 /* LoginManagerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManagerAdapter.swift; sourceTree = "<group>"; };
+		F8EDEC3E1DD16B1C00607E17 /* FacebookUserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookUserRepository.swift; sourceTree = "<group>"; };
+		F8EDEC401DD17EC600607E17 /* FacebokBootstrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebokBootstrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,11 +151,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F893CB081DCAB4100042E2A9 /* Cartography.framework in Frameworks */,
-				F84185851D7A175B0000AEB5 /* Core.framework in Frameworks */,
-				F84185861D7A175B0000AEB5 /* ReactiveCocoa.framework in Frameworks */,
-				F84185871D7A175B0000AEB5 /* Result.framework in Frameworks */,
-				F84185881D7A175B0000AEB5 /* MBProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				F8024C231DC43BB500407D92 /* UserRepository.swift */,
+				F8EDEC3E1DD16B1C00607E17 /* FacebookUserRepository.swift */,
 				F8EDEC341DCFD19600607E17 /* DonationsRepository.swift */,
+				F8EDEC3C1DD1657100607E17 /* LoginManagerAdapter.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -191,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				F8024C2A1DC43D5500407D92 /* Bootstrapper.swift */,
+				F8EDEC401DD17EC600607E17 /* FacebokBootstrapper.swift */,
 			);
 			path = Bootstrappers;
 			sourceTree = "<group>";
@@ -257,7 +251,6 @@
 		F841854E1D7A10CE0000AEB5 = {
 			isa = PBXGroup;
 			children = (
-				F84185891D7A176B0000AEB5 /* Frameworks */,
 				F84185581D7A10CE0000AEB5 /* Products */,
 				F84185591D7A10CE0000AEB5 /* ProyectoAlimentar */,
 				F84185BE1D7E43850000AEB5 /* Default-568h@2x.png */,
@@ -325,18 +318,6 @@
 				F841857D1D7A16580000AEB5 /* DonationPickerViewModel.swift */,
 			);
 			path = DonationPicker;
-			sourceTree = "<group>";
-		};
-		F84185891D7A176B0000AEB5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F893CB071DCAB4100042E2A9 /* Cartography.framework */,
-				F84185811D7A175B0000AEB5 /* Core.framework */,
-				F84185821D7A175B0000AEB5 /* ReactiveCocoa.framework */,
-				F84185831D7A175B0000AEB5 /* Result.framework */,
-				F84185841D7A175B0000AEB5 /* MBProgressHUD.framework */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		F84185901D7A27570000AEB5 /* Extensions */ = {
@@ -573,6 +554,11 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -588,6 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8EDEC411DD17EC600607E17 /* FacebokBootstrapper.swift in Sources */,
 				F805D4EE1DCD486A00985C32 /* ActiveDonationViewModel.swift in Sources */,
 				F841857E1D7A16580000AEB5 /* DonationPickerViewModel.swift in Sources */,
 				F8024C371DC44CA900407D92 /* DonationDetailsViewModel.swift in Sources */,
@@ -608,6 +595,7 @@
 				F893CB041DCAB3210042E2A9 /* TitleView.swift in Sources */,
 				F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */,
 				F8024C241DC43BB500407D92 /* UserRepository.swift in Sources */,
+				F8EDEC3F1DD16B1C00607E17 /* FacebookUserRepository.swift in Sources */,
 				F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */,
 				F8680C051D936C6C0090207A /* Resource.swift in Sources */,
 				F84185751D7A15CD0000AEB5 /* MapView.swift in Sources */,
@@ -629,6 +617,7 @@
 				F8024C261DC43C7000407D92 /* User.swift in Sources */,
 				F8DF77DD1DB9872E00B5C37D /* MainView.swift in Sources */,
 				F8681CDF1D8E20030092F44E /* LocationService.swift in Sources */,
+				F8EDEC3D1DD1657100607E17 /* LoginManagerAdapter.swift in Sources */,
 				F8024C1E1DBF09D400407D92 /* UITabBarExtension.swift in Sources */,
 				F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */,
 				F8681CE31D8E27DA0092F44E /* Donation.swift in Sources */,
