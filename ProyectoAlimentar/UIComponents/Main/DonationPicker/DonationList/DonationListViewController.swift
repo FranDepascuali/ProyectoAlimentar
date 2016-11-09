@@ -14,10 +14,13 @@ public final class DonationListViewController: UIViewController {
     private var _donationsCarouselController: CarouselController!
 
     private let _viewModel: DonationListViewModel
+    
+    private let _onConfirmDonation: Donation -> ()
 
-    public init(viewModel: DonationListViewModel) {
+    public init(viewModel: DonationListViewModel, onConfirmDonation: Donation -> ()) {
         _viewModel = viewModel
-
+        _onConfirmDonation = onConfirmDonation
+        
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -37,13 +40,12 @@ extension DonationListViewController: CarouselControllerDelegate {
 
     public func carousel(carousel: CarouselController, didSelectItemAtIndex index: Int) {
         _viewModel.selectDonationAt(index)
-
     }
 
     public func carousel(carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell {
         let cell = carousel.collectionView?.dequeCellWithIdentifier(.DonationDetailCell, forIndexPath: index) as! DonationDetailCell
 
-        cell.bindViewModel(_viewModel[index])
+        cell.bindViewModel(_viewModel[index], onConfirmDonation: _onConfirmDonation)
         
         return cell
     }

@@ -12,6 +12,7 @@ public final class DonationDetailViewModel {
     
     public let donationDetailsViewModel: DonationDetailsViewModel
     
+    // TODO: This should not be stored
     public let donation: Donation
     
     public init(donation: Donation) {
@@ -23,5 +24,5 @@ public final class DonationDetailViewModel {
     public var fetchDonationTitle: String {
         return "Buscar donación"
     }
-    
+
 }

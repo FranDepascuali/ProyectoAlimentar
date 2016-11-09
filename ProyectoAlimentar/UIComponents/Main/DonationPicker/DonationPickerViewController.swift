@@ -16,16 +16,15 @@ public final class DonationPickerViewController: UIViewController {
 
     private let _viewModel: DonationPickerViewModel
 
-    private var loaded = false
-
     private let _mapViewController: MapViewController
 
-    private let _donationListViewController: DonationListViewController
+    private lazy var _donationListViewController: DonationListViewController = {
+        return DonationListViewController(viewModel: self._viewModel.donationListViewModel(), onConfirmDonation: self.presentConfirmDonationController)
+    }()
 
     init(viewModel: DonationPickerViewModel) {
         _viewModel = viewModel
         _mapViewController = MapViewController(viewModel: _viewModel.mapViewModel())
-        _donationListViewController = DonationListViewController(viewModel: _viewModel.donationListViewModel())
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -67,4 +66,24 @@ private extension DonationPickerViewController {
             .start()
     }
     
+    private func presentConfirmDonationController(donation: Donation) {
+        let confirmDonationController = ConfirmDonationViewController(
+            viewModel: self._viewModel.createConfirmDonationViewModel(),
+            onAccept: { [unowned self] _ in self.donationCancelled() },
+            onCancel: { [unowned self] _ in self.donationAccepted() })
+        
+        _mainView.addBlackOverlay()
+        loadViewController(confirmDonationController, into: _mainView.confirmDonationContainerView)
+        _mainView.confirmDonationContainerView.hidden = false
+    }
+    
+    private func donationCancelled() {
+        _mainView.confirmDonationContainerView.hidden = true
+        _mainView.removeBlackOverlay()
+    }
+    
+    private func donationAccepted() {
+        _mainView.confirmDonationContainerView.hidden = true
+       _mainView.removeBlackOverlay() 
+    }
 }
