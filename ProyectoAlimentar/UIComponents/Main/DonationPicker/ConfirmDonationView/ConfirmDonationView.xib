@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ConfirmDonationView" customModule="ProyectoAlimentar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="267"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="5DP-Rw-U8z">
+                    <rect key="frame" x="22" y="22" width="236" height="223"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2dN-vg-1uM">
+                            <rect key="frame" x="0.0" y="0.0" width="236" height="132.5"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBW-NS-Zep">
+                                    <rect key="frame" x="79.5" y="0.0" width="77" height="86"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="77" id="NZH-Dk-7AS"/>
+                                        <constraint firstAttribute="height" constant="86" id="kNd-je-Fgj"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAd-36-7iq">
+                                    <rect key="frame" x="97" y="96" width="42" height="36.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCE-s3-XuV">
+                            <rect key="frame" x="0.0" y="141.5" width="236" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ACM-oq-aTR">
+                            <rect key="frame" x="0.0" y="171" width="236" height="52"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydw-Fu-ITs">
+                                    <rect key="frame" x="0.0" y="0.0" width="106" height="52"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QV-wY-YUt">
+                                    <rect key="frame" x="130" y="0.0" width="106" height="52"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="a8Y-Pr-aA2"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5DP-Rw-U8z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="22" id="ShH-OC-97L"/>
+                <constraint firstAttribute="trailing" secondItem="5DP-Rw-U8z" secondAttribute="trailing" constant="22" id="kC8-bo-T1Q"/>
+                <constraint firstItem="5DP-Rw-U8z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="mLl-bh-UI0"/>
+                <constraint firstAttribute="bottom" secondItem="5DP-Rw-U8z" secondAttribute="bottom" constant="22" id="n9t-QT-xtt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="acceptButton" destination="0QV-wY-YUt" id="AvX-Tq-5SR"/>
+                <outlet property="bigChronometerImageView" destination="lBW-NS-Zep" id="GGd-VS-2e2"/>
+                <outlet property="cancelButton" destination="Ydw-Fu-ITs" id="LFY-Me-IHe"/>
+                <outlet property="detailedTimeLabel" destination="mCE-s3-XuV" id="2WZ-GQ-9bF"/>
+                <outlet property="timeLabel" destination="AAd-36-7iq" id="GMQ-9X-5ko"/>
+            </connections>
+            <point key="canvasLocation" x="127" y="15.5"/>
+        </view>
+    </objects>
+</document>

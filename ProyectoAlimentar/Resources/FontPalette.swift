@@ -11,6 +11,7 @@ import UIKit
 
 public enum RobotoFont: String {
     case Medium = "Roboto-Medium"
+    case Bold = "Roboto-Bold"
 }
 
 public extension UILabel {

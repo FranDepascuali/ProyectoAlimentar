@@ -33,13 +33,21 @@ public final class DonationDetailCell: UICollectionViewCell {
         }
     }
     
-    public func bindViewModel(viewModel: DonationDetailViewModel) {
+    public func bindViewModel(viewModel: DonationDetailViewModel, onConfirmDonation: Donation -> ()) {
         fetchDonationButton.setTitle(viewModel.fetchDonationTitle, forState: .Normal)
         _donationDetailsView.bindViewModel(viewModel.donationDetailsViewModel)
+        fetchDonationButton.setAction { _ in onConfirmDonation(viewModel.donation) }
     }
     
     override public func awakeFromNib() {
         super.awakeFromNib()
         _donationDetailsView.loadInto(donationDetailsContainerView)
     }
+    
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        fetchDonationButton.setAction { _ in }
+    }
+
 }

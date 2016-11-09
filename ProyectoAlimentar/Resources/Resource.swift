@@ -22,6 +22,7 @@ public enum ImageAssetIdentifier: String {
     case TimeOpenedIcon = "img_donation_time"
     case LocationIcon = "img_donation_location"
     case Chronometer = "img_chronometer"
+    case BigChronometer = "big_img_chronometer"
 }
 
 public enum CellIdentifier: String {

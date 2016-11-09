@@ -15,6 +15,28 @@ public enum MapType {
 }
 
 public final class DonationPickerView: UIView, NibLoadable {
+    
+    private lazy var blackLayer: UIView = {
+        let blackLayer = UIView(frame: self.frame)
+        blackLayer.backgroundColor = UIColor(hex: "00000085")
+        return blackLayer
+    }()
+    
+    public func removeBlackOverlay() {
+        blackLayer.removeFromSuperview()
+    }
+    
+    public func addBlackOverlay() {
+        addSubview(blackLayer)
+        // We want confirm donation view to be visible
+        bringSubviewToFront(confirmDonationContainerView)
+    }
+    
+    @IBOutlet weak var confirmDonationContainerView: UIView! {
+        didSet {
+            confirmDonationContainerView.hidden = true
+        }
+    }
 
     @IBOutlet weak var donorsButtonBottomLine: UIView! {
         didSet {

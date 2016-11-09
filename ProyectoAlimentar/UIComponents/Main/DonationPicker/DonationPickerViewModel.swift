@@ -95,6 +95,10 @@ public class DonationPickerViewModel {
             })
             .map { _ in () }
     }
+    
+    public func createConfirmDonationViewModel() -> ConfirmDonationViewModel {
+        return ConfirmDonationViewModel()
+    }
 }
 
 private extension DonationPickerViewModel {

@@ -60,6 +60,11 @@
 		F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE71D8E5A920092F44E /* DonationListViewController.swift */; };
 		F893CB041DCAB3210042E2A9 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893CB031DCAB3210042E2A9 /* TitleView.swift */; };
 		F893CB0A1DCAC1CE0042E2A9 /* ProgrammaticViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893CB091DCAC1CE0042E2A9 /* ProgrammaticViewType.swift */; };
+		F8B639951DD2A42600ADF26E /* ConfirmDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639941DD2A42600ADF26E /* ConfirmDonationView.swift */; };
+		F8B639971DD2A44C00ADF26E /* ConfirmDonationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B639961DD2A44C00ADF26E /* ConfirmDonationView.xib */; };
+		F8B639991DD2A83B00ADF26E /* ConfirmDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639981DD2A83B00ADF26E /* ConfirmDonationViewController.swift */; };
+		F8B6399B1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B6399A1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift */; };
+		F8B6399D1DD2C31800ADF26E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8B6399C1DD2C10500ADF26E /* Roboto-Bold.ttf */; };
 		F8DF77D21DB9753400B5C37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D11DB9753300B5C37D /* LoginViewController.swift */; };
 		F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D31DB9753A00B5C37D /* LoginView.swift */; };
 		F8DF77D61DB9754800B5C37D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DF77D51DB9754800B5C37D /* LoginView.xib */; };
@@ -131,6 +136,11 @@
 		F8681CE71D8E5A920092F44E /* DonationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListViewController.swift; sourceTree = "<group>"; };
 		F893CB031DCAB3210042E2A9 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F893CB091DCAC1CE0042E2A9 /* ProgrammaticViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammaticViewType.swift; sourceTree = "<group>"; };
+		F8B639941DD2A42600ADF26E /* ConfirmDonationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDonationView.swift; sourceTree = "<group>"; };
+		F8B639961DD2A44C00ADF26E /* ConfirmDonationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmDonationView.xib; sourceTree = "<group>"; };
+		F8B639981DD2A83B00ADF26E /* ConfirmDonationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDonationViewController.swift; sourceTree = "<group>"; };
+		F8B6399A1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDonationViewModel.swift; sourceTree = "<group>"; };
+		F8B6399C1DD2C10500ADF26E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../../../Downloads/roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		F8DF77D11DB9753300B5C37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8DF77D31DB9753A00B5C37D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F8DF77D51DB9754800B5C37D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -309,6 +319,7 @@
 		F84185761D7A162D0000AEB5 /* DonationPicker */ = {
 			isa = PBXGroup;
 			children = (
+				F8B639931DD2A41D00ADF26E /* ConfirmDonationView */,
 				F8681CE61D8E5A840092F44E /* DonationList */,
 				F841856D1D7A14060000AEB5 /* Map */,
 				F8680BF81D932DFD0090207A /* Search */,
@@ -381,6 +392,7 @@
 		F8680BFF1D934F4F0090207A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F8B6399C1DD2C10500ADF26E /* Roboto-Bold.ttf */,
 				F8680BFD1D934F480090207A /* Roboto-Medium.ttf */,
 			);
 			path = Fonts;
@@ -428,6 +440,17 @@
 				F893CB031DCAB3210042E2A9 /* TitleView.swift */,
 			);
 			path = TitleView;
+			sourceTree = "<group>";
+		};
+		F8B639931DD2A41D00ADF26E /* ConfirmDonationView */ = {
+			isa = PBXGroup;
+			children = (
+				F8B639941DD2A42600ADF26E /* ConfirmDonationView.swift */,
+				F8B639961DD2A44C00ADF26E /* ConfirmDonationView.xib */,
+				F8B639981DD2A83B00ADF26E /* ConfirmDonationViewController.swift */,
+				F8B6399A1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift */,
+			);
+			path = ConfirmDonationView;
 			sourceTree = "<group>";
 		};
 		F8DF77CF1DB9751000B5C37D /* Authentication */ = {
@@ -526,7 +549,9 @@
 			files = (
 				F805D4EC1DCD42E500985C32 /* ActiveDonationCell.xib in Resources */,
 				F84185711D7A14400000AEB5 /* MapView.xib in Resources */,
+				F8B6399D1DD2C31800ADF26E /* Roboto-Bold.ttf in Resources */,
 				F841857C1D7A16490000AEB5 /* DonationPickerView.xib in Resources */,
+				F8B639971DD2A44C00ADF26E /* ConfirmDonationView.xib in Resources */,
 				F8680BFE1D934F480090207A /* Roboto-Medium.ttf in Resources */,
 				F8DF77D61DB9754800B5C37D /* LoginView.xib in Resources */,
 				F8DF77E11DB9874500B5C37D /* MainView.xib in Resources */,
@@ -597,8 +622,10 @@
 				F8024C241DC43BB500407D92 /* UserRepository.swift in Sources */,
 				F8EDEC3F1DD16B1C00607E17 /* FacebookUserRepository.swift in Sources */,
 				F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */,
+				F8B6399B1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift in Sources */,
 				F8680C051D936C6C0090207A /* Resource.swift in Sources */,
 				F84185751D7A15CD0000AEB5 /* MapView.swift in Sources */,
+				F8B639991DD2A83B00ADF26E /* ConfirmDonationViewController.swift in Sources */,
 				F8680C071D9486FC0090207A /* FakedLocation.swift in Sources */,
 				F8024C411DC4522500407D92 /* DonationsRecordViewModel.swift in Sources */,
 				F8680BFC1D93308C0090207A /* DonationListViewModel.swift in Sources */,
@@ -617,6 +644,7 @@
 				F8024C261DC43C7000407D92 /* User.swift in Sources */,
 				F8DF77DD1DB9872E00B5C37D /* MainView.swift in Sources */,
 				F8681CDF1D8E20030092F44E /* LocationService.swift in Sources */,
+				F8B639951DD2A42600ADF26E /* ConfirmDonationView.swift in Sources */,
 				F8EDEC3D1DD1657100607E17 /* LoginManagerAdapter.swift in Sources */,
 				F8024C1E1DBF09D400407D92 /* UITabBarExtension.swift in Sources */,
 				F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */,
