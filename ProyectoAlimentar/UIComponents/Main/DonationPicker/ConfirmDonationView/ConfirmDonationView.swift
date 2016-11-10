@@ -38,7 +38,6 @@ public final class ConfirmDonationView: UIView, NibLoadable {
             cancelButton.setTitleColor(ColorPalette.secondaryTextColor, forState: .Normal)
             cancelButton.titleLabel?.setFont(pointSize: 14)
             cancelButton.titleLabel?.addCharactersSpacing(0.5)
-            cancelButton.setTitle("Cancelar", forState: .Normal)
         }
     }
     
@@ -47,7 +46,17 @@ public final class ConfirmDonationView: UIView, NibLoadable {
             acceptButton.setTitleColor(ColorPalette.activatedColor, forState: .Normal)
             acceptButton.titleLabel?.setFont(pointSize: 14)
             acceptButton.titleLabel?.addCharactersSpacing(0.5)
+        }
+    }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        UIView.performWithoutAnimation {
+            cancelButton.setTitle("Cancelar", forState: .Normal)
             acceptButton.setTitle("Aceptar", forState: .Normal)
+            cancelButton.layoutIfNeeded()
+            acceptButton.layoutIfNeeded()
         }
     }
 }
