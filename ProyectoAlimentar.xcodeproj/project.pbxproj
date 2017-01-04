@@ -30,6 +30,10 @@
 		F805D4EA1DCD42DB00985C32 /* ActiveDonationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F805D4E91DCD42DB00985C32 /* ActiveDonationCell.swift */; };
 		F805D4EC1DCD42E500985C32 /* ActiveDonationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F805D4EB1DCD42E500985C32 /* ActiveDonationCell.xib */; };
 		F805D4EE1DCD486A00985C32 /* ActiveDonationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F805D4ED1DCD486A00985C32 /* ActiveDonationViewModel.swift */; };
+		F825942F1DE8D68B00B0C159 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F825942E1DE8D68B00B0C159 /* ProfileViewController.swift */; };
+		F82594311DE8D69600B0C159 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82594301DE8D69600B0C159 /* ProfileView.xib */; };
+		F82594331DE8D69F00B0C159 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82594321DE8D69F00B0C159 /* ProfileViewModel.swift */; };
+		F82594351DE8D6B000B0C159 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82594341DE8D6B000B0C159 /* ProfileView.swift */; };
 		F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */; };
 		F84185621D7A10CE0000AEB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84185611D7A10CE0000AEB5 /* Assets.xcassets */; };
 		F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841856E1D7A142C0000AEB5 /* MapViewController.swift */; };
@@ -49,7 +53,6 @@
 		F84185CD1D7E44B10000AEB5 /* DonationDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84185CC1D7E44B10000AEB5 /* DonationDetailCell.swift */; };
 		F8680BFA1D932E0C0090207A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680BF91D932E0C0090207A /* SearchViewController.swift */; };
 		F8680BFC1D93308C0090207A /* DonationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680BFB1D93308C0090207A /* DonationListViewModel.swift */; };
-		F8680BFE1D934F480090207A /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8680BFD1D934F480090207A /* Roboto-Medium.ttf */; };
 		F8680C011D934FF00090207A /* FontPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680C001D934FF00090207A /* FontPalette.swift */; };
 		F8680C031D9358800090207A /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680C021D9358800090207A /* UILabelExtension.swift */; };
 		F8680C051D936C6C0090207A /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8680C041D936C6C0090207A /* Resource.swift */; };
@@ -60,17 +63,20 @@
 		F8681CE81D8E5A920092F44E /* DonationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8681CE71D8E5A920092F44E /* DonationListViewController.swift */; };
 		F893CB041DCAB3210042E2A9 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893CB031DCAB3210042E2A9 /* TitleView.swift */; };
 		F893CB0A1DCAC1CE0042E2A9 /* ProgrammaticViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893CB091DCAC1CE0042E2A9 /* ProgrammaticViewType.swift */; };
+		F8AB6F221DECF08C00F4657B /* .git-keep in Resources */ = {isa = PBXBuildFile; fileRef = F8AB6F211DECF08C00F4657B /* .git-keep */; };
+		F8AB6F241DECF09B00F4657B /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F8AB6F231DECF09B00F4657B /* Debug.xcconfig */; };
+		F8AB6F261DECF23300F4657B /* CredentialsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB6F251DECF23300F4657B /* CredentialsManager.swift */; };
 		F8B639951DD2A42600ADF26E /* ConfirmDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639941DD2A42600ADF26E /* ConfirmDonationView.swift */; };
 		F8B639971DD2A44C00ADF26E /* ConfirmDonationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B639961DD2A44C00ADF26E /* ConfirmDonationView.xib */; };
 		F8B639991DD2A83B00ADF26E /* ConfirmDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639981DD2A83B00ADF26E /* ConfirmDonationViewController.swift */; };
 		F8B6399B1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B6399A1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift */; };
-		F8B6399D1DD2C31800ADF26E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8B6399C1DD2C10500ADF26E /* Roboto-Bold.ttf */; };
 		F8B639A41DD51D6600ADF26E /* ActiveDonationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639A31DD51D6600ADF26E /* ActiveDonationDetailView.swift */; };
 		F8B639A61DD5230200ADF26E /* ActiveDonationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639A51DD5230200ADF26E /* ActiveDonationDetailViewController.swift */; };
 		F8B639A81DD5230A00ADF26E /* ActiveDonationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639A71DD5230A00ADF26E /* ActiveDonationDetailViewModel.swift */; };
 		F8B639AA1DD5231300ADF26E /* ActiveDonationDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B639A91DD5231300ADF26E /* ActiveDonationDetailView.xib */; };
 		F8B639AF1DD52AC400ADF26E /* DonationDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639AE1DD52AC400ADF26E /* DonationDescriptionView.swift */; };
 		F8B639B11DD52AF000ADF26E /* DonationDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B639B01DD52AF000ADF26E /* DonationDescriptionView.xib */; };
+		F8B639B31DD7C53300ADF26E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639B21DD7C53300ADF26E /* NetworkManager.swift */; };
 		F8DF77D21DB9753400B5C37D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D11DB9753300B5C37D /* LoginViewController.swift */; };
 		F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77D31DB9753A00B5C37D /* LoginView.swift */; };
 		F8DF77D61DB9754800B5C37D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DF77D51DB9754800B5C37D /* LoginView.xib */; };
@@ -79,10 +85,13 @@
 		F8DF77DD1DB9872E00B5C37D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77DC1DB9872E00B5C37D /* MainView.swift */; };
 		F8DF77DF1DB9873800B5C37D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77DE1DB9873800B5C37D /* MainViewModel.swift */; };
 		F8DF77E11DB9874500B5C37D /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DF77E01DB9874500B5C37D /* MainView.xib */; };
+		F8E5645F1DE8DB0A0047FA73 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E5645E1DE8DB0A0047FA73 /* Deserializable.swift */; };
+		F8E564621DEBB6C70047FA73 /* User+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E564611DEBB6C70047FA73 /* User+Serializable.swift */; };
+		F8E564641DECE5890047FA73 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E564631DECE5890047FA73 /* KeychainService.swift */; };
+		F8EAB8811E1D775000A1E473 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8EAB87F1E1D775000A1E473 /* Roboto-Bold.ttf */; };
+		F8EAB8821E1D775000A1E473 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8EAB8801E1D775000A1E473 /* Roboto-Medium.ttf */; };
 		F8EDEC351DCFD19600607E17 /* DonationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC341DCFD19600607E17 /* DonationsRepository.swift */; };
 		F8EDEC371DCFE7E700607E17 /* DonationSelectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC361DCFE7E700607E17 /* DonationSelectionService.swift */; };
-		F8EDEC3D1DD1657100607E17 /* LoginManagerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC3C1DD1657100607E17 /* LoginManagerAdapter.swift */; };
-		F8EDEC3F1DD16B1C00607E17 /* FacebookUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC3E1DD16B1C00607E17 /* FacebookUserRepository.swift */; };
 		F8EDEC411DD17EC600607E17 /* FacebokBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EDEC401DD17EC600607E17 /* FacebokBootstrapper.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +119,10 @@
 		F805D4E91DCD42DB00985C32 /* ActiveDonationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationCell.swift; sourceTree = "<group>"; };
 		F805D4EB1DCD42E500985C32 /* ActiveDonationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveDonationCell.xib; sourceTree = "<group>"; };
 		F805D4ED1DCD486A00985C32 /* ActiveDonationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationViewModel.swift; sourceTree = "<group>"; };
+		F825942E1DE8D68B00B0C159 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F82594301DE8D69600B0C159 /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		F82594321DE8D69F00B0C159 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		F82594341DE8D6B000B0C159 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F84185571D7A10CE0000AEB5 /* ProyectoAlimentar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoAlimentar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F841855A1D7A10CE0000AEB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F84185611D7A10CE0000AEB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +144,6 @@
 		F84185CC1D7E44B10000AEB5 /* DonationDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDetailCell.swift; sourceTree = "<group>"; };
 		F8680BF91D932E0C0090207A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F8680BFB1D93308C0090207A /* DonationListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListViewModel.swift; sourceTree = "<group>"; };
-		F8680BFD1D934F480090207A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../../../Downloads/roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		F8680C001D934FF00090207A /* FontPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontPalette.swift; sourceTree = "<group>"; };
 		F8680C021D9358800090207A /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		F8680C041D936C6C0090207A /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -142,17 +154,20 @@
 		F8681CE71D8E5A920092F44E /* DonationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationListViewController.swift; sourceTree = "<group>"; };
 		F893CB031DCAB3210042E2A9 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		F893CB091DCAC1CE0042E2A9 /* ProgrammaticViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammaticViewType.swift; sourceTree = "<group>"; };
+		F8AB6F211DECF08C00F4657B /* .git-keep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".git-keep"; sourceTree = "<group>"; };
+		F8AB6F231DECF09B00F4657B /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		F8AB6F251DECF23300F4657B /* CredentialsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsManager.swift; sourceTree = "<group>"; };
 		F8B639941DD2A42600ADF26E /* ConfirmDonationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDonationView.swift; sourceTree = "<group>"; };
 		F8B639961DD2A44C00ADF26E /* ConfirmDonationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmDonationView.xib; sourceTree = "<group>"; };
 		F8B639981DD2A83B00ADF26E /* ConfirmDonationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDonationViewController.swift; sourceTree = "<group>"; };
 		F8B6399A1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDonationViewModel.swift; sourceTree = "<group>"; };
-		F8B6399C1DD2C10500ADF26E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../../../Downloads/roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		F8B639A31DD51D6600ADF26E /* ActiveDonationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationDetailView.swift; sourceTree = "<group>"; };
 		F8B639A51DD5230200ADF26E /* ActiveDonationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationDetailViewController.swift; sourceTree = "<group>"; };
 		F8B639A71DD5230A00ADF26E /* ActiveDonationDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDonationDetailViewModel.swift; sourceTree = "<group>"; };
 		F8B639A91DD5231300ADF26E /* ActiveDonationDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveDonationDetailView.xib; sourceTree = "<group>"; };
 		F8B639AE1DD52AC400ADF26E /* DonationDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationDescriptionView.swift; sourceTree = "<group>"; };
 		F8B639B01DD52AF000ADF26E /* DonationDescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DonationDescriptionView.xib; sourceTree = "<group>"; };
+		F8B639B21DD7C53300ADF26E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F8DF77D11DB9753300B5C37D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8DF77D31DB9753A00B5C37D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F8DF77D51DB9754800B5C37D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -161,10 +176,13 @@
 		F8DF77DC1DB9872E00B5C37D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F8DF77DE1DB9873800B5C37D /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F8DF77E01DB9874500B5C37D /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		F8E5645E1DE8DB0A0047FA73 /* Deserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
+		F8E564611DEBB6C70047FA73 /* User+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Serializable.swift"; sourceTree = "<group>"; };
+		F8E564631DECE5890047FA73 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		F8EAB87F1E1D775000A1E473 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		F8EAB8801E1D775000A1E473 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		F8EDEC341DCFD19600607E17 /* DonationsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationsRepository.swift; sourceTree = "<group>"; };
 		F8EDEC361DCFE7E700607E17 /* DonationSelectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationSelectionService.swift; sourceTree = "<group>"; };
-		F8EDEC3C1DD1657100607E17 /* LoginManagerAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManagerAdapter.swift; sourceTree = "<group>"; };
-		F8EDEC3E1DD16B1C00607E17 /* FacebookUserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookUserRepository.swift; sourceTree = "<group>"; };
 		F8EDEC401DD17EC600607E17 /* FacebokBootstrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebokBootstrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,8 +200,8 @@
 		F8024C141DBF005200407D92 /* ActiveDonations */ = {
 			isa = PBXGroup;
 			children = (
-				F8B639A21DD51D5B00ADF26E /* ActiveDonationDetail */,
 				F805D4E81DCD42D400985C32 /* ActiveDonationCell */,
+				F8B639A21DD51D5B00ADF26E /* ActiveDonationDetail */,
 				F8024C171DBF006800407D92 /* ActiveDonationsView.swift */,
 				F8024C191DBF007800407D92 /* ActiveDonationsView.xib */,
 				F8024C151DBF006100407D92 /* ActiveDonationsViewController.swift */,
@@ -195,10 +213,10 @@
 		F8024C221DC43BA500407D92 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				F8024C231DC43BB500407D92 /* UserRepository.swift */,
-				F8EDEC3E1DD16B1C00607E17 /* FacebookUserRepository.swift */,
+				F8E564601DEBB6BB0047FA73 /* Decoders */,
 				F8EDEC341DCFD19600607E17 /* DonationsRepository.swift */,
-				F8EDEC3C1DD1657100607E17 /* LoginManagerAdapter.swift */,
+				F8B639B21DD7C53300ADF26E /* NetworkManager.swift */,
+				F8024C231DC43BB500407D92 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -272,6 +290,17 @@
 			path = ActiveDonationCell;
 			sourceTree = "<group>";
 		};
+		F825942D1DE8D67F00B0C159 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F82594341DE8D6B000B0C159 /* ProfileView.swift */,
+				F82594301DE8D69600B0C159 /* ProfileView.xib */,
+				F825942E1DE8D68B00B0C159 /* ProfileViewController.swift */,
+				F82594321DE8D69F00B0C159 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		F841854E1D7A10CE0000AEB5 = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				F8024C271DC43D2F00407D92 /* Bootstrappers */,
+				F8AB6F201DECF08C00F4657B /* Configurations */,
 				F8681CE01D8E27A30092F44E /* Domain */,
 				F84185901D7A27570000AEB5 /* Extensions */,
 				F8024C221DC43BA500407D92 /* Repositories */,
@@ -309,7 +339,7 @@
 		F841856C1D7A12CA0000AEB5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F8680BFF1D934F4F0090207A /* Fonts */,
+				F8EAB87E1E1D775000A1E473 /* Fonts */,
 				F84185611D7A10CE0000AEB5 /* Assets.xcassets */,
 				F841858D1D7A20EB0000AEB5 /* ColorPalette.swift */,
 				F8680C001D934FF00090207A /* FontPalette.swift */,
@@ -403,20 +433,13 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		F8680BFF1D934F4F0090207A /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F8B6399C1DD2C10500ADF26E /* Roboto-Bold.ttf */,
-				F8680BFD1D934F480090207A /* Roboto-Medium.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		F8681CDD1D8E1FF50092F44E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F8681CDE1D8E20030092F44E /* LocationService.swift */,
+				F8AB6F251DECF23300F4657B /* CredentialsManager.swift */,
 				F8EDEC361DCFE7E700607E17 /* DonationSelectionService.swift */,
+				F8E564631DECE5890047FA73 /* KeychainService.swift */,
+				F8681CDE1D8E20030092F44E /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -456,6 +479,15 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		F8AB6F201DECF08C00F4657B /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				F8AB6F211DECF08C00F4657B /* .git-keep */,
+				F8AB6F231DECF09B00F4657B /* Debug.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		F8B639931DD2A41D00ADF26E /* ConfirmDonationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,12 +503,11 @@
 			isa = PBXGroup;
 			children = (
 				F8B639A31DD51D6600ADF26E /* ActiveDonationDetailView.swift */,
+				F8B639A91DD5231300ADF26E /* ActiveDonationDetailView.xib */,
 				F8B639A51DD5230200ADF26E /* ActiveDonationDetailViewController.swift */,
 				F8B639A71DD5230A00ADF26E /* ActiveDonationDetailViewModel.swift */,
-				F8B639A91DD5231300ADF26E /* ActiveDonationDetailView.xib */,
 			);
-			name = ActiveDonationDetail;
-			path = DonationDetail;
+			path = ActiveDonationDetail;
 			sourceTree = "<group>";
 		};
 		F8B639AD1DD52AC400ADF26E /* DonationDescriptionView */ = {
@@ -513,12 +544,31 @@
 				F8024C141DBF005200407D92 /* ActiveDonations */,
 				F84185761D7A162D0000AEB5 /* DonationPicker */,
 				F8024C3B1DC451D000407D92 /* DonationsRecord */,
+				F825942D1DE8D67F00B0C159 /* Profile */,
 				F8DF77DC1DB9872E00B5C37D /* MainView.swift */,
 				F8DF77E01DB9874500B5C37D /* MainView.xib */,
 				F8DF77DA1DB9872400B5C37D /* MainViewController.swift */,
 				F8DF77DE1DB9873800B5C37D /* MainViewModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		F8E564601DEBB6BB0047FA73 /* Decoders */ = {
+			isa = PBXGroup;
+			children = (
+				F8E5645E1DE8DB0A0047FA73 /* Deserializable.swift */,
+				F8E564611DEBB6C70047FA73 /* User+Serializable.swift */,
+			);
+			path = Decoders;
+			sourceTree = "<group>";
+		};
+		F8EAB87E1E1D775000A1E473 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F8EAB87F1E1D775000A1E473 /* Roboto-Bold.ttf */,
+				F8EAB8801E1D775000A1E473 /* Roboto-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,21 +632,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8EAB8821E1D775000A1E473 /* Roboto-Medium.ttf in Resources */,
 				F805D4EC1DCD42E500985C32 /* ActiveDonationCell.xib in Resources */,
+				F8EAB8811E1D775000A1E473 /* Roboto-Bold.ttf in Resources */,
 				F8B639AA1DD5231300ADF26E /* ActiveDonationDetailView.xib in Resources */,
 				F84185711D7A14400000AEB5 /* MapView.xib in Resources */,
-				F8B6399D1DD2C31800ADF26E /* Roboto-Bold.ttf in Resources */,
 				F841857C1D7A16490000AEB5 /* DonationPickerView.xib in Resources */,
 				F8B639971DD2A44C00ADF26E /* ConfirmDonationView.xib in Resources */,
 				F8B639B11DD52AF000ADF26E /* DonationDescriptionView.xib in Resources */,
-				F8680BFE1D934F480090207A /* Roboto-Medium.ttf in Resources */,
 				F8DF77D61DB9754800B5C37D /* LoginView.xib in Resources */,
 				F8DF77E11DB9874500B5C37D /* MainView.xib in Resources */,
 				F84185BF1D7E43850000AEB5 /* Default-568h@2x.png in Resources */,
 				F84185621D7A10CE0000AEB5 /* Assets.xcassets in Resources */,
 				F8024C1A1DBF007800407D92 /* ActiveDonationsView.xib in Resources */,
 				F84185CB1D7E44A10000AEB5 /* DonationDetailCell.xib in Resources */,
+				F82594311DE8D69600B0C159 /* ProfileView.xib in Resources */,
 				F8024C331DC44A7E00407D92 /* DonationDetailsView.xib in Resources */,
+				F8AB6F241DECF09B00F4657B /* Debug.xcconfig in Resources */,
+				F8AB6F221DECF08C00F4657B /* .git-keep in Resources */,
 				F8024C4A1DC4545E00407D92 /* DonationRecordCell.xib in Resources */,
 				F8024C431DC4524300407D92 /* DonationsRecordView.xib in Resources */,
 			);
@@ -621,6 +674,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -648,6 +702,7 @@
 				F8680C011D934FF00090207A /* FontPalette.swift in Sources */,
 				F8024C2B1DC43D5500407D92 /* Bootstrapper.swift in Sources */,
 				F8DF77D21DB9753400B5C37D /* LoginViewController.swift in Sources */,
+				F825942F1DE8D68B00B0C159 /* ProfileViewController.swift in Sources */,
 				F841855B1D7A10CE0000AEB5 /* AppDelegate.swift in Sources */,
 				F841857A1D7A163F0000AEB5 /* DonationPickerView.swift in Sources */,
 				F8EDEC371DCFE7E700607E17 /* DonationSelectionService.swift in Sources */,
@@ -658,7 +713,7 @@
 				F893CB041DCAB3210042E2A9 /* TitleView.swift in Sources */,
 				F8DF77D41DB9753A00B5C37D /* LoginView.swift in Sources */,
 				F8024C241DC43BB500407D92 /* UserRepository.swift in Sources */,
-				F8EDEC3F1DD16B1C00607E17 /* FacebookUserRepository.swift in Sources */,
+				F82594351DE8D6B000B0C159 /* ProfileView.swift in Sources */,
 				F8B639A61DD5230200ADF26E /* ActiveDonationDetailViewController.swift in Sources */,
 				F841858E1D7A20EB0000AEB5 /* ColorPalette.swift in Sources */,
 				F8B6399B1DD2B2F800ADF26E /* ConfirmDonationViewModel.swift in Sources */,
@@ -669,24 +724,28 @@
 				F8024C411DC4522500407D92 /* DonationsRecordViewModel.swift in Sources */,
 				F8680BFC1D93308C0090207A /* DonationListViewModel.swift in Sources */,
 				F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */,
+				F8E564621DEBB6C70047FA73 /* User+Serializable.swift in Sources */,
 				F8DF77D81DB9756000B5C37D /* LoginViewModel.swift in Sources */,
 				F8B639A81DD5230A00ADF26E /* ActiveDonationDetailViewModel.swift in Sources */,
+				F8E564641DECE5890047FA73 /* KeychainService.swift in Sources */,
 				F8B639AF1DD52AC400ADF26E /* DonationDescriptionView.swift in Sources */,
+				F8E5645F1DE8DB0A0047FA73 /* Deserializable.swift in Sources */,
 				F84185BD1D7E3F060000AEB5 /* UICollectionView.swift in Sources */,
 				F8024C3F1DC4521B00407D92 /* DonationsRecordView.swift in Sources */,
 				F8024C161DBF006100407D92 /* ActiveDonationsViewController.swift in Sources */,
 				F84185731D7A15BC0000AEB5 /* MapViewModel.swift in Sources */,
 				F8024C391DC44E1F00407D92 /* DonationDetailViewModel.swift in Sources */,
+				F8B639B31DD7C53300ADF26E /* NetworkManager.swift in Sources */,
 				F8EDEC351DCFD19600607E17 /* DonationsRepository.swift in Sources */,
 				F8680BFA1D932E0C0090207A /* SearchViewController.swift in Sources */,
 				F8680C031D9358800090207A /* UILabelExtension.swift in Sources */,
 				F893CB0A1DCAC1CE0042E2A9 /* ProgrammaticViewType.swift in Sources */,
 				F8024C2E1DC43E2B00407D92 /* MainCoordinator.swift in Sources */,
+				F82594331DE8D69F00B0C159 /* ProfileViewModel.swift in Sources */,
 				F8024C261DC43C7000407D92 /* User.swift in Sources */,
 				F8DF77DD1DB9872E00B5C37D /* MainView.swift in Sources */,
 				F8681CDF1D8E20030092F44E /* LocationService.swift in Sources */,
 				F8B639951DD2A42600ADF26E /* ConfirmDonationView.swift in Sources */,
-				F8EDEC3D1DD1657100607E17 /* LoginManagerAdapter.swift in Sources */,
 				F8024C1E1DBF09D400407D92 /* UITabBarExtension.swift in Sources */,
 				F84185B81D7E3E5E0000AEB5 /* CarouselController.swift in Sources */,
 				F8681CE31D8E27DA0092F44E /* Donation.swift in Sources */,
@@ -695,6 +754,7 @@
 				F84185CD1D7E44B10000AEB5 /* DonationDetailCell.swift in Sources */,
 				F84185921D7A27610000AEB5 /* UIView.swift in Sources */,
 				F8681CE51D8E56B90092F44E /* MapViewAnnotation.swift in Sources */,
+				F8AB6F261DECF23300F4657B /* CredentialsManager.swift in Sources */,
 				F84185781D7A16360000AEB5 /* DonationPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +764,7 @@
 /* Begin XCBuildConfiguration section */
 		F84185671D7A10CE0000AEB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8AB6F231DECF09B00F4657B /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -746,6 +807,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -788,6 +850,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -796,6 +859,7 @@
 		};
 		F841856A1D7A10CE0000AEB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8AB6F231DECF09B00F4657B /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

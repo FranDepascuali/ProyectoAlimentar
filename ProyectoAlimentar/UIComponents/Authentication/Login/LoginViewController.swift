@@ -47,17 +47,29 @@ private extension LoginViewController {
     }
 
     private func loadFacebookButton() {
-        let loginButton = LoginButton(readPermissions: [ .PublicProfile ])
+        let loginButton = LoginButton(readPermissions: [.PublicProfile, .UserFriends, .Email])
         loginButton.loadInto(_loginView.facebookButtonContainerView)
-        loginButton.userInteractionEnabled = false
+        loginButton.delegate = self
+    }
+}
+
+extension LoginViewController: LoginButtonDelegate {
+    
+    public func loginButtonDidCompleteLogin(loginButton: LoginButton, result: LoginResult) {
         
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(loginButtonClicked))
-        _loginView.facebookButtonContainerView.addGestureRecognizer(recognizer)
+        switch result {
+        case .Cancelled:
+            print("Login cancelled")
+        case .Failed(let error):
+            print("Login failed with error \(error)")
+        case .Success(_, _, let token):
+            _viewModel
+                .login(token.authenticationToken)
+                .start()
+        }
     }
     
-    @objc private func loginButtonClicked(recognizer: UITapGestureRecognizer) {
-        _viewModel
-            .login()
-            .start()
+    public func loginButtonDidLogOut(loginButton: LoginButton) {
+        // Do nothing
     }
 }

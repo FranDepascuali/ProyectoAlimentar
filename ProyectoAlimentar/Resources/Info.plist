@@ -50,6 +50,11 @@
 	</array>
 	<key>FacebookAppID</key>
 	<string>863927230374800</string>
+	<key>Services Credentials</key>
+	<dict>
+		<key>ApiURL</key>
+		<string>$(API_URL)</string>
+	</dict>
 	<key>FacebookDisplayName</key>
 	<string>proyecto-alimentar</string>
 	<key>LSApplicationQueriesSchemes</key>

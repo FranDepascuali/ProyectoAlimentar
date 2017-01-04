@@ -8,19 +8,20 @@
 
 import Foundation
 import ReactiveCocoa
+import enum Result.NoError
 
 public final class LoginViewModel {
 
-    private let _userRepository: FacebookUserRepository
+    private let _userRepository: UserRepositoryType
     
-    public init(userRepository: FacebookUserRepository) {
+    public init(userRepository: UserRepositoryType) {
         _userRepository = userRepository
     }
     
-    public func login() -> SignalProducer<(), FacebookLoginError> {
-        return
-            _userRepository
-                .login()
+    public func login(token: String) -> SignalProducer<(), NoError> {
+        return _userRepository
+                .login(token)
+                .map { _ in () }
                 .observeOn(UIScheduler())
     }
 }
