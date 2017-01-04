@@ -24,3 +24,6 @@ Thumbs.db
 # Carthage
 .carthage_cache.yml
 Carthage/
+
+!Configuration/.git-keep
+Configuration/*

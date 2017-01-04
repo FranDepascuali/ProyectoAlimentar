@@ -12,6 +12,7 @@ public enum TabViewItem: Int {
     case First = 0
     case Second
     case Third
+    case Four
 }
 
 public final class MainViewModel {
@@ -22,10 +23,13 @@ public final class MainViewModel {
 
     private let _donationsRepository: DonationRepositoryType
     
-    public init(donationsRepository: DonationRepositoryType) {
+    private let _userRepository: UserRepositoryType
+    
+    public init(donationsRepository: DonationRepositoryType, userRepository: UserRepositoryType) {
         selectedTab = AnyProperty(_selectedTab)
         
         _donationsRepository = donationsRepository
+        _userRepository = userRepository
     }
 
     public func selectTab(at index: Int) {
@@ -44,5 +48,9 @@ public final class MainViewModel {
     
     public func createDonationsRecordViewModel() -> DonationsRecordsViewModel {
         return DonationsRecordsViewModel(donationRepository: _donationsRepository)
+    }
+    
+    public func createProfileViewModel() -> LoginViewModel {
+        return LoginViewModel(userRepository: _userRepository)
     }
 }

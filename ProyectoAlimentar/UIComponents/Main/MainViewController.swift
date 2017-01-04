@@ -68,7 +68,7 @@ private extension MainViewController {
 
     private func initializeControllers() -> [UIViewController] {
         return [getDonationPickerViewController(), getActiveDonationsViewController(),
-            getDonationsRecordViewController()]
+            getDonationsRecordViewController(), getProfileViewController()]
     }
 
     private func getActiveDonationsViewController() -> ActiveDonationsViewController {
@@ -81,5 +81,9 @@ private extension MainViewController {
 
     private func getDonationsRecordViewController() -> DonationsRecordViewController {
         return DonationsRecordViewController(viewModel: _viewModel.createDonationsRecordViewModel())
+    }
+    
+    private func getProfileViewController() -> LoginViewController {
+        return LoginViewController(viewModel: _viewModel.createProfileViewModel())
     }
 }

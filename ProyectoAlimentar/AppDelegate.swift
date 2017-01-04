@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FacebookBootstrapper.sharedInstance.bootstrap(application, launchOptions: launchOptions)
         
-        _mainCoordinator = MainCoordinator(window: window!, userRepository: (loginProvider: FacebookUserRepository()))
+        _mainCoordinator = MainCoordinator(window: window!, userRepository: UserRepository(networkManager: createNetworkManager()))
         _mainCoordinator.start()
         
         return true
@@ -45,10 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FacebookBootstrapper.sharedInstance.openURL(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
-//    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-//        return FacebookBootstrapper(application: app, didFinishLaunchingWithOptions: options).openURL(url)
-//    }
-//    
+ 
     func applicationDidBecomeActive(application: UIApplication) {
         FacebookBootstrapper.sharedInstance.applicationDidBecomeActive(application)
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -56,6 +53,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    private func createNetworkManager() -> NetworkManager {
+        let ApiURL = CredentialsManager.sharedInstance[.ApiURL]
+        
+        precondition(ApiURL != nil && ApiURL != "" , "Api key must not be null. Check configuration files")
+        let _ApiURL = "https://" + ApiURL!
+        print("API URL: \(_ApiURL)")
+        
+        let networkManager = NetworkManager(baseURL: _ApiURL)
+        return networkManager
     }
 
 
