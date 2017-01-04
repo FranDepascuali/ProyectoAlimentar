@@ -10,21 +10,16 @@ import Foundation
 
 public struct Donation {
 
-    public let placeName: String = "Nombre del lugar"
+    public let placeName: String
 
-    public let distance: Double = 0.8
+    public let distance: Double
 
-    public let placeDirection: String = "Dirección"
+    public let placeDirection: String
 
-    public let from: String = "09:00"
+    public let from: String
 
-    public let to: String = "22:00"
+    public let to: String
 
-    private let _id: Int
-
-    public init(id: Int) {
-        _id = id
-    }
 }
 
 extension Donation: Equatable {
@@ -37,6 +32,5 @@ public func ==(lhs: Donation, rhs: Donation) -> Bool {
         lhs.placeName == rhs.placeName &&
         lhs.placeDirection == rhs.placeDirection &&
         lhs.from == rhs.from &&
-        lhs.to == rhs.to &&
-        lhs._id == rhs._id
+        lhs.to == rhs.to 
 }
