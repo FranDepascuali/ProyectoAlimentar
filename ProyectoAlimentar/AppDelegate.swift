@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FacebookBootstrapper.sharedInstance.bootstrap(application, launchOptions: launchOptions)
         
-        _mainCoordinator = MainCoordinator(window: window!, userRepository: UserRepository(networkManager: createNetworkManager()))
+        _mainCoordinator = MainCoordinator(window: window!, userRepository: UserRepository(networkManager: AppEnvironment.sharedInstance.networkManager))
         _mainCoordinator.start()
         
         return true
@@ -38,16 +38,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
-    private func createNetworkManager() -> NetworkManager {
-        let ApiURL = CredentialsManager.sharedInstance[.ApiURL]
-        
-        precondition(ApiURL != nil && ApiURL != "" , "Api key must not be null. Check configuration files")
-        let _ApiURL = "https://" + ApiURL!
-        print("API URL: \(_ApiURL)")
-        
-        let networkManager = NetworkManager(baseURL: _ApiURL)
-        return networkManager
-    }
-
-
 }
