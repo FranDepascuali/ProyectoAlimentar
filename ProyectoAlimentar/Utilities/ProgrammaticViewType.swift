@@ -14,7 +14,6 @@ public protocol ProgrammaticViewType {
     
 }
 
-
 extension UIView: ProgrammaticViewType {
     
     public static func programatic() -> Self {
