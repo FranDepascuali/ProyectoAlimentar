@@ -11,18 +11,18 @@ import Result
 
 extension User: Deserializable {
     
-    public static func serialize(JSON: AnyObject) -> Result<User, SerializerErrorType> {
+    public static func deserialize(JSON: AnyObject) -> Result<User, DeserializerErrorType> {
         
-        let _email: Result<String, SerializerErrorType> = JSON >>> "email"
-        let _name: Result<String, SerializerErrorType> = JSON >>> "name"
-        let _username: Result<String, SerializerErrorType> = JSON >>> "username"
+        let _email: Result<String, DeserializerErrorType> = JSON >>> "email"
+        let _name: Result<String, DeserializerErrorType> = JSON >>> "name"
+        let _username: Result<String, DeserializerErrorType> = JSON >>> "username"
         
         guard
             let email = _email.value,
             let name = _name.value,
             let username = _username.value else {
                 print("Error deserializing User")
-                return Result(error: SerializerErrorType.AbsentKey(""))
+                return Result(error: DeserializerErrorType.AbsentKey(""))
         }
         
     
@@ -32,9 +32,9 @@ extension User: Deserializable {
 
 infix operator >>> { associativity left precedence 160 }
 
-public func >>><ValueType>(JSON: AnyObject, key: String) -> Result<ValueType, SerializerErrorType> {
+public func >>><ValueType>(JSON: AnyObject, key: String) -> Result<ValueType, DeserializerErrorType> {
     guard let value = JSON[key] as? ValueType else {
-        return Result(error: SerializerErrorType.AbsentKey(key))
+        return Result(error: DeserializerErrorType.AbsentKey(key))
     }
     
     return Result(value)

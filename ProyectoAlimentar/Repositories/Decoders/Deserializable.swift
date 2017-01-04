@@ -9,7 +9,7 @@
 import Foundation
 import Result
 
-public enum SerializerErrorType: ErrorType {
+public enum DeserializerErrorType: ErrorType {
     
     case AbsentKey(String)
     
@@ -17,5 +17,5 @@ public enum SerializerErrorType: ErrorType {
 
 public protocol Deserializable {
     
-    static func serialize(JSON: AnyObject) -> Result<Self, SerializerErrorType>
+    static func deserialize(JSON: AnyObject) -> Result<Self, DeserializerErrorType>
 }

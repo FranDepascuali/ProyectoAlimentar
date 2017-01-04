@@ -86,7 +86,7 @@
 		F8DF77DF1DB9873800B5C37D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF77DE1DB9873800B5C37D /* MainViewModel.swift */; };
 		F8DF77E11DB9874500B5C37D /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DF77E01DB9874500B5C37D /* MainView.xib */; };
 		F8E5645F1DE8DB0A0047FA73 /* Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E5645E1DE8DB0A0047FA73 /* Deserializable.swift */; };
-		F8E564621DEBB6C70047FA73 /* User+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E564611DEBB6C70047FA73 /* User+Serializable.swift */; };
+		F8E564621DEBB6C70047FA73 /* User+Deserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E564611DEBB6C70047FA73 /* User+Deserializable.swift */; };
 		F8E564641DECE5890047FA73 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E564631DECE5890047FA73 /* KeychainService.swift */; };
 		F8EAB8811E1D775000A1E473 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8EAB87F1E1D775000A1E473 /* Roboto-Bold.ttf */; };
 		F8EAB8821E1D775000A1E473 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8EAB8801E1D775000A1E473 /* Roboto-Medium.ttf */; };
@@ -177,7 +177,7 @@
 		F8DF77DE1DB9873800B5C37D /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F8DF77E01DB9874500B5C37D /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		F8E5645E1DE8DB0A0047FA73 /* Deserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializable.swift; sourceTree = "<group>"; };
-		F8E564611DEBB6C70047FA73 /* User+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Serializable.swift"; sourceTree = "<group>"; };
+		F8E564611DEBB6C70047FA73 /* User+Deserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Deserializable.swift"; sourceTree = "<group>"; };
 		F8E564631DECE5890047FA73 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		F8EAB87F1E1D775000A1E473 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		F8EAB8801E1D775000A1E473 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -324,7 +324,6 @@
 				F8024C271DC43D2F00407D92 /* Bootstrappers */,
 				F8AB6F201DECF08C00F4657B /* Configurations */,
 				F8681CE01D8E27A30092F44E /* Domain */,
-				F84185901D7A27570000AEB5 /* Extensions */,
 				F8024C221DC43BA500407D92 /* Repositories */,
 				F841856C1D7A12CA0000AEB5 /* Resources */,
 				F8681CDD1D8E1FF50092F44E /* Services */,
@@ -373,13 +372,6 @@
 				F841857D1D7A16580000AEB5 /* DonationPickerViewModel.swift */,
 			);
 			path = DonationPicker;
-			sourceTree = "<group>";
-		};
-		F84185901D7A27570000AEB5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F84185B61D7E3E510000AEB5 /* Utilities */ = {
@@ -557,7 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				F8E5645E1DE8DB0A0047FA73 /* Deserializable.swift */,
-				F8E564611DEBB6C70047FA73 /* User+Serializable.swift */,
+				F8E564611DEBB6C70047FA73 /* User+Deserializable.swift */,
 			);
 			path = Decoders;
 			sourceTree = "<group>";
@@ -724,7 +716,7 @@
 				F8024C411DC4522500407D92 /* DonationsRecordViewModel.swift in Sources */,
 				F8680BFC1D93308C0090207A /* DonationListViewModel.swift in Sources */,
 				F841856F1D7A142C0000AEB5 /* MapViewController.swift in Sources */,
-				F8E564621DEBB6C70047FA73 /* User+Serializable.swift in Sources */,
+				F8E564621DEBB6C70047FA73 /* User+Deserializable.swift in Sources */,
 				F8DF77D81DB9756000B5C37D /* LoginViewModel.swift in Sources */,
 				F8B639A81DD5230A00ADF26E /* ActiveDonationDetailViewModel.swift in Sources */,
 				F8E564641DECE5890047FA73 /* KeychainService.swift in Sources */,

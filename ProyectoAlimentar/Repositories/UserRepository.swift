@@ -37,7 +37,7 @@ public class UserRepository: UserRepositoryType {
                 URL: "fb_connect",
                 parameters: ["access_token": token])
             .flatMap(.Latest) {
-                return SignalProducer(result: User.serialize($0))
+                return SignalProducer(result: User.deserialize($0))
             }
             .on(next: { [unowned self] in self.setCurrentUser($0) })
             .liftError()
