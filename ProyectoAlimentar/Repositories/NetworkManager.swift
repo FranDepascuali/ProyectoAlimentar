@@ -29,6 +29,7 @@ public class NetworkManager: NetworkManagerType {
     private let _baseURL: String
     
     public required init(baseURL: String = CredentialsManager.sharedInstance[.ApiURL]!) {
+        print("Network manager initialized using URL: " + baseURL)
         _baseURL = baseURL
     }
     

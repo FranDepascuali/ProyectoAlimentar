@@ -64,14 +64,7 @@ public class KeychainService: NSObject {
         print("User \(user) loaded from keychain")
         return user
     }
-//    public class func savePassword(token: NSString) {
-//        self.save(passwordKey, data: token)
-//    }
-//    
-//    public class func loadPassword() -> NSString? {
-//        return self.load(passwordKey)
-//    }
-//    
+
     /**
      * Internal methods for querying the keychain.
      */
