@@ -45,7 +45,7 @@ private extension MainCoordinator {
         if let _ = user {
             return createMainViewController()
         } else {
-            return createLoginViewController()
+            return createMainViewController()
         }
     }
 
