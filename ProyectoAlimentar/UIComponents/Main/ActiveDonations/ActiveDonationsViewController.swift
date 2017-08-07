@@ -10,9 +10,9 @@ import UIKit
 
 public final class ActiveDonationsViewController: UIViewController {
 
-    private let _viewModel: ActiveDonationsViewModel
+    fileprivate let _viewModel: ActiveDonationsViewModel
 
-    private lazy var _activeDonationsView = ActiveDonationsView.loadFromNib()!
+    fileprivate lazy var _activeDonationsView: ActiveDonationsView = ActiveDonationsView.loadFromNib()!
 
     public init(viewModel: ActiveDonationsViewModel) {
         _viewModel = viewModel
@@ -27,12 +27,12 @@ public final class ActiveDonationsViewController: UIViewController {
         view = _activeDonationsView
     }
 
-    public override func viewDidAppear(animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         _activeDonationsView.activeDonationsCollectionView.collectionViewLayout.invalidateLayout()
         _activeDonationsView.activeDonationsCollectionView.collectionViewLayout = createFlowLayout()
         _activeDonationsView.activeDonationsCollectionView.reloadData()
-        _activeDonationsView.activeDonationsCollectionView.setContentOffset(CGPointZero, animated: false)
+        _activeDonationsView.activeDonationsCollectionView.setContentOffset(CGPoint.zero, animated: false)
     }
 
     override public func viewDidLoad() {
@@ -45,11 +45,11 @@ public final class ActiveDonationsViewController: UIViewController {
 
 extension ActiveDonationsViewController: UICollectionViewDataSource {
 
-    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return _viewModel.count()
     }
 
-    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ActiveDonationCell = collectionView.dequeCellWithIdentifier(.ActiveDonationCell, forIndexPath: indexPath.row)
 
         cell.bindViewModel(_viewModel[indexPath.row])
@@ -61,7 +61,7 @@ extension ActiveDonationsViewController: UICollectionViewDataSource {
 
 private extension ActiveDonationsViewController {
 
-    private func initializeCollectionView() {
+    func initializeCollectionView() {
         // TODO: change MyCell
         _activeDonationsView.activeDonationsCollectionView.dataSource = self
         _activeDonationsView.activeDonationsCollectionView.collectionViewLayout = createFlowLayout()
@@ -70,18 +70,18 @@ private extension ActiveDonationsViewController {
 
     }
 
-    private func createFlowLayout() -> UICollectionViewFlowLayout {
+    func createFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         // TODO: take this faked number out
         layout.itemSize = CGSize(width: view.frame.width,
                                  height: 187)
         layout.minimumInteritemSpacing = 40
-        layout.scrollDirection = UICollectionViewScrollDirection.Vertical
+        layout.scrollDirection = UICollectionViewScrollDirection.vertical
 
         return layout
     }
 
-    private func bindViewModel() {
+    func bindViewModel() {
 
     }
 

@@ -7,16 +7,16 @@
 //
 
 import UIKit
-import FacebookLogin
-import FacebookCore
+//import FacebookLogin
+//import FacebookCore
 import Core
 
 public final class LoginViewController: UIViewController {
 
-    private let _viewModel: LoginViewModel
-
-    private lazy var _loginView: LoginView = LoginView.loadFromNib()!
-
+    fileprivate let _viewModel: LoginViewModel
+//
+//    fileprivate lazy var _loginView: LoginView = LoginView.loadFromNib()!
+//
     public init(viewModel: LoginViewModel) {
         _viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -26,50 +26,50 @@ public final class LoginViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override public func loadView() {
-        view = _loginView
-        
-        loadFacebookButton()
-    }
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-
-        bindViewModel()
-    }
+//    override public func loadView() {
+//        view = _loginView
+//        
+//        loadFacebookButton()
+//    }
+//
+//    override public func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        bindViewModel()
+//    }
 
 }
-
-private extension LoginViewController {
-
-    private func bindViewModel() {
-
-    }
-
-    private func loadFacebookButton() {
-        let loginButton = LoginButton(readPermissions: [.PublicProfile, .UserFriends, .Email])
-        loginButton.loadInto(_loginView.facebookButtonContainerView)
-        loginButton.delegate = self
-    }
-}
-
-extension LoginViewController: LoginButtonDelegate {
-    
-    public func loginButtonDidCompleteLogin(loginButton: LoginButton, result: LoginResult) {
-        
-        switch result {
-        case .Cancelled:
-            print("Login cancelled")
-        case .Failed(let error):
-            print("Login failed with error \(error)")
-        case .Success(_, _, let token):
-            _viewModel
-                .login(token.authenticationToken)
-                .start()
-        }
-    }
-    
-    public func loginButtonDidLogOut(loginButton: LoginButton) {
-        // Do nothing
-    }
-}
+//
+//private extension LoginViewController {
+//
+//    func bindViewModel() {
+//
+//    }
+//
+//    func loadFacebookButton() {
+//        let loginButton = LoginButton(readPermissions: [.publicProfile, .userFriends, .email])
+//        loginButton.add(into:_loginView.facebookButtonContainerView)
+//        loginButton.delegate = self
+//    }
+//}
+//
+//extension LoginViewController: LoginButtonDelegate {
+//    
+//    public func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+//        
+//        switch result {
+//        case .cancelled:
+//            print("Login cancelled")
+//        case .failed(let error):
+//            print("Login failed with error \(error)")
+//        case .success(_, _, let token):
+//            _viewModel
+//                .login(token.authenticationToken)
+//                .start()
+//        }
+//    }
+//    
+//    public func loginButtonDidLogOut(_ loginButton: LoginButton) {
+//        // Do nothing
+//    }
+//}

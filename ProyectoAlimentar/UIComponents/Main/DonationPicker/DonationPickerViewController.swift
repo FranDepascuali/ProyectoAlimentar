@@ -8,17 +8,17 @@
 
 import UIKit
 import Core
-import ReactiveCocoa
+import ReactiveSwift
 
 public final class DonationPickerViewController: UIViewController {
 
-    private let _mainView = DonationPickerView.loadFromNib()!
+    fileprivate let _mainView: DonationPickerView = DonationPickerView.loadFromNib()!
 
-    private let _viewModel: DonationPickerViewModel
+    fileprivate let _viewModel: DonationPickerViewModel
 
-    private let _mapViewController: MapViewController
+    fileprivate let _mapViewController: MapViewController
 
-    private lazy var _donationListViewController: DonationListViewController = {
+    fileprivate lazy var _donationListViewController: DonationListViewController = {
         return DonationListViewController(viewModel: self._viewModel.donationListViewModel(), onConfirmDonation: self.presentConfirmDonationController)
     }()
 
@@ -35,23 +35,23 @@ public final class DonationPickerViewController: UIViewController {
 
     public override func loadView() {
         view = _mainView
-
-        loadViewController(_mapViewController, into: _mainView.mapContainerView)
-        loadViewController(_donationListViewController, into: _mainView.donationDetailContainerView)
+        
+        load(childViewController: _mapViewController, into: _mainView.mapContainerView)
+        load(childViewController: _donationListViewController, into: _mainView.donationDetailContainerView)
     }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         _mainView.communityKitchenButton.setAction { [unowned self] _ in
-            self._mainView.selectedMapType = .CommunityKitchen
+            self._mainView.selectedMapType = .communityKitchen
         }
 
         _mainView.donorsButton.setAction { [unowned self] _ in
-            self._mainView.selectedMapType = .Donor
+            self._mainView.selectedMapType = .donor
         }
 
-        _mainView.selectedMapType = .Donor
+        _mainView.selectedMapType = .donor
         
         bindViewModel(_viewModel)
     }
@@ -60,30 +60,30 @@ public final class DonationPickerViewController: UIViewController {
 
 private extension DonationPickerViewController {
     
-    private func bindViewModel(viewModel: DonationPickerViewModel) {
+    func bindViewModel(_ viewModel: DonationPickerViewModel) {
         viewModel
             .fetchDonations()
             .start()
     }
     
-    private func presentConfirmDonationController(donation: Donation) {
+    func presentConfirmDonationController(_ donation: Donation) {
         let confirmDonationController = ConfirmDonationViewController(
             viewModel: self._viewModel.createConfirmDonationViewModel(),
             onAccept: { [unowned self] _ in self.donationCancelled() },
             onCancel: { [unowned self] _ in self.donationAccepted() })
         
         _mainView.addBlackOverlay()
-        loadViewController(confirmDonationController, into: _mainView.confirmDonationContainerView)
-        _mainView.confirmDonationContainerView.hidden = false
+        load(childViewController: confirmDonationController, into: _mainView.confirmDonationContainerView)
+        _mainView.confirmDonationContainerView.isHidden = false
     }
     
-    private func donationCancelled() {
-        _mainView.confirmDonationContainerView.hidden = true
+    func donationCancelled() {
+        _mainView.confirmDonationContainerView.isHidden = true
         _mainView.removeBlackOverlay()
     }
     
-    private func donationAccepted() {
-        _mainView.confirmDonationContainerView.hidden = true
+    func donationAccepted() {
+        _mainView.confirmDonationContainerView.isHidden = true
        _mainView.removeBlackOverlay() 
     }
 }

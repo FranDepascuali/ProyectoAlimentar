@@ -7,44 +7,44 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 import Core
 import Result
 
 public typealias LocatedDonation = (Donation, MapViewAnnotation)
 
-public class DonationPickerViewModel {
+open class DonationPickerViewModel {
 
-    private let _selectedDonation: MutableProperty<LocatedDonation?> = MutableProperty(.None)
+    fileprivate let _selectedDonation: MutableProperty<LocatedDonation?> = MutableProperty(.none)
     
-    private let _locatedDonations: MutableProperty<[LocatedDonation]>
+    fileprivate let _locatedDonations: MutableProperty<[LocatedDonation]>
     
-    private var _donations: AnyProperty<[Donation]> {
-        let extractDonations: [LocatedDonation] -> [Donation] =
+    fileprivate var _donations: Property<[Donation]> {
+        let extractDonations: ([LocatedDonation]) -> [Donation] =
             { $0.map { $0.0 } }
         
-        return AnyProperty(_locatedDonations).map(extractDonations)
+        return Property(_locatedDonations).map(extractDonations)
     }
     
-    private var _annotations: AnyProperty<[MapViewAnnotation]> {
+    fileprivate var _annotations: Property<[MapViewAnnotation]> {
         
-        let extractAnnotations: [LocatedDonation] -> [MapViewAnnotation] =
+        let extractAnnotations: ([LocatedDonation]) -> [MapViewAnnotation] =
             { $0.map { $0.1 } }
         
-        return AnyProperty(_locatedDonations).map(extractAnnotations)
+        return Property(_locatedDonations).map(extractAnnotations)
     }
     
-    private let _donationRepository: DonationRepositoryType
+    fileprivate let _donationRepository: DonationRepositoryType
 
     public init(donationRepository: DonationRepositoryType) {
         _locatedDonations = MutableProperty([])
         _donationRepository = donationRepository
     }
 
-    public func mapViewModel() -> MapViewModel {
+    open func mapViewModel() -> MapViewModel {
         let selectedForMap = _selectedDonation
                 .signal
-                .ignoreNil()
+                .skipNil()
                 .map { $0.1 }
 
         let mapViewModel = MapViewModel(
@@ -55,20 +55,20 @@ public class DonationPickerViewModel {
                     return
                 }
 
-                self._selectedDonation.value = self._locatedDonations.value.filterFirst { $0.1 == annotation }!
+                self._selectedDonation.value = self._locatedDonations.value.first(where: { $0.1 == annotation })!
         }
 
         return mapViewModel
 
     }
 
-    public func donationListViewModel() -> DonationListViewModel {
+    open func donationListViewModel() -> DonationListViewModel {
         
         let selectedIndex = _selectedDonation
             .signal
-            .ignoreNil()
+            .skipNil()
             .map { [unowned self] locatedDonation in
-                self._locatedDonations.value.indexOf { $0 == locatedDonation }!
+                self._locatedDonations.value.index { $0 == locatedDonation }!
         }
         
         
@@ -80,34 +80,34 @@ public class DonationPickerViewModel {
                     return
                 }
 
-                self._selectedDonation.value = self._locatedDonations.value.filterFirst { $0.0 == donation }!
+                self._selectedDonation.value = self._locatedDonations.value.first(where: { $0.0 == donation })!
         }
 
         return donationListViewModel
     }
     
-    public func fetchDonations() -> SignalProducer<(), NoError> {
+    open func fetchDonations() -> SignalProducer<(), NoError> {
         return _donationRepository
             .fetchDonationsWithLocation()
-            .on(next: {
+            .on(value: {
                 self._locatedDonations.value = $0
                 self._selectedDonation.value = $0.first
             })
             .map { _ in () }
     }
     
-    public func createConfirmDonationViewModel() -> ConfirmDonationViewModel {
+    open func createConfirmDonationViewModel() -> ConfirmDonationViewModel {
         return ConfirmDonationViewModel()
     }
 }
 
 private extension DonationPickerViewModel {
 
-    private func isAlreadySelected(donation: Donation) -> Bool {
+    func isAlreadySelected(_ donation: Donation) -> Bool {
         return _selectedDonation.value?.0 == donation
     }
 
-    private func isAlreadySelected(annotation: MapViewAnnotation) -> Bool {
+    func isAlreadySelected(_ annotation: MapViewAnnotation) -> Bool {
         return _selectedDonation.value?.1 == annotation
     }
 }

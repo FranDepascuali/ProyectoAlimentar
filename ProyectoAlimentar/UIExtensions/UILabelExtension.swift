@@ -10,7 +10,7 @@ import UIKit
 
 public extension UILabel {
 
-    public func addCharactersSpacing(spacing: CGFloat) {
+    public func addCharactersSpacing(_ spacing: CGFloat) {
         let attributedString = NSMutableAttributedString(string: text!)
         attributedString.addAttribute(NSKernAttributeName, value: spacing, range: NSMakeRange(0, text!.characters.count))
         attributedText = attributedString

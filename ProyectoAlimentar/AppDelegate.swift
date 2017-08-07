@@ -13,14 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private var _mainCoordinator: MainCoordinator!
+    fileprivate var _mainCoordinator: MainCoordinator!
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        window = UIWindow(frame:UIScreen.mainScreen().bounds)
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        window = UIWindow(frame:UIScreen.main.bounds)
+        UIApplication.shared.statusBarStyle = .lightContent
         
-        FacebookBootstrapper.sharedInstance.bootstrap(application, launchOptions: launchOptions)
+//        FacebookBootstrapper.sharedInstance.bootstrap(application, launchOptions: launchOptions)
         
         _mainCoordinator = MainCoordinator(window: window!, userRepository: UserRepository(networkManager: AppEnvironment.sharedInstance.networkManager))
         _mainCoordinator.start()
@@ -28,14 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return FacebookBootstrapper.sharedInstance.openURL(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
- 
-    func applicationDidBecomeActive(application: UIApplication) {
-        FacebookBootstrapper.sharedInstance.applicationDidBecomeActive(application)
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
+//
+//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//        return FacebookBootstrapper.sharedInstance.openURL(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+//    }
+// 
+//    func applicationDidBecomeActive(_ application: UIApplication) {
+//        FacebookBootstrapper.sharedInstance.applicationDidBecomeActive(application)
+//        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//    }
     
 }

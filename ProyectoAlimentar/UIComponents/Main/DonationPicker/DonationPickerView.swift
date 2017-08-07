@@ -10,13 +10,13 @@ import UIKit
 import Core
 
 public enum MapType {
-    case Donor
-    case CommunityKitchen
+    case donor
+    case communityKitchen
 }
 
 public final class DonationPickerView: UIView, NibLoadable {
     
-    private lazy var blackLayer: UIView = {
+    fileprivate lazy var blackLayer: UIView = {
         let blackLayer = UIView(frame: self.frame)
         blackLayer.backgroundColor = UIColor(hex: "00000085")
         return blackLayer
@@ -29,51 +29,51 @@ public final class DonationPickerView: UIView, NibLoadable {
     public func addBlackOverlay() {
         addSubview(blackLayer)
         // We want confirm donation view to be visible
-        bringSubviewToFront(confirmDonationContainerView)
+        bringSubview(toFront: confirmDonationContainerView)
     }
     
     @IBOutlet weak var confirmDonationContainerView: UIView! {
         didSet {
-            confirmDonationContainerView.hidden = true
+            confirmDonationContainerView.isHidden = true
         }
     }
 
     @IBOutlet weak var donorsButtonBottomLine: UIView! {
         didSet {
-            donorsButtonBottomLine.backgroundColor = .clearColor()
+            donorsButtonBottomLine.backgroundColor = .clear
         }
     }
 
     @IBOutlet weak var communityKitchenButtonBottomLine: UIView! {
         didSet {
-            communityKitchenButtonBottomLine.backgroundColor = .clearColor()
+            communityKitchenButtonBottomLine.backgroundColor = .clear
         }
     }
 
-    public var selectedMapType: MapType = .Donor {
+    public var selectedMapType: MapType = .donor {
         didSet {
             switch selectedMapType {
-            case .Donor:
+            case .donor:
                 // We need to reset the colors of the other button
-                communityKitchenButtonBottomLine.backgroundColor = .clearColor()
-                communityKitchenButton.setTitleColor(ColorPalette.secondaryTextColor, forState: .Normal)
+                communityKitchenButtonBottomLine.backgroundColor = .clear
+                communityKitchenButton.setTitleColor(ColorPalette.secondaryTextColor, for: UIControlState())
 
                 donorsButtonBottomLine.backgroundColor = ColorPalette.primaryColor
-                donorsButton.setTitleColor(ColorPalette.primaryColor, forState: .Normal)
-            case .CommunityKitchen:
+                donorsButton.setTitleColor(ColorPalette.primaryColor, for: UIControlState())
+            case .communityKitchen:
                 // We need to reset the colors of the other button
-                donorsButtonBottomLine.backgroundColor = .clearColor()
-                donorsButton.setTitleColor(ColorPalette.secondaryTextColor, forState: .Normal)
+                donorsButtonBottomLine.backgroundColor = .clear
+                donorsButton.setTitleColor(ColorPalette.secondaryTextColor, for: UIControlState())
 
                 communityKitchenButtonBottomLine.backgroundColor = ColorPalette.primaryColor
-                communityKitchenButton.setTitleColor(ColorPalette.primaryColor, forState: .Normal)
+                communityKitchenButton.setTitleColor(ColorPalette.primaryColor, for: UIControlState())
             }
         }
     }
 
     @IBOutlet weak var searchContainerView: UIView! {
         didSet {
-            searchContainerView.backgroundColor = .clearColor()
+            searchContainerView.backgroundColor = .clear
 
             // TODO: this should be on the search view when implemented
             searchContainerView.backgroundColor = ColorPalette.primaryColor
@@ -82,20 +82,20 @@ public final class DonationPickerView: UIView, NibLoadable {
 
     @IBOutlet weak var mapContainerView: UIView! {
         didSet {
-           mapContainerView.backgroundColor = .clearColor()
+           mapContainerView.backgroundColor = .clear
         }
     }
 
     @IBOutlet weak var donationDetailContainerView: UIView! {
         didSet {
-            donationDetailContainerView.backgroundColor = .clearColor()
+            donationDetailContainerView.backgroundColor = .clear
         }
     }
 
     @IBOutlet weak var donorsButton: UIButton! {
         didSet {
-            donorsButton.setTitle("Donantes", forState: .Normal)
-            donorsButton.setTitleColor(ColorPalette.secondaryTextColor, forState: .Normal)
+            donorsButton.setTitle("Donantes", for: UIControlState())
+            donorsButton.setTitleColor(ColorPalette.secondaryTextColor, for: UIControlState())
             donorsButton.titleLabel?.setFont(pointSize: 14)
             donorsButton.titleLabel!.addCharactersSpacing(0.5)
         }
@@ -104,8 +104,8 @@ public final class DonationPickerView: UIView, NibLoadable {
 
     @IBOutlet weak var communityKitchenButton: UIButton! {
         didSet {
-            communityKitchenButton.setTitle("Comedores", forState: .Normal)
-            communityKitchenButton.setTitleColor(ColorPalette.secondaryTextColor, forState: .Normal)
+            communityKitchenButton.setTitle("Comedores", for: UIControlState())
+            communityKitchenButton.setTitleColor(ColorPalette.secondaryTextColor, for: UIControlState())
             communityKitchenButton.titleLabel?.setFont(pointSize: 14)
             communityKitchenButton.titleLabel!.addCharactersSpacing(0.5)
         }

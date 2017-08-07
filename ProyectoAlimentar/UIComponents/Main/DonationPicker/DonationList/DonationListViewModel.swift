@@ -7,37 +7,37 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 import enum Result.NoError
 
-public class DonationListViewModel {
+open class DonationListViewModel {
 
-    public let donations: AnyProperty<[DonationDetailViewModel]>
+    open let donations: Property<[DonationDetailViewModel]>
     
-    private let _notifySelection: Donation -> ()
+    fileprivate let _notifySelection: (Donation) -> ()
 
     // TODO: This should not be var
-    public var selected: Signal<Int, NoError>!
+    open var selected: Signal<Int, NoError>!
 
-    public var donationsCount: Int {
+    open var donationsCount: Int {
         return donations.value.count
     }
 
-    public init(donations: AnyProperty<[Donation]>,
+    public init(donations: Property<[Donation]>,
                 externalSelection: Signal<Int, NoError>,
-                notifySelection: Donation -> ()) {
+                notifySelection: @escaping (Donation) -> ()) {
 
         self.donations = donations.map { $0.map(DonationDetailViewModel.init) }
         _notifySelection = notifySelection
         selected = externalSelection
-            .observeOn(UIScheduler())
+            .observe(on: UIScheduler())
     }
 
-    public func selectDonationAt(index: Int) {
+    open func selectDonationAt(_ index: Int) {
         _notifySelection(donations.value[index].donation)
     }
     
-    public subscript(index: Int) -> DonationDetailViewModel {
+    open subscript(index: Int) -> DonationDetailViewModel {
         return donations.value[index]
     }
     

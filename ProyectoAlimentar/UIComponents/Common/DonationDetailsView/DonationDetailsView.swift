@@ -57,7 +57,7 @@ public final class DonationDetailsView: UIView, NibLoadable {
         }
     }
     
-    public func bindViewModel(viewModel: DonationDetailsViewModel) {
+    public func bindViewModel(_ viewModel: DonationDetailsViewModel) {
         placeNameLabel.text = viewModel.placeName
         distanceToPlaceLabel.text = viewModel.distance
         locationLabel.text = viewModel.placeDirection

@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import ReactiveCocoa
+import ReactiveSwift
 
 public final class MainCoordinator {
 
-    private let _window: UIWindow
-    private let _userRepository: UserRepositoryType
+    fileprivate let _window: UIWindow
+    fileprivate let _userRepository: UserRepositoryType
 
     public init(window: UIWindow, userRepository: UserRepositoryType) {
         _window = window
@@ -24,8 +24,8 @@ public final class MainCoordinator {
         
         _userRepository.currentUser
             .producer
-            .observeOn(UIScheduler())
-            .startWithNext { [unowned self] in
+            .observe(on: UIScheduler())
+            .startWithValues { [unowned self] in
                 self._window.rootViewController = self.getRootViewController($0)
         }
     }
@@ -33,15 +33,15 @@ public final class MainCoordinator {
 
 private extension MainCoordinator {
 
-    private func createMainViewController() -> MainViewController {
+    func createMainViewController() -> MainViewController {
         return MainViewController(viewModel: MainViewModel(donationsRepository: FakedDonationsRepository(), userRepository: _userRepository))
     }
 
-    private func createLoginViewController() -> LoginViewController {
+    func createLoginViewController() -> LoginViewController {
         return LoginViewController(viewModel: LoginViewModel(userRepository: _userRepository))
     }
 
-    private func getRootViewController(user: User?) -> UIViewController {
+    func getRootViewController(_ user: User?) -> UIViewController {
         if let _ = user {
             return createMainViewController()
         } else {

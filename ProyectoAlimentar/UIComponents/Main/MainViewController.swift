@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import ReactiveCocoa
+import ReactiveSwift
 
 public final class MainViewController: UIViewController {
 
-    private let _viewModel: MainViewModel
-    private lazy var _viewControllers: [UIViewController] = self.initializeControllers()
+    fileprivate let _viewModel: MainViewModel
+    fileprivate lazy var _viewControllers: [UIViewController] = self.initializeControllers()
 
-    private lazy var _mainView = MainView.loadFromNib()!
+    fileprivate lazy var _mainView: MainView = MainView.loadFromNib()!
 
     public init(viewModel: MainViewModel) {
         _viewModel = viewModel
@@ -28,7 +28,7 @@ public final class MainViewController: UIViewController {
     override public func loadView() {
         view = _mainView
 
-        loadViewController(_viewControllers[0], into: _mainView.containerView)
+        load(childViewController: _viewControllers[0], into: _mainView.containerView)
     }
 
     override public func viewDidLoad() {
@@ -41,7 +41,7 @@ public final class MainViewController: UIViewController {
 
 extension MainViewController: UITabBarDelegate {
 
-    public func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+    public func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if let index = _mainView.tabBar.indexForItem(item) {
             _viewModel.selectTab(at: index)
         }
@@ -51,39 +51,39 @@ extension MainViewController: UITabBarDelegate {
 
 private extension MainViewController {
 
-    private func displayControllerAt(index: Int) {
+    func displayControllerAt(_ index: Int) {
         _mainView.containerView.subviews.forEach { $0.removeFromSuperview() }
         _mainView.tabBar.selectItemAt(index)
-        loadViewController(_viewControllers[index], into: _mainView.containerView)
+        load(childViewController: _viewControllers[index], into: _mainView.containerView)
     }
 
-    private func bindViewModel() {
+    func bindViewModel() {
         _viewModel.selectedTab
             .producer
-            .observeOn(UIScheduler())
-            .startWithNext { [unowned self] item in
+            .observe(on: UIScheduler())
+            .startWithValues { [unowned self] item in
                 self.displayControllerAt(item.rawValue)
         }
     }
 
-    private func initializeControllers() -> [UIViewController] {
+    func initializeControllers() -> [UIViewController] {
         return [getDonationPickerViewController(), getActiveDonationsViewController(),
             getDonationsRecordViewController(), getProfileViewController()]
     }
 
-    private func getActiveDonationsViewController() -> ActiveDonationsViewController {
+    func getActiveDonationsViewController() -> ActiveDonationsViewController {
         return ActiveDonationsViewController(viewModel: _viewModel.createActiveDonationsViewModel())
     }
 
-    private func getDonationPickerViewController() -> DonationPickerViewController {
+    func getDonationPickerViewController() -> DonationPickerViewController {
         return DonationPickerViewController(viewModel: _viewModel.createDonationPickerViewModel())
     }
 
-    private func getDonationsRecordViewController() -> DonationsRecordViewController {
+    func getDonationsRecordViewController() -> DonationsRecordViewController {
         return DonationsRecordViewController(viewModel: _viewModel.createDonationsRecordViewModel())
     }
     
-    private func getProfileViewController() -> LoginViewController {
+    func getProfileViewController() -> LoginViewController {
         return LoginViewController(viewModel: _viewModel.createProfileViewModel())
     }
 }

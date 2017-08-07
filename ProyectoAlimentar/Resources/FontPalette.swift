@@ -16,7 +16,7 @@ public enum RobotoFont: String {
 
 public extension UILabel {
 
-    public func setFont(type: RobotoFont = .Medium, pointSize: Float? = nil) {
+    public func setFont(_ type: RobotoFont = .Medium, pointSize: Float? = nil) {
         let size = pointSize ?? Float(self.font.pointSize)
         self.font = UIFont(type: type, pointSize: size)
         self.sizeToFit()
@@ -26,7 +26,7 @@ public extension UILabel {
 
 public extension UITextView {
 
-    public func setFont(type: RobotoFont = .Medium, pointSize: Float? = nil) {
+    public func setFont(_ type: RobotoFont = .Medium, pointSize: Float? = nil) {
         let size = pointSize ?? Float(self.font!.pointSize)
         self.font = UIFont(type: type, pointSize: size)
         self.sizeToFit()

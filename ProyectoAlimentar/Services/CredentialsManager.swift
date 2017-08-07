@@ -20,11 +20,11 @@ public protocol CredentialsManagerType {
 
 public struct CredentialsManager: CredentialsManagerType {
     
-    public static let sharedInstance = CredentialsManager(bundle: NSBundle.mainBundle())
+    public static let sharedInstance = CredentialsManager(bundle: Bundle.main)
     
-    private let credentials: [String: String]
+    fileprivate let credentials: [String: String]
     
-    public init(bundle: NSBundle = NSBundle.mainBundle()) {
+    public init(bundle: Bundle = Bundle.main) {
         if let credentials = bundle.infoDictionary?["Services Credentials"] as? [String: String] {
             self.credentials = credentials
         } else {

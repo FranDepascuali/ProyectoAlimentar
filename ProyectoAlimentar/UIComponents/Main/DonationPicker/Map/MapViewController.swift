@@ -8,15 +8,15 @@
 
 import Foundation
 import MapKit
-import ReactiveCocoa
+import ReactiveSwift
 
 public final class MapViewController: UIViewController {
 
-    private let _mapView = MapView.loadFromNib()!
+    fileprivate let _mapView: MapView = MapView.loadFromNib()!
 
-    private let _viewModel: MapViewModel
+    fileprivate let _viewModel: MapViewModel
 
-    private var _initiallyLoaded: Bool = false
+    fileprivate var _initiallyLoaded: Bool = false
 
     public init(viewModel: MapViewModel) {
         _viewModel = viewModel
@@ -37,7 +37,7 @@ public final class MapViewController: UIViewController {
 //        bindViewModel()
     }
     
-    override public func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !_initiallyLoaded {
             _initiallyLoaded = true
@@ -49,13 +49,13 @@ public final class MapViewController: UIViewController {
 
 extension MapViewController: MKMapViewDelegate {
 
-    public func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
         }
 
         let reuseId = MapViewAnnotation.orderAnnotationIdentifier
-        if let view = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) {
+        if let view = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) {
             view.annotation = annotation
             return view
         } else {
@@ -66,7 +66,7 @@ extension MapViewController: MKMapViewDelegate {
 
     }
 
-    public func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+    public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         _viewModel.tapped(view.annotation as! MapViewAnnotation)
     }
 
@@ -74,23 +74,23 @@ extension MapViewController: MKMapViewDelegate {
 
 private extension MapViewController {
 
-    private func bindViewModel() {
+    func bindViewModel() {
         
         _viewModel.annotations
             .producer
-            .observeOn(UIScheduler())
-            .startWithNext { [unowned self] in
+            .observe(on: UIScheduler())
+            .startWithValues { [unowned self] in
                 self.addAnnotationsToMap($0)
         }
         
         _viewModel.selected
-            .map { Optional.Some($0) }
-            .combinePrevious(.None)
-            .observeNext { [unowned self] in
+            .map { Optional.some($0) }
+            .combinePrevious(.none)
+            .observeValues { [unowned self] in
                 self.centerMap($0.1!)
-                self._mapView.map.viewForAnnotation($0.1!)?.image = UIImage(identifier: ImageAssetIdentifier.SelectedOrderPin)
+                self._mapView.map.view(for: $0.1!)?.image = UIImage(identifier: ImageAssetIdentifier.SelectedOrderPin)
 
-                let previousAnnotation = $0.0.flatMap { self._mapView.map.viewForAnnotation($0) }
+                let previousAnnotation = $0.0.flatMap { self._mapView.map.view(for: $0) }
 
                 guard let _previousAnnotation = previousAnnotation else {
                     return
@@ -100,24 +100,24 @@ private extension MapViewController {
         }
     }
 
-    private func initializeMap() {
+    func initializeMap() {
         _mapView.map.delegate = self
-        _mapView.map.scrollEnabled = true
-        _mapView.map.zoomEnabled = true
+        _mapView.map.isScrollEnabled = true
+        _mapView.map.isZoomEnabled = true
         _mapView.map.showsPointsOfInterest = false
     }
 
     /* Add the annotations to reload annotation's imagesViews */
-    private func addAnnotationsToMap(annotations: [MapViewAnnotation]) {
+    func addAnnotationsToMap(_ annotations: [MapViewAnnotation]) {
         _mapView.map.addAnnotations(annotations)
         _mapView.map.showAnnotations(annotations, animated: false)
     }
 
-    private func centerMap(annotation: MapViewAnnotation) {
+    func centerMap(_ annotation: MapViewAnnotation) {
         let coordinate = annotation.coordinate
-        UIView.animateWithDuration(0.5) {
+        UIView.animate(withDuration: 0.5, animations: {
             self._mapView.map.centerCoordinate = coordinate
-        }
+        }) 
     }
 
 }

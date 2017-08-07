@@ -13,7 +13,7 @@ public final class ActiveDonationsView: UIView, NibLoadable {
     
     @IBOutlet weak var titleViewContainer: UIView! {
         didSet {
-            TitleView(title: "Donaciones Activas").loadInto(titleViewContainer)
+            TitleView(title: "Donaciones Activas").add(into:titleViewContainer)
         }
     }
 

@@ -33,16 +33,16 @@ public enum CellIdentifier: String {
 
 public extension UICollectionView {
     
-    public func registerCell(identifier: CellIdentifier) {
-        registerNib(UINib(nibName: identifier.rawValue, bundle: nil), forCellWithReuseIdentifier: identifier.rawValue)
+    public func registerCell(_ identifier: CellIdentifier) {
+        register(UINib(nibName: identifier.rawValue, bundle: nil), forCellWithReuseIdentifier: identifier.rawValue)
     }
     
-    public func dequeCellWithIdentifier<CellType: UICollectionViewCell>(identifier: CellIdentifier, forIndexPath indexPath: NSIndexPath) -> CellType {
-        return dequeueReusableCellWithReuseIdentifier(identifier.rawValue, forIndexPath: indexPath) as! CellType
+    public func dequeCellWithIdentifier<CellType: UICollectionViewCell>(_ identifier: CellIdentifier, forIndexPath indexPath: IndexPath) -> CellType {
+        return dequeueReusableCell(withReuseIdentifier: identifier.rawValue, for: indexPath) as! CellType
     }
     
-    public func dequeCellWithIdentifier<CellType: UICollectionViewCell>(identifier: CellIdentifier, forIndexPath index: Int) -> CellType {
-        return dequeCellWithIdentifier(identifier, forIndexPath: NSIndexPath(forItem: index, inSection: 0))
+    public func dequeCellWithIdentifier<CellType: UICollectionViewCell>(_ identifier: CellIdentifier, forIndexPath index: Int) -> CellType {
+        return dequeCellWithIdentifier(identifier, forIndexPath: IndexPath(item: index, section: 0))
     }
     
     

@@ -33,29 +33,29 @@ let kSecReturnDataValue = NSString(format: kSecReturnData)
 let kSecMatchLimitOneValue = NSString(format: kSecMatchLimitOne)
 
 // http://stackoverflow.com/questions/37539997/save-and-load-from-keychain-swift
-public class KeychainService: NSObject {
+open class KeychainService: NSObject {
     
     /**
      * Exposed methods to perform save and load queries.
      */
     
-    public static let sharedInstance = KeychainService()
+    open static let sharedInstance = KeychainService()
     
-    private override init() {}
+    fileprivate override init() {}
     
-    public func saveUser(user: User) {
+    open func saveUser(_ user: User) {
         print("Saving user \(user) to keychain")
         
-        save(emailKey, data: user.email)
-        save(usernameKey, data: user.userName)
-        save(nameKey, data: user.name)
+        save(emailKey as NSString, data: user.email as NSString)
+        save(usernameKey as NSString, data: user.userName as NSString)
+        save(nameKey as NSString, data: user.name as NSString)
     }
     
-    public func loadUser() -> User? {
+    open func loadUser() -> User? {
         guard
-            let email = load(emailKey),
-            let username = load(usernameKey),
-            let name = load(nameKey)
+            let email = load(emailKey as NSString),
+            let username = load(usernameKey as NSString),
+            let name = load(nameKey as NSString)
             else {
                 print("unable to load user from keychain")
                 return nil
@@ -69,20 +69,20 @@ public class KeychainService: NSObject {
      * Internal methods for querying the keychain.
      */
     
-    private func save(service: NSString, data: NSString) {
-        let dataFromString: NSData = data.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+    fileprivate func save(_ service: NSString, data: NSString) {
+        let dataFromString: Data = data.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)!
         
         // Instantiate a new default keychain query
         let keychainQuery: NSMutableDictionary = NSMutableDictionary(objects: [kSecClassGenericPasswordValue, service, userAccount, dataFromString], forKeys: [kSecClassValue, kSecAttrServiceValue, kSecAttrAccountValue, kSecValueDataValue])
         
         // Delete any existing items
-        SecItemDelete(keychainQuery as CFDictionaryRef)
+        SecItemDelete(keychainQuery as CFDictionary)
         
         // Add the new keychain item
-        SecItemAdd(keychainQuery as CFDictionaryRef, nil)
+        SecItemAdd(keychainQuery as CFDictionary, nil)
     }
     
-    public func resetKeychain() {
+    open func resetKeychain() {
         self.deleteAllKeysForSecClass(kSecClassGenericPassword)
         self.deleteAllKeysForSecClass(kSecClassInternetPassword)
         self.deleteAllKeysForSecClass(kSecClassCertificate)
@@ -90,13 +90,13 @@ public class KeychainService: NSObject {
         self.deleteAllKeysForSecClass(kSecClassIdentity)
     }
     
-    private func deleteAllKeysForSecClass(secClass: CFTypeRef) {
+    fileprivate func deleteAllKeysForSecClass(_ secClass: CFTypeRef) {
         let dict: [NSString : AnyObject] = [kSecClass : secClass]
-        let result = SecItemDelete(dict)
+        let result = SecItemDelete(dict as CFDictionary)
         assert(result == noErr || result == errSecItemNotFound, "Error deleting keychain data (\(result))")
     }
     
-    private func load(service: NSString) -> NSString? {
+    fileprivate func load(_ service: NSString) -> NSString? {
         // Instantiate a new default keychain query
         // Tell the query to return a result
         // Limit our results to one item
@@ -109,8 +109,8 @@ public class KeychainService: NSObject {
         var contentsOfKeychain: NSString? = nil
         
         if status == errSecSuccess {
-            if let retrievedData = dataTypeRef as? NSData {
-                contentsOfKeychain = NSString(data: retrievedData, encoding: NSUTF8StringEncoding)
+            if let retrievedData = dataTypeRef as? Data {
+                contentsOfKeychain = NSString(data: retrievedData, encoding: String.Encoding.utf8.rawValue)
             }
         } else {
             print("Nothing was retrieved from the keychain. Status code \(status)")

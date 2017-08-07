@@ -10,21 +10,21 @@ import UIKit
 
 public final class DonationRecordCell: UICollectionViewCell {
     
-    private lazy var _donationDetailsView = DonationDetailsView.loadFromNib()!
+    fileprivate lazy var _donationDetailsView: DonationDetailsView = DonationDetailsView.loadFromNib()!
     
     @IBOutlet weak var donationDetailsContainerView: UIView! {
         didSet {
-            donationDetailsContainerView.backgroundColor = .clearColor()
+            donationDetailsContainerView.backgroundColor = .clear
         }
     }
     
-    public func bindViewModel(viewModel: DonationRecordViewModel) {
+    public func bindViewModel(_ viewModel: DonationRecordViewModel) {
         _donationDetailsView.bindViewModel(viewModel.donationDetailsViewModel)
     }
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        _donationDetailsView.loadInto(donationDetailsContainerView)
+        _donationDetailsView.add(into:donationDetailsContainerView)
     }
     
 }

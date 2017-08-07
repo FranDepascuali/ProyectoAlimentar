@@ -17,7 +17,7 @@ public protocol ProgrammaticViewType {
 extension UIView: ProgrammaticViewType {
     
     public static func programatic() -> Self {
-        let view = self.init(frame: CGRectZero)
+        let view = self.init(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }

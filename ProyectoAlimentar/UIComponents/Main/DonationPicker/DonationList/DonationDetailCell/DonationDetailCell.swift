@@ -11,37 +11,37 @@ import Core
 
 public final class DonationDetailCell: UICollectionViewCell {
     
-    private lazy var _donationDetailsView = DonationDetailsView.loadFromNib()!
+    fileprivate lazy var _donationDetailsView: DonationDetailsView = DonationDetailsView.loadFromNib()!
     
     @IBOutlet weak var donationDetailsContainerView: UIView! {
         didSet {
-            donationDetailsContainerView.backgroundColor = UIColor.clearColor()
+            donationDetailsContainerView.backgroundColor = UIColor.clear
         }
     }
 
     @IBOutlet weak var detailedInformationStackView: UIStackView! {
         didSet {
-            detailedInformationStackView.hidden = true
+            detailedInformationStackView.isHidden = true
         }
     }
 
     @IBOutlet weak var fetchDonationButton: UIButton! {
         didSet {
             fetchDonationButton.backgroundColor = ColorPalette.primaryColor
-            fetchDonationButton.setTitleColor(.whiteColor(), forState: .Normal)
+            fetchDonationButton.setTitleColor(.white, for: UIControlState())
             fetchDonationButton.titleLabel?.setFont(pointSize: 14)
         }
     }
     
-    public func bindViewModel(viewModel: DonationDetailViewModel, onConfirmDonation: Donation -> ()) {
-        fetchDonationButton.setTitle(viewModel.fetchDonationTitle, forState: .Normal)
+    public func bindViewModel(_ viewModel: DonationDetailViewModel, onConfirmDonation: @escaping (Donation) -> ()) {
+        fetchDonationButton.setTitle(viewModel.fetchDonationTitle, for: UIControlState())
         _donationDetailsView.bindViewModel(viewModel.donationDetailsViewModel)
         fetchDonationButton.setAction { _ in onConfirmDonation(viewModel.donation) }
     }
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        _donationDetailsView.loadInto(donationDetailsContainerView)
+        _donationDetailsView.add(into:donationDetailsContainerView)
     }
     
     public override func prepareForReuse() {

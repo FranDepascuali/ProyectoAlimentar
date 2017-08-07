@@ -10,6 +10,6 @@ import UIKit
 
 public protocol Bootstrapper {
 
-    func bootstrap(application: UIApplication, launchOptions: [NSObject : AnyObject]?)
+    func bootstrap(_ application: UIApplication, launchOptions: [AnyHashable: Any]?)
 
 }

@@ -9,13 +9,13 @@
 import Foundation
 import Result
 
-public enum DeserializerErrorType: ErrorType {
+public enum DeserializerErrorType: Error {
     
-    case AbsentKey(String)
+    case absentKey(String)
     
 }
 
 public protocol Deserializable {
     
-    static func deserialize(JSON: AnyObject) -> Result<Self, DeserializerErrorType>
+    static func deserialize(_ JSON: AnyObject) -> Result<Self, DeserializerErrorType>
 }

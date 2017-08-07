@@ -10,9 +10,9 @@ import UIKit
 
 public final class ActiveDonationDetailViewController: UIViewController {
     
-    private let _viewModel: ActiveDonationDetailViewModel
+    fileprivate let _viewModel: ActiveDonationDetailViewModel
     
-    private lazy var _donationDetailView: ActiveDonationDetailView = ActiveDonationDetailView.loadFromNib()!
+    fileprivate lazy var _donationDetailView: ActiveDonationDetailView = ActiveDonationDetailView.loadFromNib()!
     
     public init(viewModel: ActiveDonationDetailViewModel) {
         _viewModel = viewModel
@@ -36,7 +36,7 @@ public final class ActiveDonationDetailViewController: UIViewController {
 
 private extension ActiveDonationDetailViewController {
     
-    private func bindViewModel(viewModel: ActiveDonationDetailViewModel) {
+    func bindViewModel(_ viewModel: ActiveDonationDetailViewModel) {
         _donationDetailView.donationDetailsView.bindViewModel(viewModel.donationDetailsViewModel)
     }
     

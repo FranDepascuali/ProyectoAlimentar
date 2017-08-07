@@ -63,7 +63,6 @@
 		F893CB041DCAB3210042E2A9 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893CB031DCAB3210042E2A9 /* TitleView.swift */; };
 		F893CB0A1DCAC1CE0042E2A9 /* ProgrammaticViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893CB091DCAC1CE0042E2A9 /* ProgrammaticViewType.swift */; };
 		F8AB6F221DECF08C00F4657B /* .git-keep in Resources */ = {isa = PBXBuildFile; fileRef = F8AB6F211DECF08C00F4657B /* .git-keep */; };
-		F8AB6F241DECF09B00F4657B /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F8AB6F231DECF09B00F4657B /* Debug.xcconfig */; };
 		F8AB6F261DECF23300F4657B /* CredentialsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB6F251DECF23300F4657B /* CredentialsManager.swift */; };
 		F8B639951DD2A42600ADF26E /* ConfirmDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B639941DD2A42600ADF26E /* ConfirmDonationView.swift */; };
 		F8B639971DD2A44C00ADF26E /* ConfirmDonationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B639961DD2A44C00ADF26E /* ConfirmDonationView.xib */; };
@@ -598,13 +597,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Alimentar;
 				TargetAttributes = {
 					F84185561D7A10CE0000AEB5 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 25JT3PTV2V;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -647,7 +646,6 @@
 				F84185CB1D7E44A10000AEB5 /* DonationDetailCell.xib in Resources */,
 				F82594311DE8D69600B0C159 /* ProfileView.xib in Resources */,
 				F8024C331DC44A7E00407D92 /* DonationDetailsView.xib in Resources */,
-				F8AB6F241DECF09B00F4657B /* Debug.xcconfig in Resources */,
 				F8AB6F221DECF08C00F4657B /* .git-keep in Resources */,
 				F8024C4A1DC4545E00407D92 /* DonationRecordCell.xib in Resources */,
 				F8024C431DC4524300407D92 /* DonationsRecordView.xib in Resources */,
@@ -668,12 +666,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -865,12 +859,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ProyectoAlimentar/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-Onone";
 				PRODUCT_BUNDLE_IDENTIFIER = Alimentar.ProyectoAlimentar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -883,10 +879,12 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ProyectoAlimentar/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Alimentar.ProyectoAlimentar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

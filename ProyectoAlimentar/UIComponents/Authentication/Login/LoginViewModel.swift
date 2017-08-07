@@ -7,21 +7,21 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 import enum Result.NoError
 
 public final class LoginViewModel {
 
-    private let _userRepository: UserRepositoryType
+    fileprivate let _userRepository: UserRepositoryType
     
     public init(userRepository: UserRepositoryType) {
         _userRepository = userRepository
     }
     
-    public func login(token: String) -> SignalProducer<(), NoError> {
+    public func login(_ token: String) -> SignalProducer<(), NoError> {
         return _userRepository
                 .login(token)
                 .map { _ in () }
-                .observeOn(UIScheduler())
+                .observe(on: UIScheduler())
     }
 }

@@ -7,17 +7,17 @@
 //
 
 import UIKit
-import ReactiveCocoa
+import ReactiveSwift
 
 public final class DonationListViewController: UIViewController {
 
-    private var _donationsCarouselController: CarouselController!
+    fileprivate var _donationsCarouselController: CarouselController!
 
-    private let _viewModel: DonationListViewModel
+    fileprivate let _viewModel: DonationListViewModel
     
-    private let _onConfirmDonation: Donation -> ()
+    fileprivate let _onConfirmDonation: (Donation) -> ()
 
-    public init(viewModel: DonationListViewModel, onConfirmDonation: Donation -> ()) {
+    public init(viewModel: DonationListViewModel, onConfirmDonation: @escaping (Donation) -> ()) {
         _viewModel = viewModel
         _onConfirmDonation = onConfirmDonation
         
@@ -38,11 +38,11 @@ public final class DonationListViewController: UIViewController {
 
 extension DonationListViewController: CarouselControllerDelegate {
 
-    public func carousel(carousel: CarouselController, didSelectItemAtIndex index: Int) {
+    public func carousel(_ carousel: CarouselController, didSelectItemAtIndex index: Int) {
         _viewModel.selectDonationAt(index)
     }
 
-    public func carousel(carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell {
+    public func carousel(_ carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell {
         let cell = carousel.collectionView?.dequeCellWithIdentifier(.DonationDetailCell, forIndexPath: index) as! DonationDetailCell
 
         cell.bindViewModel(_viewModel[index], onConfirmDonation: _onConfirmDonation)
@@ -50,18 +50,18 @@ extension DonationListViewController: CarouselControllerDelegate {
         return cell
     }
 
-    public func numberOfItems(carousel: CarouselController) -> Int {
+    public func numberOfItems(_ carousel: CarouselController) -> Int {
         return _viewModel.donationsCount
     }
 
-    private func createFlowLayout() -> UICollectionViewFlowLayout {
+    fileprivate func createFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         // TODO: take this faked number out
         layout.itemSize = CGSize(width: view.frame.width - 40,
                                  height: 158)
         layout.minimumInteritemSpacing = 40
         //        layout.minimumLineSpacing = SessionTrickListController.MinimumLineSpacing
-        layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        layout.scrollDirection = UICollectionViewScrollDirection.horizontal
 
         return layout
     }
@@ -69,24 +69,24 @@ extension DonationListViewController: CarouselControllerDelegate {
 
 private extension DonationListViewController {
 
-    private func initializeDonationCarouselController() {
+    func initializeDonationCarouselController() {
         _donationsCarouselController = CarouselController(collectionViewLayout: createFlowLayout())
         _donationsCarouselController.collectionView!.showsHorizontalScrollIndicator = false
         _donationsCarouselController.collectionView!.registerCell(.DonationDetailCell)
         _donationsCarouselController.delegate = self
-        loadViewController(_donationsCarouselController, into: view)
+        load(childViewController: _donationsCarouselController, into: view)
     }
 
-    private func bindViewModel() {
+    func bindViewModel() {
         
         _viewModel.donations
             .producer
-            .observeOn(UIScheduler())
-            .startWithNext { _ in
+            .observe(on: UIScheduler())
+            .startWithValues { _ in
                 self._donationsCarouselController.collectionView?.reloadData()
         }
         
         _viewModel.selected
-            .observeNext { [unowned self] in self._donationsCarouselController.setSelected($0) }
+            .observeValues { [unowned self] in self._donationsCarouselController.setSelected($0) }
     }
 }

@@ -15,18 +15,18 @@ public final class DonationDescriptionView: UIView, NibLoadable {
         didSet {
             descriptionLabel.text = "Descripción"
             descriptionLabel.setFont(pointSize: 16)
-            descriptionLabel.textColor = .blackColor()
+            descriptionLabel.textColor = .black
         }
     }
   
     @IBOutlet weak var descriptionTextView: UITextView! {
         didSet {
-            descriptionTextView.scrollEnabled = false
-            descriptionTextView.editable = false
+            descriptionTextView.isScrollEnabled = false
+            descriptionTextView.isEditable = false
             descriptionTextView.textColor = ColorPalette.secondaryTextColor
             descriptionTextView.setFont(pointSize: 14)
-            descriptionTextView.textContainerInset = UIEdgeInsetsZero
-            descriptionTextView.contentInset = UIEdgeInsetsZero
+            descriptionTextView.textContainerInset = UIEdgeInsets.zero
+            descriptionTextView.contentInset = UIEdgeInsets.zero
             descriptionTextView.textContainer.lineFragmentPadding = 0;
             descriptionTextView.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         }

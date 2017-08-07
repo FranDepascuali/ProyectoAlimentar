@@ -10,7 +10,7 @@ import Foundation
 
 public struct DonationDetailsViewModel {
     
-    private let _donation: Donation
+    fileprivate let _donation: Donation
     
     public init(donation: Donation) {
         _donation = donation

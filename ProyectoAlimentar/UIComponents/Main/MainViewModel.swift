@@ -6,34 +6,34 @@
 //  Copyright © 2016 Alimentar. All rights reserved.
 //
 
-import ReactiveCocoa
+import ReactiveSwift
 
 public enum TabViewItem: Int {
-    case First = 0
-    case Second
-    case Third
-    case Four
+    case first = 0
+    case second
+    case third
+    case four
 }
 
 public final class MainViewModel {
 
-    public let selectedTab: AnyProperty<TabViewItem>
+    public let selectedTab: Property<TabViewItem>
 
-    private let _selectedTab = MutableProperty(TabViewItem.First)
+    fileprivate let _selectedTab = MutableProperty(TabViewItem.first)
 
-    private let _donationsRepository: DonationRepositoryType
+    fileprivate let _donationsRepository: DonationRepositoryType
     
-    private let _userRepository: UserRepositoryType
+    fileprivate let _userRepository: UserRepositoryType
     
     public init(donationsRepository: DonationRepositoryType, userRepository: UserRepositoryType) {
-        selectedTab = AnyProperty(_selectedTab)
+        selectedTab = Property(_selectedTab)
         
         _donationsRepository = donationsRepository
         _userRepository = userRepository
     }
 
     public func selectTab(at index: Int) {
-        guard let selectedTab = TabViewItem(rawValue: index) where selectedTab != _selectedTab.value else { return }
+        guard let selectedTab = TabViewItem(rawValue: index), selectedTab != _selectedTab.value else { return }
 
         _selectedTab.value = selectedTab
     }

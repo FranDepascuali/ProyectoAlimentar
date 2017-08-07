@@ -7,71 +7,71 @@
 //
 
 import UIKit
-import ReactiveCocoa
+import ReactiveSwift
 
 @objc
 public protocol CarouselControllerDelegate {
 
-    func carousel(carousel: CarouselController, didSelectItemAtIndex index: Int)
+    func carousel(_ carousel: CarouselController, didSelectItemAtIndex index: Int)
 
-    func carousel(carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell
+    func carousel(_ carousel: CarouselController, cellForRowAtCarouselIndex index: Int) -> UICollectionViewCell
 
-    func numberOfItems(carousel: CarouselController) -> Int
+    func numberOfItems(_ carousel: CarouselController) -> Int
 }
 
-public class CarouselController: UICollectionViewController {
+open class CarouselController: UICollectionViewController {
 
-    private var _selected: Int = 0
+    fileprivate var _selected: Int = 0
 
-    private var _lastOffset: CGFloat = 0
+    fileprivate var _lastOffset: CGFloat = 0
 
-    public weak var delegate: CarouselControllerDelegate?
+    open weak var delegate: CarouselControllerDelegate?
 
-    public var itemCount: Int {
+    open var itemCount: Int {
         return delegate?.numberOfItems(self) ?? 0
     }
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clearColor()
-        collectionView?.backgroundColor = .clearColor()
+        view.backgroundColor = .clear
+        collectionView?.backgroundColor = .clear
     }
 
-    public func setSelected(index: Int) {
+    open func setSelected(_ index: Int) {
         _selected = toInternalIndex(index)
         scrollToItem(_selected, animated: true)
     }
 
 }
 
-public extension CarouselController {
+extension CarouselController {
 
-    override public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    override public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return itemCount > 0 ? itemCount + 2 : 0
     }
 
-    override public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         _selected = indexPath.row
         scrollToItemNotifyingDelegate(indexPath.row, animated: true)
     }
 
-    override public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    override open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = fromInternalIndex(indexPath.row)
         return delegate!.carousel(self, cellForRowAtCarouselIndex: index)
     }
 }
 
-public extension CarouselController {
+extension CarouselController {
 
-    override public func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    override open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         _lastOffset = scrollView.contentOffset.x
     }
 
-    override public func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint,
+    override open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint,
                                                    targetContentOffset: UnsafeMutablePointer<CGPoint>) {
 
         let currentOffset = CGFloat(scrollView.contentOffset.x)
@@ -98,7 +98,7 @@ public extension CarouselController {
         }
     }
 
-    override public func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    override open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         if let indexPath = collectionView?.centerCellIndexPath {
             let position = indexPath.row
             // If we are at the copy of the last item we scroll to it
@@ -119,12 +119,12 @@ private extension CarouselController {
     // Carousel has a copy of the last element in first position and a copy of first element in last position (to simulate infinte scrolling).
 
     // Get carousel internal index from real data index
-    private func toInternalIndex(index: Int) -> Int {
+    func toInternalIndex(_ index: Int) -> Int {
         return index + 1
     }
 
     // Get real index from carousel internal index
-    private func fromInternalIndex(position: Int) -> Int {
+    func fromInternalIndex(_ position: Int) -> Int {
         switch position {
         case 0: return itemCount - 1
         case itemCount + 1: return 0
@@ -132,16 +132,16 @@ private extension CarouselController {
         }
     }
 
-    private func scrollToItemNotifyingDelegate(position: Int, animated: Bool) {
+    func scrollToItemNotifyingDelegate(_ position: Int, animated: Bool) {
         self.delegate?.carousel(self, didSelectItemAtIndex: fromInternalIndex(position))
         self.scrollToItem(position, animated: animated)
     }
 
-    private func scrollToItem(position: Int, animated: Bool) {
-        dispatch_async(dispatch_get_main_queue(), {
-            let indexPath = NSIndexPath(forItem: position, inSection: 0)
-            self.collectionView?.scrollToItemAtIndexPath(indexPath,
-                atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally,
+    func scrollToItem(_ position: Int, animated: Bool) {
+        DispatchQueue.main.async(execute: {
+            let indexPath = IndexPath(item: position, section: 0)
+            self.collectionView?.scrollToItem(at: indexPath,
+                at: UICollectionViewScrollPosition.centeredHorizontally,
                 animated: animated)
         })
     }

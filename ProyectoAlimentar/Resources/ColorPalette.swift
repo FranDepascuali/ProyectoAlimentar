@@ -19,11 +19,11 @@ public protocol ColorPaletteType {
 
 private extension UIColor {
 
-    private static let lightOrange = UIColor(hex: "FDB949")!
+    static let lightOrange = UIColor(hex: "FDB949")!
 
-    private static let darkOrange = UIColor(hex: "F39700")!
+    static let darkOrange = UIColor(hex: "F39700")!
     
-    private static let lightGrey = UIColor(hex: "F2F2F2")!
+    static let lightGrey = UIColor(hex: "F2F2F2")!
 }
 
 public struct ColorPalette: ColorPaletteType {
@@ -32,7 +32,7 @@ public struct ColorPalette: ColorPaletteType {
 
     public static var activatedColor = UIColor.darkOrange
 
-    public static var primaryTextColor = UIColor.blackColor()
+    public static var primaryTextColor = UIColor.black
 
     public static var secondaryTextColor = UIColor(hex: "9b9b9b")!
     

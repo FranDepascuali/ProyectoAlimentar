@@ -10,12 +10,12 @@ import UIKit
 
 public extension UITabBar {
 
-    public func selectItemAt(index: Int) {
+    public func selectItemAt(_ index: Int) {
         selectedItem = items![index]
     }
 
-    public func indexForItem(item: UITabBarItem) -> Int? {
-        for (index, _item) in items!.enumerate() {
+    public func indexForItem(_ item: UITabBarItem) -> Int? {
+        for (index, _item) in items!.enumerated() {
             if _item == item {
                 return index
             }

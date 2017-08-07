@@ -6,13 +6,13 @@
 //  Copyright © 2016 Alimentar. All rights reserved.
 //
 
-import ReactiveCocoa
+import ReactiveSwift
 
 public final class DonationsRecordsViewModel {
     
-    private let _donationRepository: DonationRepositoryType
+    fileprivate let _donationRepository: DonationRepositoryType
     
-    private let _donations: MutableProperty<[DonationRecordViewModel]>
+    fileprivate let _donations: MutableProperty<[DonationRecordViewModel]>
     
     public init(donationRepository: DonationRepositoryType) {
         _donations = MutableProperty([])

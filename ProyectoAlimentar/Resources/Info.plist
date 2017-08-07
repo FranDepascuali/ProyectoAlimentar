@@ -43,8 +43,6 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Alimentar necesita tu ubicación para mostrar donaciones cercanas.</string>
-	<key>NSMainNibFile</key>
-	<string>pd</string>
 	<key>Services Credentials</key>
 	<dict>
 		<key>ApiURL</key>

@@ -10,17 +10,17 @@ import UIKit
 
 public final class ConfirmDonationViewController: UIViewController {
     
-    private let _confirmDonationView = ConfirmDonationView.loadFromNib()!
+    fileprivate let _confirmDonationView: ConfirmDonationView = ConfirmDonationView.loadFromNib()!
     
-    private let _viewModel: ConfirmDonationViewModel
+    fileprivate let _viewModel: ConfirmDonationViewModel
     
-    private let _onAccept: () -> ()
+    fileprivate let _onAccept: () -> ()
     
-    private let _onCancel: () -> ()
+    fileprivate let _onCancel: () -> ()
     
     public init(viewModel: ConfirmDonationViewModel,
-                onAccept: () -> (),
-                onCancel: () -> ()) {
+                onAccept: @escaping () -> (),
+                onCancel: @escaping () -> ()) {
         _viewModel = viewModel
         _onAccept = onAccept
         _onCancel = onCancel
@@ -44,7 +44,7 @@ public final class ConfirmDonationViewController: UIViewController {
 
 private extension ConfirmDonationViewController {
     
-    private func bindViewModel(viewModel: ConfirmDonationViewModel) {
+    func bindViewModel(_ viewModel: ConfirmDonationViewModel) {
         _confirmDonationView.acceptButton.setAction { [unowned self] _ in
             self._onAccept()
         }

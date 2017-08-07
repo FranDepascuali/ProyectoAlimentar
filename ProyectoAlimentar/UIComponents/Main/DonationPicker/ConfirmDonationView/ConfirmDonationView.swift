@@ -35,7 +35,7 @@ public final class ConfirmDonationView: UIView, NibLoadable {
     
     @IBOutlet weak var cancelButton: UIButton! {
         didSet {
-            cancelButton.setTitleColor(ColorPalette.secondaryTextColor, forState: .Normal)
+            cancelButton.setTitleColor(ColorPalette.secondaryTextColor, for: UIControlState())
             cancelButton.titleLabel?.setFont(pointSize: 14)
             cancelButton.titleLabel?.addCharactersSpacing(0.5)
         }
@@ -43,7 +43,7 @@ public final class ConfirmDonationView: UIView, NibLoadable {
     
     @IBOutlet weak var acceptButton: UIButton! {
         didSet {
-            acceptButton.setTitleColor(ColorPalette.activatedColor, forState: .Normal)
+            acceptButton.setTitleColor(ColorPalette.activatedColor, for: UIControlState())
             acceptButton.titleLabel?.setFont(pointSize: 14)
             acceptButton.titleLabel?.addCharactersSpacing(0.5)
         }
@@ -53,8 +53,8 @@ public final class ConfirmDonationView: UIView, NibLoadable {
         super.awakeFromNib()
         
         UIView.performWithoutAnimation {
-            cancelButton.setTitle("Cancelar", forState: .Normal)
-            acceptButton.setTitle("Aceptar", forState: .Normal)
+            cancelButton.setTitle("Cancelar", for: UIControlState())
+            acceptButton.setTitle("Aceptar", for: UIControlState())
             cancelButton.layoutIfNeeded()
             acceptButton.layoutIfNeeded()
         }

@@ -7,31 +7,31 @@
 //
 
 import CoreLocation
-import ReactiveCocoa
+import ReactiveSwift
 import enum Result.NoError
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 import Result
 
 public final class MapViewModel {
 
-    public let annotations: AnyProperty<[MapViewAnnotation]>
+    public let annotations: Property<[MapViewAnnotation]>
 
-    private let _notifySelection: MapViewAnnotation -> ()
+    fileprivate let _notifySelection: (MapViewAnnotation) -> ()
 
     public let selected: Signal<MapViewAnnotation, NoError>
 
-    public init(annotations: AnyProperty<[MapViewAnnotation]>,
+    public init(annotations: Property<[MapViewAnnotation]>,
                 externalSelection: Signal<MapViewAnnotation, NoError>,
-                notifySelection: MapViewAnnotation -> ()) {
+                notifySelection: @escaping (MapViewAnnotation) -> ()) {
 
         self.annotations = annotations
         _notifySelection = notifySelection
-        selected = externalSelection.observeOn(UIScheduler())
+        selected = externalSelection.observe(on: UIScheduler())
     }
 
-    public func tapped(annotation: MapViewAnnotation) {
+    public func tapped(_ annotation: MapViewAnnotation) {
         _notifySelection(annotation)
     }
 

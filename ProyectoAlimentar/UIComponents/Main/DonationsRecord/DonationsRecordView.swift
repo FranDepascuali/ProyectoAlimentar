@@ -13,7 +13,7 @@ public final class DonationsRecordView: UIView, NibLoadable {
     
     @IBOutlet weak var titleContainerView: UIView! {
         didSet {
-            TitleView(title: "Historial").loadInto(titleContainerView)
+            TitleView(title: "Historial").add(into:titleContainerView)
         }
     }
     

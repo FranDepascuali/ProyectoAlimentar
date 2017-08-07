@@ -37,16 +37,16 @@ public final class ActiveDonationCell: UICollectionViewCell {
         }
     }
     
-    private lazy var _donationDetailsView = DonationDetailsView.loadFromNib()!
+    fileprivate lazy var _donationDetailsView: DonationDetailsView = DonationDetailsView.loadFromNib()!
     
     @IBOutlet weak var donationDetailsContainerView: UIView! {
         didSet {
-            donationDetailsContainerView.backgroundColor = .clearColor()
-            _donationDetailsView.loadInto(donationDetailsContainerView)
+            donationDetailsContainerView.backgroundColor = .clear
+            _donationDetailsView.add(into:donationDetailsContainerView)
         }
     }
     
-    public func bindViewModel(viewModel: ActiveDonationViewModel) {
+    public func bindViewModel(_ viewModel: ActiveDonationViewModel) {
         _donationDetailsView.bindViewModel(viewModel.donationDetailsViewModel)
     }
 }

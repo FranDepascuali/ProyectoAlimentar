@@ -7,28 +7,29 @@
 //
 
 import UIKit
-import FacebookCore
-import FacebookLogin
+//import FacebookCore
+//import FacebookLogin
 
-public final class FacebookBootstrapper: Bootstrapper {
-    
-    public static let sharedInstance = FacebookBootstrapper()
-    
-    private init() {}
-    
-    public func bootstrap(application: UIApplication, launchOptions: [NSObject : AnyObject]?) {
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-    }
-    
-    public func openURL(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return ApplicationDelegate.shared.application(application,
-                                                    openURL: url,
-                                                    sourceApplication: sourceApplication,
-                                                    annotation: annotation)
-        
-    }
-    
-    public func applicationDidBecomeActive(application: UIApplication) {
-        AppEventsLogger.activate(application)
-    }
-}
+//public final class FacebookBootstrapper: Bootstrapper {
+//    
+//    public static let sharedInstance = FacebookBootstrapper()
+//    
+//    fileprivate init() {}
+//    
+//    public func bootstrap(_ application: UIApplication, launchOptions: [AnyHashable: Any]?) {
+//        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+//    }
+//    
+//    public func openURL(_ application: UIApplication, openURL url: URL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+//        return ApplicationDelegate.shared.application(application,
+//                                                    openURL: url,
+//                                                    sourceApplication: sourceApplication,
+//                                                    annotation: annotation)
+//        
+//    }
+//    
+//    public func applicationDidBecomeActive(_ application: UIApplication) {
+//        AppEventsLogger.activate(application)
+//    }
+//}
+
